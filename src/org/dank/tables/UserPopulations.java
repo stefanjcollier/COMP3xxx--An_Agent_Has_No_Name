@@ -6,7 +6,9 @@ import java.util.Map;
 import java.util.Set;
 
 /**
- * Created by Stefa on 30/11/2016.
+ * Contains the data from table 2, the User Population Probabilities
+ *
+ * Created by Stefan on 30/11/2016.
  */
 public class UserPopulations implements UserPopulationProbTable {
 
@@ -18,7 +20,7 @@ public class UserPopulations implements UserPopulationProbTable {
 
     @Override
     public double percentOfPopulation(Set<MarketSegment> segment) {
-        return this.segmentToPopMap.get(segment) / 10000;
+        return this.segmentToPopMap.get(segment) / 10000.0;
     }
 
     public static void main(String[] args){

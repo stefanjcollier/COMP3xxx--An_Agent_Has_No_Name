@@ -6,6 +6,7 @@ import tau.tac.adx.report.demand.CampaignOpportunityMessage;
 import java.util.Set;
 
 /**
+ *
  * Created by Stefa on 29/11/2016.
  */
 public interface Campaign {
