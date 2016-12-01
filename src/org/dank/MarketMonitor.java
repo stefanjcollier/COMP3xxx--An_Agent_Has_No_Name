@@ -1,40 +1,67 @@
 package org.dank;
 
-import tau.tac.adx.demand.Campaign;
+import org.dank.entities.Campaign;
 import tau.tac.adx.report.adn.MarketSegment;
-import tau.tac.adx.report.demand.CampaignOpportunityMessage;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Set;
 
+
 /**
- *
- * Allocated to: Vlad
- *
- * This is effectively a wrapper on the histogram.
- *
- *  Keeps track of all running campaigns including their:
- *      market_segments
- *      reach
- *
- * Should be updated with each daily message
- *
- * Created by Stefa on 29/11/2016.
+ * Created by vlad on 30/11/2016.
  */
-interface MarketMonitor {
+public class MarketMonitor implements MarketMonitorInterface {
 
-    Collection<Campaign> getAllCampaignsOnDay(int day);
+    private static MarketMonitor singleton;
 
-    Collection<CampaignOpportunityMessage> getAllCampaigns();
+    private Collection<Campaign> allCampaigns;
 
-    void addCampaign(CampaignOpportunityMessage new_camp);
+    long currDay;
 
-    int getRequiredImpressionsOnDay(int day);
+    // reference to tables
 
-    Set<MarketSegment> getTargetSegmentsOnDay(int day);
+    public MarketMonitor() {
 
-    static MarketMonitor getInstance(){
+        allCampaigns = new ArrayList<Campaign>();
+    }
+
+    public Collection<Campaign> getAllCampaignsOnDay(int day) {
+
         return null;
+    };
+
+    public Collection<Campaign> getAllCampaigns() {
+        return allCampaigns;
+    };
+
+    public void addCampaign(Campaign newCampaign) {
+        allCampaigns.add(newCampaign);
+    };
+
+    public int getRequiredImpressionsOnDay(int day) {
+        return 0;
+    };
+
+    public Set<MarketSegment> getTargetSegmentsOnDay(int day) {
+        return null;
+    };
+
+    public static MarketMonitor getInstance(){
+        if (singleton == null) {
+            singleton = new MarketMonitor();
+        }
+        return singleton;
+    };
+
+    public void setCurrDay(int currDay) {
+        this.currDay = currDay;
+    }
+
+    private long getAvgImpressionsLeftPerDay(Campaign c) {
+        long daysLeft = c.getDayEnd() - currDay;
+
+        return ((long)c.impsTogo() / daysLeft);
     }
 
 }
