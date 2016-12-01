@@ -1,6 +1,7 @@
 package org.dank.entities;
 
 import tau.tac.adx.report.adn.MarketSegment;
+import tau.tac.adx.report.demand.CampaignOpportunityMessage;
 
 import java.util.Set;
 
@@ -14,6 +15,10 @@ public interface Campaign {
     int getReach();
     double getRequiredImpressionsPerDay();
     Set<MarketSegment> getTargetSegment();
+
+    static Campaign generateCampaign(CampaignOpportunityMessage camp){
+        return null;
+    }
 
 
 
