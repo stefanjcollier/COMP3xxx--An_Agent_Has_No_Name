@@ -8,4 +8,4 @@ TACAA_HOME=`pwd`
 echo $TACAA_HOME
 echo $CLASSPATH
 
-java -cp "lib/*;out/production/AdxAgent/org.DankAdNetwork" tau.tac.adx.agentware.Main -config config/aw-1.conf
+java -cp "lib/*" tau.tac.adx.agentware.Main -config config/aw-1.conf

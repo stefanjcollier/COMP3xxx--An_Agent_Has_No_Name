@@ -107,21 +107,6 @@ public class DankAdNetwork extends Agent {
 
 	@Override
 	protected void messageReceived(Message message) {
-		System.out.println("------------------------------------------------");
-		System.out.println("------------------------------------------------");
-		System.out.println("------------------------------------------------");
-		System.out.println("------------------------------------------------");
-		System.out.println("------------------------------------------------");
-		System.out.println("------------------------------------------------");
-		System.out.println("-------------------message---------------------------");
-		System.out.println("------------------------------------------------");
-		System.out.println("------------------------------------------------");
-		System.out.println("------------------------------------------------");
-		System.out.println("------------------------------------------------");
-		System.out.println("------------------------------------------------");
-		System.out.println("------------------------------------------------");
-		System.out.println("------------------------------------------------");
-
 		try {
 			Transportable content = message.getContent();
 
