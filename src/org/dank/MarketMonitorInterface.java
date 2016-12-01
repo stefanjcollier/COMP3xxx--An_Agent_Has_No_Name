@@ -1,8 +1,7 @@
 package org.dank;
 
-import tau.tac.adx.demand.Campaign;
+import org.dank.entities.Campaign;
 import tau.tac.adx.report.adn.MarketSegment;
-import tau.tac.adx.report.demand.CampaignOpportunityMessage;
 
 import java.util.Collection;
 import java.util.Set;
@@ -21,20 +20,16 @@ import java.util.Set;
  *
  * Created by Stefa on 29/11/2016.
  */
-interface MarketMonitor {
+public interface MarketMonitorInterface {
 
     Collection<Campaign> getAllCampaignsOnDay(int day);
 
-    Collection<CampaignOpportunityMessage> getAllCampaigns();
+    Collection<Campaign> getAllCampaigns();
 
-    void addCampaign(CampaignOpportunityMessage new_camp);
+    void addCampaign(Campaign new_camp);
 
     int getRequiredImpressionsOnDay(int day);
 
     Set<MarketSegment> getTargetSegmentsOnDay(int day);
-
-    static MarketMonitor getInstance(){
-        return null;
-    }
 
 }
