@@ -16,4 +16,6 @@ public interface UserPopulationProbTable {
     }
 
     double percentOfPopulation(Set<MarketSegment> segment);
+
+    int getPopulation();
 }

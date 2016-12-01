@@ -23,6 +23,11 @@ public class UserPopulations implements UserPopulationProbTable {
         return this.segmentToPopMap.get(segment) / 10000.0;
     }
 
+    @Override
+    public int getPopulation(){
+        return 10000;
+    }
+
     public static void main(String[] args){
         UserPopulations u = new UserPopulations();
         Set<MarketSegment> segments = MarketSegment.compundMarketSegment2(MarketSegment.FEMALE, MarketSegment.LOW_INCOME);
