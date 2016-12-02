@@ -4,6 +4,8 @@ import java.util.StringJoiner;
 import java.util.stream.DoubleStream;
 
 /**
+ * Contains the stats from table 3 on visitor incomes
+ *
  * Created by Stefa on 01/12/2016.
  */
 public class PublisherIncomeStatistics {
@@ -48,7 +50,7 @@ public class PublisherIncomeStatistics {
     public double has100plusIncome(PublisherToken publisher){
         return this.getIncomeChances(publisher)[inc100plus];
     }
-    public double hasIncome(PublisherToken publisher, int income_token){
+    public double getIncomeProb(PublisherToken publisher, int income_token){
         return this.getIncomeChances(publisher)[income_token];
     }
     public double[] getIncomeChances(PublisherToken publisher){
