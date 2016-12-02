@@ -1,6 +1,6 @@
 package org.dank;
 
-import tau.tac.adx.demand.Campaign;
+import org.dank.entities.Campaign;
 
 /**
  * Allocated to: Ekrem
@@ -9,7 +9,7 @@ import tau.tac.adx.demand.Campaign;
  */
 public interface CampaignDecider {
 
-    boolean shouldBidOnCampaign(Campaign incoming);
+    boolean shouldBidOnCampaign(Campaign incoming,int currentDay);
 
     static CampaignDecider getInstance(){
         return null;
