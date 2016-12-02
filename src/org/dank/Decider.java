@@ -27,7 +27,7 @@ public class Decider implements CampaignDecider {
 
     private MarketMonitor monitor;
     private UserPopulations userPopulations;
-    private int currentDay;
+    private long currentDay;
 
     public Decider(MarketMonitor monitor){
         this.monitor = monitor;
@@ -39,7 +39,7 @@ public class Decider implements CampaignDecider {
     Step 1 : check if potential imps per day(specified Market Segment) > overall imps per day(RC) +
     */
     @Override
-    public boolean shouldBidOnCampaign(Campaign incoming,int currentDay) {
+    public boolean shouldBidOnCampaign(Campaign incoming,long currentDay) {
         this.currentDay = currentDay;
 
         long campaignLength = incoming.getDayEnd() - incoming.getDayStart();
@@ -65,14 +65,11 @@ public class Decider implements CampaignDecider {
         // multiply it by the percentage of population that have the same market seg := avail_imps
         // reach required for IC := ori_IC
         //
-        // IF avail_imps >= ori_IC
-        // THEN return true
-        // ELSE return false
+        // return avail_imps >= ori_IC
 
+        long avail_imps = getImpressionsPerDayFor(incomingCamp) * incomingCamp.getLength();
 
-
-
-        return true;
+        return avail_imps >= incomingCamp.getReachImps();
     }
 
     /**
@@ -116,15 +113,15 @@ public class Decider implements CampaignDecider {
      * @param incomingCamp -- The campaign, who's target market we will look at
      * @return an estimate to the number of impressions that will be generated for the market segment
      */
-    private int getImpressionsPerDayFor(Campaign incomingCamp){
+    private long getImpressionsPerDayFor(Campaign incomingCamp){
         Set<MarketSegment> userType = incomingCamp.getTargetSegment();
-        int population = userPopulations.getPopulation();
+        long population = userPopulations.getPopulation();
         double percentOfPop = userPopulations.percentOfPopulation(userType);
 
         // TODO: determine the true number of impressions generated each day by either:
         // TODO: [1] look at the docs/code to find a value somewhere
         // TODO  [2] or run the server like 10 times and store the imps generated per day
 
-        return (int)(population * percentOfPop);
+        return (long)(population * percentOfPop);
     }
 }

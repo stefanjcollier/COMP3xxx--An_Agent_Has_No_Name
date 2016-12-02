@@ -9,7 +9,7 @@ import org.dank.entities.Campaign;
  */
 public interface CampaignDecider {
 
-    boolean shouldBidOnCampaign(Campaign incoming,int currentDay);
+    boolean shouldBidOnCampaign(Campaign incoming, long currentDay);
 
     static CampaignDecider getInstance(){
         return null;

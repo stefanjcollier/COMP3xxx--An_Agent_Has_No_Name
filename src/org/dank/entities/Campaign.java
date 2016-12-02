@@ -142,4 +142,5 @@ public class Campaign {
         this.budget = budget;
     }
 
+    public long getLength(){ return this.dayEnd - this.dayStart; }
 }
