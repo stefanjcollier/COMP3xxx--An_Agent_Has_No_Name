@@ -69,6 +69,9 @@ public class Decider implements CampaignDecider {
         // THEN return true
         // ELSE return false
 
+
+
+
         return true;
     }
 
@@ -78,7 +81,7 @@ public class Decider implements CampaignDecider {
      * to support the incoming campaign.
      *
      * @param incomingCamp -- The campaign we are decing whether to accept
-     * @return true -- There is a enough
+     * @return true -- There is a enough per day
      */
     protected boolean isEnoughRemainingImpressionsPerDay(Campaign incomingCamp){
         // Get estimated impressions per day
@@ -100,5 +103,28 @@ public class Decider implements CampaignDecider {
         return true;
     }
 
+    /**
+     * Estimate the number of impressions that will generated for market segment that the
+     * incoming campaign is targeting.
+     *
+     * NOTE: This currently assumes 1 imp per user per day (version 1)
+     *
+     * v1: 1 imp per user per day
+     * v2: avg(1..max_imps_per_visit) imps per user per day
+     * v3: avg determined by data collection
+     *
+     * @param incomingCamp -- The campaign, who's target market we will look at
+     * @return an estimate to the number of impressions that will be generated for the market segment
+     */
+    private int getImpressionsPerDayFor(Campaign incomingCamp){
+        Set<MarketSegment> userType = incomingCamp.getTargetSegment();
+        int population = userPopulations.getPopulation();
+        double percentOfPop = userPopulations.percentOfPopulation(userType);
 
+        // TODO: determine the true number of impressions generated each day by either:
+        // TODO: [1] look at the docs/code to find a value somewhere
+        // TODO  [2] or run the server like 10 times and store the imps generated per day
+
+        return (int)(population * percentOfPop);
+    }
 }
