@@ -61,6 +61,14 @@ public class Decider implements CampaignDecider {
      * @return true -- There is enough impressions for the incomingCamp
      */
     protected boolean isEnoughImpressionsForNewCampaign(Campaign incomingCamp){
+        // Get estimated impressions per day times by the IC.length
+        // multiply it by the percentage of population that have the same market seg := avail_imps
+        // reach required for IC := ori_IC
+        //
+        // IF avail_imps >= ori_IC
+        // THEN return true
+        // ELSE return false
+
         return true;
     }
 
@@ -73,6 +81,22 @@ public class Decider implements CampaignDecider {
      * @return true -- There is a enough
      */
     protected boolean isEnoughRemainingImpressionsPerDay(Campaign incomingCamp){
+        // Get estimated impressions per day
+        // multiply it by the percentage of population that have the same market seg := avail_imps_pd
+        // determine imps per day needed for IC := ori_IC_pd
+        //
+        // FOR EACH day IN RANGE( IC.start -> IC.END)
+        //    # Find all required imps needed that day
+        //    all_req_imps_pd := 0
+        //    FOR EACH camp in all_RCs
+        //       IF camp.is_running_on(day)
+        //       THEN all_req_imps_pd += camp.req_imps_pd()
+        //    # determine if there are enough imps available per day
+        //    IF (ori_IC_pd + all_req_imps_pd) > avail
+        //    THEN return false
+        // #If we reach the end of the loop, therefore there must be enough each day
+        // return true
+
         return true;
     }
 
