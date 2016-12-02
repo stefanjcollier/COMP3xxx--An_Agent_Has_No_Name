@@ -5,6 +5,9 @@ import tau.tac.adx.report.adn.MarketSegment;
 import java.util.Set;
 
 /**
+ *
+ * Contains the data from table 2, the User Population Probabilities
+
  * Allocated to: Stefan
  *
  * Created by Stefa on 29/11/2016.

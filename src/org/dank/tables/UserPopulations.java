@@ -28,6 +28,7 @@ public class UserPopulations implements UserPopulationProbTable {
         return 10000;
     }
 
+    //Example of MarketSgement being created
     public static void main(String[] args){
         UserPopulations u = new UserPopulations();
         Set<MarketSegment> segments = MarketSegment.compundMarketSegment2(MarketSegment.FEMALE, MarketSegment.LOW_INCOME);
