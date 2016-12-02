@@ -39,7 +39,7 @@ public class MarketMonitor implements MarketMonitorInterface {
         allCampaigns.add(newCampaign);
     };
 
-    public int getRequiredImpressionsOnDay(int day) {
+    public int getRequiredImpressionsOnDay(int day, Set<MarketSegment> targetSegment) {
         return 0;
     };
 

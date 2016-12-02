@@ -28,7 +28,7 @@ public interface MarketMonitorInterface {
 
     void addCampaign(Campaign new_camp);
 
-    int getRequiredImpressionsOnDay(int day);
+    public int getRequiredImpressionsOnDay(int day, Set<MarketSegment> targetSegment);
 
     Set<MarketSegment> getTargetSegmentsOnDay(int day);
 
