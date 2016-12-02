@@ -87,7 +87,7 @@ public class Decider implements CampaignDecider {
         //
         // FOR EACH day IN RANGE( IC.start -> IC.END)
         //    # Find all required imps needed that day
-        //    all_req_imps_pd := 0
+        //    todays_required_imps := 0
         //    FOR EACH camp in all_RCs
         //       IF camp.is_running_on(day)
         //       THEN all_req_imps_pd += camp.req_imps_pd()
@@ -96,6 +96,26 @@ public class Decider implements CampaignDecider {
         //    THEN return false
         // #If we reach the end of the loop, therefore there must be enough each day
         // return true
+        long avail_imps_pd = getImpressionsPerDayFor(incomingCamp);
+        long ori_IC = incomingCamp.getReachImps()/incomingCamp.getLength();
+
+        for (long today = incomingCamp.getDayStart(); today <= incomingCamp.getDayEnd(); today++){
+            long todays_required_imps = 0;
+            // Option A:
+            for (Campaign running_camp : this.monitor.getAllCampaignsOnDay((int)today)){
+                // todays_required_imps += running_camp.getReachImps();
+            }
+
+            // Option B: (Preferable, but blocked by Vlad)
+            //  Set<MarketSegment> target_market = incomingCamp.getTargetSegment();
+            //  todays_required_imps = this.monitor.getRequiredImpressionsOnDay(today,target_market);
+
+            if (todays_required_imps + ori_IC > avail_imps_pd){
+                return false;
+            }
+        }
+        return true;
+
 
         return true;
     }
