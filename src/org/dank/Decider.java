@@ -115,9 +115,6 @@ public class Decider implements CampaignDecider {
             }
         }
         return true;
-
-
-        return true;
     }
 
     /**
