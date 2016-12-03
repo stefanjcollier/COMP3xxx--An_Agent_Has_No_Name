@@ -102,9 +102,24 @@ public class Decider implements CampaignDecider {
         long ori_IC = incomingCamp.getReachImps()/incomingCamp.getLength();
         long todays_required_imps = 0;
 
-        long sumOfAverageImpsNeeded = 0;
+        // look at each day of the incoming camp
+        for (long today = incomingCamp.getDayStart(); today <= incomingCamp.getDayEnd(); today++){
+            //Look at each campaign that runs on that day
+            for (Campaign running_camp : this.monitor.getAllCampaignsOnDay((int)today)){
 
+                // If they compete, then add up the required impressions
+                if (isCompeting(running_camp, incomingCamp)) {
+                    todays_required_imps += running_camp.getReachImps()/ running_camp.getLength();
+                }
+            }
+
+            if (todays_required_imps + ori_IC > avail_imps_pd){
+                return false;
+            }
+        }
+        /*
         //calcaulates average Imps needed for all the running campaigns
+        long sumOfAverageImpsNeeded = 0;
 
         Set<MarketSegment> temp = null;
 
@@ -115,26 +130,25 @@ public class Decider implements CampaignDecider {
             sumOfAverageImpsNeeded +=  getImpressionsPerDayFor(temp) / (c.getDayEnd() - c.getDayStart());
 
         }
-
-
-
-      /*  for (long today = incomingCamp.getDayStart(); today <= incomingCamp.getDayEnd(); today++){
-
-            // Option A:
-            for (Campaign running_camp : this.monitor.getAllCampaignsOnDay((int)today)){
-
-                // todays_required_imps += running_camp.getReachImps();
-            }
-
-            // Option B: (Preferable, but blocked by Vlad)
-            //  Set<MarketSegment> target_market = incomingCamp.getTargetSegment();
-            //  todays_required_imps = this.monitor.getRequiredImpressionsOnDay(today,target_market);
-
-            if (todays_required_imps + ori_IC > avail_imps_pd){
-                return false;
-            }
-        }*/
         return avail_imps_pd > ori_IC + sumOfAverageImpsNeeded;
+         */
+
+        // If we reached this line, that implies there was no day where imp demmand exceeded imp supply
+        // Therefore there is enough imps generated each day for our incoming campaign
+        return true;
+    }
+
+
+    /**
+     * Determines if the two given {@link Campaign}s are competing by seeing if their target markets intersect
+     * @return true -- They do compete
+     */
+    private static boolean isCompeting(Campaign RC, Campaign IC){
+        Set<MarketSegment> targetSegment_RC = RC.getTargetSegment();
+        Set<MarketSegment> targetSegment_IC = IC.getTargetSegment();
+        targetSegment_RC.retainAll(targetSegment_IC);
+
+        return targetSegment_RC.size() > 0;
     }
 
     /**
