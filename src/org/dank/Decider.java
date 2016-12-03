@@ -9,9 +9,7 @@ import org.dank.tables.UserPopulationProbTable;
 import org.dank.tables.UserPopulations;
 import tau.tac.adx.report.adn.MarketSegment;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Set;
+import java.util.*;
 
 /**
  * A implementation of {@link CampaignDecider} that determines if the campaign should be
@@ -47,7 +45,11 @@ public class Decider implements CampaignDecider {
 
         /*TODO try and error on the simulation to find out the "golden" ratio for the function of MinNumImp = ratio * userPop
         */
-        long averageImpressionsForSegment = (long) (userPopulations.percentOfPopulation(incoming.getTargetSegment()) * 10000);
+        if(isEnoughImpressionsForNewCampaign(incoming)){
+            if(isEnoughRemainingImpressionsPerDay(incoming)){
+                    return true;
+            }
+        }
 
         return false;
     }
@@ -67,7 +69,7 @@ public class Decider implements CampaignDecider {
         //
         // return avail_imps >= ori_IC
 
-        long avail_imps = getImpressionsPerDayFor(incomingCamp) * incomingCamp.getLength();
+        long avail_imps = getImpressionsPerDayFor(incomingCamp.getTargetSegment()) * incomingCamp.getLength();
 
         return avail_imps >= incomingCamp.getReachImps();
     }
@@ -96,13 +98,31 @@ public class Decider implements CampaignDecider {
         //    THEN return false
         // #If we reach the end of the loop, therefore there must be enough each day
         // return true
-        long avail_imps_pd = getImpressionsPerDayFor(incomingCamp);
+        long avail_imps_pd = getImpressionsPerDayFor(incomingCamp.getTargetSegment());
         long ori_IC = incomingCamp.getReachImps()/incomingCamp.getLength();
+        long todays_required_imps = 0;
 
-        for (long today = incomingCamp.getDayStart(); today <= incomingCamp.getDayEnd(); today++){
-            long todays_required_imps = 0;
+        long sumOfAverageImpsNeeded = 0;
+
+        //calcaulates average Imps needed for all the running campaigns
+
+        Set<MarketSegment> temp = null;
+
+        for(Campaign c : getRunningCampaignsDuring(incomingCamp)){
+            temp = c.getTargetSegment();
+            temp.retainAll(incomingCamp.getTargetSegment());
+
+            sumOfAverageImpsNeeded +=  getImpressionsPerDayFor(temp) / (c.getDayEnd() - c.getDayStart());
+
+        }
+
+
+
+      /*  for (long today = incomingCamp.getDayStart(); today <= incomingCamp.getDayEnd(); today++){
+
             // Option A:
             for (Campaign running_camp : this.monitor.getAllCampaignsOnDay((int)today)){
+
                 // todays_required_imps += running_camp.getReachImps();
             }
 
@@ -113,8 +133,8 @@ public class Decider implements CampaignDecider {
             if (todays_required_imps + ori_IC > avail_imps_pd){
                 return false;
             }
-        }
-        return true;
+        }*/
+        return avail_imps_pd > ori_IC + sumOfAverageImpsNeeded;
     }
 
     /**
@@ -127,11 +147,11 @@ public class Decider implements CampaignDecider {
      * v2: avg(1..max_imps_per_visit) imps per user per day
      * v3: avg determined by data collection
      *
-     * @param incomingCamp -- The campaign, who's target market we will look at
+     * @param userType -- The campaign, who's target market we will look at
      * @return an estimate to the number of impressions that will be generated for the market segment
      */
-    private long getImpressionsPerDayFor(Campaign incomingCamp){
-        Set<MarketSegment> userType = incomingCamp.getTargetSegment();
+    private long getImpressionsPerDayFor(Set<MarketSegment> userType){
+
         long population = userPopulations.getPopulation();
         double percentOfPop = userPopulations.percentOfPopulation(userType);
 
@@ -140,5 +160,30 @@ public class Decider implements CampaignDecider {
         // TODO  [2] or run the server like 10 times and store the imps generated per day
 
         return (long)(population * percentOfPop);
+    }
+
+
+    //gets all the running campaign during th IC
+    private ArrayList<Campaign> getRunningCampaignsDuring(Campaign IC){
+        ArrayList<Campaign> retVal = new ArrayList<Campaign>();
+
+        Set<MarketSegment> targetSegment = IC.getTargetSegment();
+        Set<MarketSegment> temp = null;
+        for(Campaign c : this.monitor.getAllCampaigns()){
+            temp = c.getTargetSegment();
+            //checks if the campaign is still running or not ?
+            if(c.getDayEnd() > IC.getDayStart()){
+                temp.retainAll(targetSegment);
+
+                //check if they targeting the similar segments?
+                if(temp.size() > 0){
+
+                    retVal.add(c);
+                }
+            }
+
+        }
+
+        return retVal;
     }
 }
