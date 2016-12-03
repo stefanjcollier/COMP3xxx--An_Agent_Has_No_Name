@@ -27,31 +27,17 @@ public class Decider implements CampaignDecider {
     private UserPopulations userPopulations;
     private long currentDay;
 
-    public Decider(MarketMonitor monitor){
+    protected Decider(MarketMonitor monitor){
         this.monitor = monitor;
         userPopulations = new UserPopulations();
 
     }
 
-    /*
-    Step 1 : check if potential imps per day(specified Market Segment) > overall imps per day(RC) +
-    */
+
     @Override
-    public boolean shouldBidOnCampaign(Campaign incoming,long currentDay) {
-        this.currentDay = currentDay;
-
-        long campaignLength = incoming.getDayEnd() - incoming.getDayStart();
-        long campaignReachImps = incoming.getReachImps();
-
-        /*TODO try and error on the simulation to find out the "golden" ratio for the function of MinNumImp = ratio * userPop
-        */
-        if(isEnoughImpressionsForNewCampaign(incoming)){
-            if(isEnoughRemainingImpressionsPerDay(incoming)){
-                    return true;
-            }
-        }
-
-        return false;
+    public boolean shouldBidOnCampaign(Campaign incoming) {
+        return isEnoughImpressionsForNewCampaign(incoming) &&
+                isEnoughRemainingImpressionsPerDay(incoming);
     }
 
     /**
@@ -63,12 +49,6 @@ public class Decider implements CampaignDecider {
      * @return true -- There is enough impressions for the incomingCamp
      */
     protected boolean isEnoughImpressionsForNewCampaign(Campaign incomingCamp){
-        // Get estimated impressions per day times by the IC.length
-        // multiply it by the percentage of population that have the same market seg := avail_imps
-        // reach required for IC := ori_IC
-        //
-        // return avail_imps >= ori_IC
-
         long avail_imps = getImpressionsPerDayFor(incomingCamp.getTargetSegment()) * incomingCamp.getLength();
 
         return avail_imps >= incomingCamp.getReachImps();
@@ -83,21 +63,6 @@ public class Decider implements CampaignDecider {
      * @return true -- There is a enough per day
      */
     protected boolean isEnoughRemainingImpressionsPerDay(Campaign incomingCamp){
-        // Get estimated impressions per day
-        // multiply it by the percentage of population that have the same market seg := avail_imps_pd
-        // determine imps per day needed for IC := ori_IC_pd
-        //
-        // FOR EACH day IN RANGE( IC.start -> IC.END)
-        //    # Find all required imps needed that day
-        //    todays_required_imps := 0
-        //    FOR EACH camp in all_RCs
-        //       IF camp.is_running_on(day)
-        //       THEN all_req_imps_pd += camp.req_imps_pd()
-        //    # determine if there are enough imps available per day
-        //    IF (ori_IC_pd + all_req_imps_pd) > avail
-        //    THEN return false
-        // #If we reach the end of the loop, therefore there must be enough each day
-        // return true
         long avail_imps_pd = getImpressionsPerDayFor(incomingCamp.getTargetSegment());
         long ori_IC_pd = incomingCamp.getReachImps()/incomingCamp.getLength();
         long todays_required_imps = 0;
@@ -117,21 +82,6 @@ public class Decider implements CampaignDecider {
                 return false;
             }
         }
-        /*
-        //calcaulates average Imps needed for all the running campaigns
-        long sumOfAverageImpsNeeded = 0;
-
-        Set<MarketSegment> temp = null;
-
-        for(Campaign c : getRunningCampaignsDuring(incomingCamp)){
-            temp = c.getTargetSegment();
-            temp.retainAll(incomingCamp.getTargetSegment());
-
-            sumOfAverageImpsNeeded +=  getImpressionsPerDayFor(temp) / (c.getDayEnd() - c.getDayStart());
-
-        }
-        return avail_imps_pd > ori_IC + sumOfAverageImpsNeeded;
-         */
 
         // If we reached this line, that implies there was no day where imp demmand exceeded imp supply
         // Therefore there is enough imps generated each day for our incoming campaign
@@ -176,28 +126,4 @@ public class Decider implements CampaignDecider {
         return (long)(population * percentOfPop);
     }
 
-
-    //gets all the running campaign during th IC
-    private ArrayList<Campaign> getRunningCampaignsDuring(Campaign IC){
-        ArrayList<Campaign> retVal = new ArrayList<Campaign>();
-
-        Set<MarketSegment> targetSegment = IC.getTargetSegment();
-        Set<MarketSegment> temp = null;
-        for(Campaign c : this.monitor.getAllCampaigns()){
-            temp = c.getTargetSegment();
-            //checks if the campaign is still running or not ?
-            if(c.getDayEnd() > IC.getDayStart()){
-                temp.retainAll(targetSegment);
-
-                //check if they targeting the similar segments?
-                if(temp.size() > 0){
-
-                    retVal.add(c);
-                }
-            }
-
-        }
-
-        return retVal;
-    }
 }
