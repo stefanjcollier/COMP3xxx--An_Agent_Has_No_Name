@@ -99,7 +99,7 @@ public class Decider implements CampaignDecider {
         // #If we reach the end of the loop, therefore there must be enough each day
         // return true
         long avail_imps_pd = getImpressionsPerDayFor(incomingCamp.getTargetSegment());
-        long ori_IC = incomingCamp.getReachImps()/incomingCamp.getLength();
+        long ori_IC_pd = incomingCamp.getReachImps()/incomingCamp.getLength();
         long todays_required_imps = 0;
 
         // look at each day of the incoming camp
@@ -113,7 +113,7 @@ public class Decider implements CampaignDecider {
                 }
             }
 
-            if (todays_required_imps + ori_IC > avail_imps_pd){
+            if (todays_required_imps + ori_IC_pd > avail_imps_pd){
                 return false;
             }
         }
