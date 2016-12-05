@@ -74,4 +74,6 @@ public interface PublisherProbTable {
      */
     public double getChanceOf(String publisher_name, Set<MarketSegment> segments, Device device);
 
+    PublisherProbTable INSTANCE = new PublisherStatistics();
+
 }
