@@ -31,7 +31,7 @@ public class CampaignBidder {
             return performStrategy3(incomingCamp, myQuality);
 
         } else {
-            return performStrategy1(incomingCamp);
+            return performStrategy1(incomingCamp, myQuality);
         }
     }
 
@@ -39,8 +39,8 @@ public class CampaignBidder {
      * bid private value: PI * CI
      * (Normal Path)
      * */
-    protected double performStrategy1(Campaign incomingCamp){
-        return this.pici(incomingCamp);
+    protected double performStrategy1(Campaign incomingCamp, double myQuality){
+        return myQuality / this.pici(incomingCamp);
     }
     /** Bid lowest valid price */
     protected double performStrategy2(Campaign incomingCamp, double myQuality){
