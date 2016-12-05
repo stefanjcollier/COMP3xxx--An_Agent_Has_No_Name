@@ -288,6 +288,12 @@ public class DankAdNetwork extends Agent {
 		String campaignAllocatedTo = " allocated to "
 				+ notificationMessage.getWinner();
 
+
+		// Update the CI
+		double budget = notificationMessage.getCostMillis()/1000.0;
+		double bid = pendingCampaign.getBudget();
+		State.getInstance().informOfCampaignOutcome(budget, bid);
+
 		if ((pendingCampaign.getId() == adNetworkDailyNotification.getCampaignId())
 				&& (notificationMessage.getCostMillis() != 0)) {
 

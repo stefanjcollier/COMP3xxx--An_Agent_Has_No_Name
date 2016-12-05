@@ -38,7 +38,21 @@ public class State {
         return gGreed;
     }
 
-    public void updateCi(BidOutcome outcome){
+    public void informOfCampaignOutcome(double budget, double bid){
+        BidOutcome outcome = BidOutcome.LOSS;
+
+        boolean won = budget != 0;
+        if(won){
+            if(budget == bid){
+                outcome = BidOutcome.RANDOM_WIN;
+            }else{
+                outcome = BidOutcome.BID_WIN;
+            }
+        }
+        updateCi(outcome);
+    }
+
+    protected void updateCi(BidOutcome outcome){
         switch(outcome){
             case BID_WIN: {
                 // Ci remains the same
