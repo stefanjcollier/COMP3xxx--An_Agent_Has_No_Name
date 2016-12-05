@@ -36,5 +36,5 @@ public class PriceIndexPredictor {
             INSTANCE = new PriceIndexPredictor();
         }
         return INSTANCE;
-    };
+    }
 }

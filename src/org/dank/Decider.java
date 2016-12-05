@@ -116,7 +116,7 @@ public class Decider implements CampaignDecider {
      */
     private long getImpressionsPerDayFor(Set<MarketSegment> userType){
 
-        long population = userPopulations.getPopulation();
+        long population = MarketSegment.usersInMarketSegments().get(userType);
         double percentOfPop = userPopulations.percentOfPopulation(userType);
 
         // TODO: determine the true number of impressions generated each day by either:
