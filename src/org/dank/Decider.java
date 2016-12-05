@@ -5,8 +5,6 @@ import org.dank.CampaignDecider;
 
 import org.dank.MarketMonitor;
 import org.dank.entities.Campaign;
-import org.dank.tables.UserPopulationProbTable;
-import org.dank.tables.UserPopulations;
 import tau.tac.adx.report.adn.MarketSegment;
 
 import java.util.*;
@@ -24,12 +22,10 @@ import java.util.*;
 public class Decider implements CampaignDecider {
 
     private MarketMonitor monitor;
-    private UserPopulations userPopulations;
     private long currentDay;
 
     protected Decider(MarketMonitor monitor){
         this.monitor = monitor;
-        userPopulations = new UserPopulations();
 
     }
 
@@ -117,13 +113,12 @@ public class Decider implements CampaignDecider {
     private long getImpressionsPerDayFor(Set<MarketSegment> userType){
 
         long population = MarketSegment.usersInMarketSegments().get(userType);
-        double percentOfPop = userPopulations.percentOfPopulation(userType);
 
         // TODO: determine the true number of impressions generated each day by either:
         // TODO: [1] look at the docs/code to find a value somewhere
         // TODO  [2] or run the server like 10 times and store the imps generated per day
 
-        return (long)(population * percentOfPop);
+        return population;
     }
 
 }
