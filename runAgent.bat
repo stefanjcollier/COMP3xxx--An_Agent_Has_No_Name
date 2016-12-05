@@ -3,7 +3,7 @@
 # Usage
 #   sh ./runServer.sh
 #
-
+@echo off
 TACAA_HOME=%pwd%
 echo %TACAA_HOME%
 echo %CLASSPATH%
