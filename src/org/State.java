@@ -1,6 +1,10 @@
 package org;
 
 /**
+ * Store useful simulation data, to be accessed during strategy computation.
+ *
+ * e.g. CI := competing index
+ *
  * Created by vlad on 04/12/2016.
  */
 public class State {
