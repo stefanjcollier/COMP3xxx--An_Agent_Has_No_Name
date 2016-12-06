@@ -1,5 +1,13 @@
 package org.dank.bidder;
 
+import com.sun.org.apache.xml.internal.dtm.ref.DTMAxisIterNodeList;
+import org.DankAdNetwork;
+import org.dank.MarketMonitor;
+import org.dank.entities.Campaign;
+
+import java.util.Collection;
+import java.util.Set;
+
 /**
  * Created by vlad on 04/12/2016.
  */
@@ -7,25 +15,29 @@ public class UCSBidder {
 
     private static UCSBidder INSTANCE;
 
+    DankAdNetwork agent;
 
-    private UCSBidder() {};
-
-
-
-    public static UCSBidder getInstance(){
-        if (INSTANCE == null) {
-            INSTANCE = new UCSBidder();
-        }
-        return INSTANCE;
-    }
+    public UCSBidder(DankAdNetwork agent) {
+        this.agent = agent;
+    };
 
 
-    public long calcUCSBid(long prevBid,long ucsLevel,int currentDay){
-        long estimatedImpressionReach = 10000; //todo -- the expected impressions to go in the next simulated day
-        long gucs = (long) 0.5; //todo --  constant
-        long Ep = 10000;//todo -- p:= impression unit-price
+    public double calcUCSBid(double prevBid,double ucsLevel,int currentDay){
 
-        long r0 = (long) 0.75 * (estimatedImpressionReach);
+        currentDay += 1; // calculation the UCSBid for day n+1
+
+        double estimatedImpressionReach = calcEstimatedImpressionReach(currentDay);
+        double gucs = 1.0; //todo --  constant
+        double Ep =  0.001;//todo -- p:= impression unit-price
+
+        double r0 =  0.75 * (estimatedImpressionReach);
+
+        System.out.println("=========================================================");
+        System.out.println("UCSBidder -- Calculating the UCS for Day" + currentDay);
+        System.out.println("UCSBidder -- Current Level : " +ucsLevel);
+        System.out.println("UCSBidder -- Previous Bid : " +prevBid);
+        System.out.println("UCSBidder -- Estimated Impression Reach : " + estimatedImpressionReach);
+        System.out.println("=========================================================");
 
         if(ucsLevel > 0.9){
 
@@ -38,6 +50,30 @@ public class UCSBidder {
             return prevBid;
         }
 
+    }
+
+    private double calcEstimatedImpressionReach(int currentDay){
+
+        Set<Campaign> allocatedCampaigns = agent.getAllocatedCampaigns();
+        double retVal = 0;
+        for(Campaign c : allocatedCampaigns){
+
+            if(c.getDayEnd() > currentDay){
+
+                double length = c.getDayEnd() - currentDay;
+                double dailyAverage = c.impsTogo() / length;
+                retVal += dailyAverage;
+
+
+            }else if(c.getDayEnd() == currentDay){
+
+                retVal += c.impsTogo();
+
+            }
+
+        }
+
+        return retVal;
     }
 
 }
