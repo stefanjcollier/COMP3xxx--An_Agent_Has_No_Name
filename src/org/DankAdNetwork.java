@@ -29,7 +29,7 @@ import java.util.logging.Logger;
  * 
  * @author
  * Test plug-in
- * 
+ *
  */
 public class DankAdNetwork extends Agent {
 
