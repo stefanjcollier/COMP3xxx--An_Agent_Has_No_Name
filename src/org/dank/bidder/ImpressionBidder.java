@@ -25,11 +25,16 @@ public class ImpressionBidder {
         if (isOverspending(spendableBudget,runningCamp, today)){
             budget *= State.MAX_IMP_PRICE;
         }
-        if (campaignEndsTomorrow(runningCamp, today)){
+        if (campaignEndsTomorrow(runningCamp, today) && notAchievedMinimumReach(runningCamp)){
             budget *= 2;
         }
         return budget / runningCamp.impsTogo();
 
+    }
+
+    private boolean notAchievedMinimumReach(Campaign runningCamp) {
+        double percentComplete = runningCamp.impsTogo()/runningCamp.getReachImps();
+        return percentComplete < State.MIN_ACCEPTABLE_REACH;
     }
 
     /** You are 'overspending' when you intend to pay more for an impression than

@@ -357,6 +357,7 @@ public class DankAdNetwork extends Agent {
 
         int dayBiddingFor = day + 1;
 
+
 		/*
 		 * add bid entries w.r.t. each active campaign with remaining contracted
 		 * impressions.
