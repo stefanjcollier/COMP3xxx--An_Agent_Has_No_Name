@@ -3,6 +3,7 @@ package org;
 import edu.umich.eecs.tac.props.Ad;
 import edu.umich.eecs.tac.props.BankStatus;
 import org.dank.MarketMonitor;
+import org.dank.bidder.UCSBidder;
 import org.dank.entities.Campaign;
 import se.sics.isl.transport.Transportable;
 import se.sics.tasim.aw.Agent;
@@ -103,10 +104,17 @@ public class DankAdNetwork extends Agent {
 	private String[] publisherNames;
 	private Campaign currCampaign;
 
-	public DankAdNetwork() {
-		campaignReports = new LinkedList<CampaignReport>();
-	}
+	private UCSBidder ucsbidder;
 
+	public DankAdNetwork() {
+
+		campaignReports = new LinkedList<CampaignReport>();
+		ucsbidder = new UCSBidder(this);
+	}
+	public Set<Campaign> getAllocatedCampaigns() {
+
+		return new HashSet<Campaign>(myCampaigns.values());
+	}
 	@Override
 	protected void messageReceived(Message message) {
 		try {
@@ -260,7 +268,17 @@ public class DankAdNetwork extends Agent {
 
 		if (adNetworkDailyNotification != null) {
 			double ucsLevel = adNetworkDailyNotification.getServiceLevel();
-			ucsBid = 0.1 + random.nextDouble()/10.0;
+			//ucsBid = 0.1 + random.nextDouble()/10.0;
+			if(ucsBid == 0){
+
+				ucsBid = 0.1 + random.nextDouble()/10.0;
+
+			}else{
+				ucsBid = ucsbidder.calcUCSBid((long)ucsBid,(long)ucsLevel, day);
+
+			}
+
+
 			System.out.println("Day " + day + ": ucs level reported: " + ucsLevel);
 		} else {
 			System.out.println("Day " + day + ": Initial ucs bid is " + ucsBid);
