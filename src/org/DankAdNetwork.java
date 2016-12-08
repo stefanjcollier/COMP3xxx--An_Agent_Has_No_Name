@@ -4,6 +4,7 @@ import edu.umich.eecs.tac.props.Ad;
 import edu.umich.eecs.tac.props.BankStatus;
 import org.dank.MarketMonitor;
 import org.dank.bidder.UCSBidder;
+import org.dank.bidder.CampaignBidder;
 import org.dank.entities.Campaign;
 import se.sics.isl.transport.Transportable;
 import se.sics.tasim.aw.Agent;
@@ -105,6 +106,9 @@ public class DankAdNetwork extends Agent {
 	private Campaign currCampaign;
 
 	private UCSBidder ucsbidder;
+	private double qualityScore = 1.0;
+
+	private CampaignBidder campaignBidder = new CampaignBidder();
 
 	public DankAdNetwork() {
 
@@ -257,7 +261,9 @@ public class DankAdNetwork extends Agent {
 
 		Random random = new Random();
 		long cmpimps = com.getReachImps();
-		long cmpBidMillis = random.nextInt((int)cmpimps);
+//		long cmpBidMillis = random.nextInt((int)cmpimps);
+
+		long cmpBidMillis = (long) campaignBidder.getBidFor(pendingCampaign, qualityScore);
 
 		System.out.println("Day " + day + ": Campaign total budget bid (millis): " + cmpBidMillis);
 
@@ -324,6 +330,8 @@ public class DankAdNetwork extends Agent {
 			campaignAllocatedTo = " WON at cost (Millis)"
 					+ notificationMessage.getCostMillis();
 		}
+
+		qualityScore = notificationMessage.getQualityScore();
 
 		System.out.println("Day " + day + ": " + campaignAllocatedTo
 				+ ". UCS Level set to " + notificationMessage.getServiceLevel()
