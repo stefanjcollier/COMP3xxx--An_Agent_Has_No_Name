@@ -171,7 +171,7 @@ public class DankAdNetwork extends Agent {
 
         } catch (NullPointerException e) {
             this.log.log(Level.SEVERE,
-                    "Exception thrown while trying to parse message." + e);
+                    "Exception thrown while trying to parse message." + message+ "\nError:\n"+ e.getStackTrace());
             return;
         }
     }
