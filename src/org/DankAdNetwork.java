@@ -448,10 +448,14 @@ public class DankAdNetwork extends Agent {
         }
 
         if (bidBundle != null) {
-            System.out.println("Day " + day + ": Sending BidBundle");
+            if (bidBundle.keys().size() > 0){
+                System.out.println("Day " + day + ": Sending BidBundle");
+            }else{
+                System.out.println("Day " + day + ": Sending Empty BidBundle");
+            }
             sendMessage(adxAgentAddress, bidBundle);
         }
-        System.out.println("==================[ Bidding Over for tomorrow"+tomorrow+" ]================================================================================");
+        System.out.println("==================[ Bidding Over for tomorrow (day "+tomorrow+") ]================================================================================");
         System.out.println("==================================================================================================================");
         System.out.println("==================================================================================================================");
     }
