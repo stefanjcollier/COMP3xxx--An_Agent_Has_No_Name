@@ -447,7 +447,7 @@ public class DankAdNetwork extends Agent {
             System.out.println("Day " + day + ": Sending BidBundle");
             sendMessage(adxAgentAddress, bidBundle);
         }
-        System.out.println("==================[ Bidding Over ]================================================================================");
+        System.out.println("==================[ Bidding Over for tomorrow"+tomorrow+" ]================================================================================");
         System.out.println("==================================================================================================================");
         System.out.println("==================================================================================================================");
     }
