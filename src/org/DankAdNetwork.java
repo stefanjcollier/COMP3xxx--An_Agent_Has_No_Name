@@ -309,7 +309,7 @@ public class DankAdNetwork extends Agent {
 
         adNetworkDailyNotification = notificationMessage;
 
-        System.out.println("Day " + day + ": Daily notification for campaign "
+        System.out.println("Day " + day + ": Daily notification for campaign ("+findNiceNameOfCampaign(adNetworkDailyNotification.getCampaignId())+") "
                 + adNetworkDailyNotification.getCampaignId());
 
         String campaignAllocatedTo = " allocated to "
@@ -626,6 +626,15 @@ public class DankAdNetwork extends Agent {
         campaignQueriesSet.toArray(campaign.getCampaignQueries());
 
 
+    }
+
+    private char findNiceNameOfCampaign(long id){
+        for (Campaign camp : MarketMonitor.getInstance().getAllCampaigns()){
+            if (camp.getId() == id){
+                return camp.getNiceName();
+            }
+        }
+        return ' ';
     }
 
 }
