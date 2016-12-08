@@ -25,8 +25,10 @@ public class ImpressionBidder {
         System.out.println("--------------[Camp: "+runningCamp.getId()+"]-------------------------------------------");
         double remainingBudget = runningCamp.getBudget() - runningCamp.getStats().getCost();
         double spendableBudget = remainingBudget * State.SPENDING_ALLOWANCE;
-        System.out.println("Total Budget: £"+runningCamp.getBudget()+"    remaining: £"+remainingBudget+
-                "    ="+(100.0*remainingBudget/runningCamp.getBudget())+"% remaining");
+        System.out.println("Total Budget: £"+runningCamp.getBudget()+"\tremaining: £"+remainingBudget+
+                "\t="+(100.0*remainingBudget/runningCamp.getBudget())+"% remaining");
+        System.out.println("Total Reach: "+runningCamp.getReachImps()+"\tremaining: "+runningCamp.impsTogo()+
+                "\ts="+(100.0*runningCamp.impsTogo()/runningCamp.getReachImps())+"%");
         System.out.println("(initial) Spendable Budget ("+State.SPENDING_ALLOWANCE+"%): £"+spendableBudget);
 
 
@@ -34,12 +36,12 @@ public class ImpressionBidder {
         if (isOverspending(spendableBudget,runningCamp, today)){
             budget *= State.MAX_IMP_PRICE;
             System.out.println("isOverspending!");
-            System.out.println();
+            System.out.println("    -> budget now:"+budget);
         }
         if (campaignEndsTomorrow(runningCamp, today) && notAchievedMinimumReach(runningCamp)){
             budget *= 2;
-            System.out.println("endsTomorrow and underachieving reach! budget doubled to:"+budget);
-
+            System.out.println("endsTomorrow and underachieving reach!");
+            System.out.println("    -> budget now:"+budget);
         }
         double impPrice = budget / runningCamp.impsTogo();
 
