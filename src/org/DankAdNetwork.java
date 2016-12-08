@@ -477,7 +477,7 @@ public class DankAdNetwork extends Agent {
                     campaignKey).getCampaignStats();
             myCampaigns.get(cmpId).setStats(cstats);
 
-            System.out.println("Day " + day + ": Updating campaign " + cmpId + " stats: "
+            System.out.println("Day " + day + ": Updating campaign ("+myCampaigns.get(cmpId).getNiceName()+") " + cmpId + " stats: "
                     + cstats.getTargetedImps() + " tgtImps "
                     + cstats.getOtherImps() + " nonTgtImps. Cost of imps is "
                     + cstats.getCost());
@@ -626,15 +626,6 @@ public class DankAdNetwork extends Agent {
         campaignQueriesSet.toArray(campaign.getCampaignQueries());
 
 
-    }
-
-    public Campaign getCampaignBasedOnNiceName(Character c) {
-        for (Campaign rc : this.myCampaigns.values()) {
-            if (rc.getNiceName() == c) {
-                return rc;
-            }
-        }
-        return null;
     }
 
 }

@@ -21,7 +21,7 @@ public class ImpressionBidder {
 
 
     public double getImpressionBid(Campaign runningCamp, int today){
-        System.out.println("--------------[ImpressionBidder:Camp: "+runningCamp.getNiceName()+"]-------------------------------------------");
+        System.out.println("--------------[ImpressionBidder:Camp "+runningCamp.getNiceName()+"("+runningCamp.getId()+")]-------------------------------------------");
 
         double remainingBudget = runningCamp.getBudget() - runningCamp.getStats().getCost();
         double spendableBudget = remainingBudget * State.SPENDING_ALLOWANCE;
