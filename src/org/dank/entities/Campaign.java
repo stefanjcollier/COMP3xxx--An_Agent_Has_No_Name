@@ -40,7 +40,7 @@ public class Campaign {
 
         stats = new CampaignStats(0, 0, 0);
         budget = 0.0;
-        this.niceName = (char)((int)Campaign.newName+1);
+        this.niceName = (char)((int)Campaign.newName++);
     }
 
     public Campaign(CampaignOpportunityMessage com) {
@@ -53,7 +53,7 @@ public class Campaign {
         videoCoef = com.getVideoCoef();
         stats = new CampaignStats(0, 0, 0);
         budget = 0.0;
-        this.niceName = (char)((int)Campaign.newName+1);
+        this.niceName = (char)((int)Campaign.newName++);
     }
 
     @Override
