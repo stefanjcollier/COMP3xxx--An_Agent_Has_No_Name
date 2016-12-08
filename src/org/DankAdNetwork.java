@@ -381,6 +381,7 @@ public class DankAdNetwork extends Agent {
                 && (currCampaign.impsTogo() > 0)) {
 
             int entCount = 0;
+            double ourBid = this.impressionBidder.getImpressionBid(currCampaign, day)*1000;
 
             for (AdxQuery query : currCampaign.getCampaignQueries()) {
 
@@ -388,7 +389,6 @@ public class DankAdNetwork extends Agent {
                  * Note: bidding per 1000 imps (CPM) - no more than average budget
                  * revenue per imp
                  */
-                double ourBid = this.impressionBidder.getImpressionBid(currCampaign, day)*1000;
 
                 if (currCampaign.impsTogo() - entCount > 0) {
 					/*
@@ -594,7 +594,6 @@ public class DankAdNetwork extends Agent {
 
         campaign.setCampaignQueries(new AdxQuery[campaignQueriesSet.size()]);
         campaignQueriesSet.toArray(campaign.getCampaignQueries());
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!" + Arrays.toString(campaign.getCampaignQueries()) + "!!!!!!!!!!!!!!!!");
 
 
     }
