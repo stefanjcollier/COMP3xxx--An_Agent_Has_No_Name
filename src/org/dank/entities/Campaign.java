@@ -53,7 +53,7 @@ public class Campaign {
         videoCoef = com.getVideoCoef();
         stats = new CampaignStats(0, 0, 0);
         budget = 0.0;
-        this.niceName = Campaign.newName++;
+        this.niceName = (char)((int)Campaign.newName+1);
     }
 
     @Override
