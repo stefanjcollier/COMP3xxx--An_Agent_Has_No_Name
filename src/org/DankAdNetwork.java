@@ -386,13 +386,13 @@ public class DankAdNetwork extends Agent {
 
                 /*
                  * Note: bidding per 1000 imps (CPM) - no more than average budget
-                 * revenue per imp //TODO what the fuck?! We need to figure out if this statement is true?
+                 * revenue per imp
                  */
-                double ourBid = this.impressionBidder.getImpressionBid(currCampaign, day);
+                double ourBid = this.impressionBidder.getImpressionBid(currCampaign, day)*1000;
 
                 if (currCampaign.impsTogo() - entCount > 0) {
 					/*
-					 * among matching entries with the same campaign id, the AdX
+					 * among matching entries with the same campaign id, the AdX\
 					 * randomly chooses an entry according to the designated
 					 * weight. by setting a constant weight 1, we create a
 					 * uniform probability over active campaigns(irrelevant because we are bidding only on one campaign)

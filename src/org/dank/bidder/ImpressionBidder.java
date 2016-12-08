@@ -21,20 +21,35 @@ public class ImpressionBidder {
 
 
     public double getImpressionBid(Campaign runningCamp, int today){
+        System.out.println("==============[ImpressionBidder]===========================================");
+        System.out.println("--------------[Camp: "+runningCamp.getId()+"]-------------------------------------------");
         double remainingBudget = runningCamp.getBudget() - runningCamp.getStats().getCost();
         double spendableBudget = remainingBudget * State.SPENDING_ALLOWANCE;
+        System.out.println("Total Budget: £"+runningCamp.getBudget()+"    remaining: £"+remainingBudget+
+                "    ="+(100.0*remainingBudget/runningCamp.getBudget())+"% remaining");
+        System.out.println("(initial) Spendable Budget ("+State.SPENDING_ALLOWANCE+"%): £"+spendableBudget);
+
 
         double budget = spendableBudget;
         if (isOverspending(spendableBudget,runningCamp, today)){
             budget *= State.MAX_IMP_PRICE;
+            System.out.println("isOverspending!");
+            System.out.println();
         }
         if (campaignEndsTomorrow(runningCamp, today) && notAchievedMinimumReach(runningCamp)){
             budget *= 2;
+            System.out.println("endsTomorrow and underachieving reach! budget doubled to:"+budget);
+
         }
-        return budget / runningCamp.impsTogo();
+        double impPrice = budget / runningCamp.impsTogo();
+
+        System.out.println("Price Per Impression: "+impPrice);
+        System.out.println("===========================================================================");
+        return impPrice;
 
     }
 
+    /** If the n is less than 0.9 */
     private boolean notAchievedMinimumReach(Campaign runningCamp) {
         double percentComplete = runningCamp.impsTogo()/runningCamp.getReachImps();
         return percentComplete < State.MIN_ACCEPTABLE_REACH;
