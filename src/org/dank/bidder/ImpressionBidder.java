@@ -28,7 +28,7 @@ public class ImpressionBidder {
         System.out.println("Total Budget: £"+runningCamp.getBudget()+"\tremaining: £"+remainingBudget+
                 "\t="+(100.0*remainingBudget/runningCamp.getBudget())+"% remaining");
         System.out.println("Total Reach: "+runningCamp.getReachImps()+"\tremaining: "+runningCamp.impsTogo()+
-                "\ts="+(100.0*runningCamp.impsTogo()/runningCamp.getReachImps())+"%");
+                "\t="+(100.0*runningCamp.impsTogo()/runningCamp.getReachImps())+"%");
         System.out.println("(initial) Spendable Budget ("+State.SPENDING_ALLOWANCE+"%): £"+spendableBudget);
 
 
