@@ -380,7 +380,11 @@ public class DankAdNetwork extends Agent {
         System.out.println("--------------------");
         System.out.println("My Campaigns(" + runningCamps.size() + "):");
         for (Campaign rc : runningCamps) {
-            System.out.println("-("+rc.getNiceName()+") "+rc);
+            System.out.println("-("+rc.getNiceName()+") "+
+                    rc.toString().split("coef")[0].replace("reach: "," Target Reach:")+
+                    "  ImpsToGo:"+rc.impsTogo()+
+                    "  imp completion:"+100*rc.getStats().getTargetedImps()/rc.getReachImps()+"%"
+            );
         }
         System.out.println("--------------------");
 

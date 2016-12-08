@@ -32,8 +32,7 @@ public class ImpressionBidder {
                 "\t\t="+(100.0*runningCamp.impsTogo()/runningCamp.getReachImps())+"%needed");
         System.out.println("Total Length: "+runningCamp.getLength()+"\t\t\tremaining: "+(runningCamp.getDayEnd()-today)+
                 "\t\t\t="+(100.0*(runningCamp.getDayEnd()-today)/runningCamp.getLength())+"%of time left");
-
-        System.out.println("(initial) Spendable Budget ("+State.SPENDING_ALLOWANCE+"%): £"+spendableBudget);
+        System.out.println("(initial) Spendable Budget ("+100*State.SPENDING_ALLOWANCE+"%): £"+spendableBudget);
 
 
         double budget = spendableBudget;
