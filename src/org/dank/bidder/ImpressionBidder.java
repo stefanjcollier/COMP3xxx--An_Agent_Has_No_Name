@@ -21,14 +21,18 @@ public class ImpressionBidder {
 
 
     public double getImpressionBid(Campaign runningCamp, int today){
-        System.out.println("==============[ImpressionBidder]===========================================");
-        System.out.println("--------------[Camp: "+runningCamp.getId()+"]-------------------------------------------");
+        System.out.println("--------------[ImpressionBidder:Camp: "+runningCamp.getNiceName()+"]-------------------------------------------");
+
         double remainingBudget = runningCamp.getBudget() - runningCamp.getStats().getCost();
         double spendableBudget = remainingBudget * State.SPENDING_ALLOWANCE;
-        System.out.println("Total Budget: £"+runningCamp.getBudget()+"\tremaining: £"+remainingBudget+
-                "\t="+(100.0*remainingBudget/runningCamp.getBudget())+"% remaining");
-        System.out.println("Total Reach: "+runningCamp.getReachImps()+"\tremaining: "+runningCamp.impsTogo()+
-                "\t="+(100.0*runningCamp.impsTogo()/runningCamp.getReachImps())+"%");
+
+        System.out.println("Total Budget: £"+runningCamp.getBudget()+"\t\tremaining: £"+remainingBudget+
+                "\t\t="+(100.0*remainingBudget/runningCamp.getBudget())+"% remaining to spend");
+        System.out.println("Total Reach: "+runningCamp.getReachImps()+"\t\tremaining: "+runningCamp.impsTogo()+
+                "\t\t="+(100.0*runningCamp.impsTogo()/runningCamp.getReachImps())+"%needed");
+        System.out.println("Total Length: "+runningCamp.getLength()+"\t\t\tremaining: "+(runningCamp.getDayEnd()-today)+
+                "\t\t\t="+(100.0*(runningCamp.getDayEnd()-today)/runningCamp.getLength())+"%of time left");
+
         System.out.println("(initial) Spendable Budget ("+State.SPENDING_ALLOWANCE+"%): £"+spendableBudget);
 
 
@@ -41,12 +45,12 @@ public class ImpressionBidder {
         if (campaignEndsTomorrow(runningCamp, today) && notAchievedMinimumReach(runningCamp)){
             budget *= 2;
             System.out.println("endsTomorrow and underachieving reach!");
-            System.out.println("    -> budget now:"+budget);
+            System.out.println("    -> budget doubled:"+budget);
         }
         double impPrice = budget / runningCamp.impsTogo();
 
         System.out.println("Price Per Impression: "+impPrice);
-        System.out.println("===========================================================================");
+        System.out.println("---------------------------------------------------------------------------");
         return impPrice;
 
     }

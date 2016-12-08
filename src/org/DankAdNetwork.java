@@ -105,17 +105,17 @@ public class DankAdNetwork extends Agent {
 
     private UCSBidder ucsbidder;
     private ImpressionBidder impressionBidder;
-	private CampaignBidder campaignBidder;
+    private CampaignBidder campaignBidder;
 
-	double qualityScore;
+    double qualityScore;
 
     public DankAdNetwork() {
 
         campaignReports = new LinkedList<CampaignReport>();
         ucsbidder = new UCSBidder(this);
         impressionBidder = ImpressionBidder.getInstance();
-		campaignBidder = new CampaignBidder();
-		qualityScore = 1;
+        campaignBidder = new CampaignBidder();
+        qualityScore = 1;
     }
 
     public Set<Campaign> getAllocatedCampaigns() {
@@ -171,7 +171,7 @@ public class DankAdNetwork extends Agent {
 
         } catch (NullPointerException e) {
             this.log.log(Level.SEVERE,
-                    "Exception thrown while trying to parse message:\n" + message.toString()+ "\nError:");
+                    "Exception thrown while trying to parse message:\n" + message.toString() + "\nError:");
             e.printStackTrace();
             return;
         }
@@ -228,7 +228,7 @@ public class DankAdNetwork extends Agent {
         campaign.setBudget(initialCampaignMessage.getBudgetMillis() / 1000.0);
         currCampaign = campaign;
         genCampaignQueries(currCampaign);
-		/*
+        /*
          * The initial campaign is already allocated to our agent so we add it
 		 * to our allocated-campaigns list.
 		 */
@@ -262,11 +262,11 @@ public class DankAdNetwork extends Agent {
 		 * (upper bound) price for the auction.
 		 */
 
-		Random random = new Random();
-		long cmpimps = com.getReachImps();
+        Random random = new Random();
+        long cmpimps = com.getReachImps();
 //		long cmpBidMillis = random.nextInt((int)cmpimps);
 
-		long cmpBidMillis = (long) campaignBidder.getBidFor(pendingCampaign, qualityScore);
+        long cmpBidMillis = (long) campaignBidder.getBidFor(pendingCampaign, qualityScore);
 
         System.out.println("Day " + day + ": Campaign total budget bid (millis): " + cmpBidMillis);
 
@@ -325,47 +325,64 @@ public class DankAdNetwork extends Agent {
                 && (notificationMessage.getCostMillis() != 0)) {
 
 			/* add campaign to list of won campaigns */
-			pendingCampaign.setBudget(notificationMessage.getCostMillis()/1000.0);
-			currCampaign = pendingCampaign;
-			genCampaignQueries(currCampaign);
-			myCampaigns.put(pendingCampaign.getId(), pendingCampaign);
+            pendingCampaign.setBudget(notificationMessage.getCostMillis() / 1000.0);
+            currCampaign = pendingCampaign;
+            genCampaignQueries(currCampaign);
+            myCampaigns.put(pendingCampaign.getId(), pendingCampaign);
 
-			campaignAllocatedTo = " WON at cost (Millis)"
-					+ notificationMessage.getCostMillis();
-		}
+            campaignAllocatedTo = " WON at cost (Millis)"
+                    + notificationMessage.getCostMillis();
+        }
 
-		qualityScore = notificationMessage.getQualityScore();
+        qualityScore = notificationMessage.getQualityScore();
 
-		System.out.println("Day " + day + ": " + campaignAllocatedTo
-				+ ". UCS Level set to " + notificationMessage.getServiceLevel()
-				+ " at price " + notificationMessage.getPrice()
-				+ " Quality Score is: " + notificationMessage.getQualityScore());
-	}
+        System.out.println("Day " + day + ": " + campaignAllocatedTo
+                + ". UCS Level set to " + notificationMessage.getServiceLevel()
+                + " at price " + notificationMessage.getPrice()
+                + " Quality Score is: " + notificationMessage.getQualityScore());
+    }
 
-	/**
-	 * The SimulationStatus message received on day n indicates that the
-	 * calculation time is up and the agent is requested to send its bid bundle
-	 * to the AdX.
-	 */
-	private void handleSimulationStatus(SimulationStatus simulationStatus) {
-		System.out.println("Day " + day + " : Simulation Status Received");
-		sendBidAndAds();
-		System.out.println("Day " + day + " ended. Starting next day");
-		++day;
-	}
+    /**
+     * The SimulationStatus message received on day n indicates that the
+     * calculation time is up and the agent is requested to send its bid bundle
+     * to the AdX.
+     */
+    private void handleSimulationStatus(SimulationStatus simulationStatus) {
+        System.out.println("Day " + day + " : Simulation Status Received");
+        sendBidAndAds();
+        System.out.println("Day " + day + " ended. Starting next day");
+        ++day;
+    }
 
-	/**
-	 *
-	 */
-	protected void sendBidAndAds() {
-
-		bidBundle = new AdxBidBundle();
+    /**
+     *
+     */
+    protected void sendBidAndAds() {
+        bidBundle = new AdxBidBundle();
 
 		/*
 		 *
 		 */
 
         int dayBiddingFor = day + 1;
+
+
+        int tomorrow = day + 1;
+        System.out.println("==================================================================================================================");
+        System.out.println("==================================================================================================================");
+        System.out.println("===================[Bidding Time, tomorrow: day " + tomorrow + "]========================================================");
+        Set<Campaign> runningCamps = new HashSet<>();
+        for (Campaign myCamp : this.myCampaigns.values()) {
+            if (myCamp.isRunningOnDay(tomorrow)) {
+                runningCamps.add(myCamp);
+            }
+        }
+        System.out.println("--------------------");
+        System.out.println("My Campaigns(" + runningCamps.size() + "):");
+        for (Campaign rc : runningCamps) {
+            System.out.println("-("+rc.getNiceName()+") "+rc);
+        }
+        System.out.println("--------------------");
 
 
 		/*
@@ -375,59 +392,64 @@ public class DankAdNetwork extends Agent {
 		 * for now, a single entry per active campaign is added for queries of
 		 * matching target segment.
 		 */
+        for (Campaign currCampaign : runningCamps) {
 
-        if ((dayBiddingFor >= currCampaign.getDayStart())
-                && (dayBiddingFor <= currCampaign.getDayEnd())
-                && (currCampaign.impsTogo() > 0)) {
+            if ((dayBiddingFor >= currCampaign.getDayStart())
+                    && (dayBiddingFor <= currCampaign.getDayEnd())
+                    && (currCampaign.impsTogo() > 0)) {
 
-            int entCount = 0;
-            double ourBid = this.impressionBidder.getImpressionBid(currCampaign, day)*1000;
+                int entCount = 0;
+                double ourBid = this.impressionBidder.getImpressionBid(currCampaign, day) * 1000;
 
-            for (AdxQuery query : currCampaign.getCampaignQueries()) {
+                for (AdxQuery query : currCampaign.getCampaignQueries()) {
 
                 /*
                  * Note: bidding per 1000 imps (CPM) - no more than average budget
                  * revenue per imp
                  */
 
-                if (currCampaign.impsTogo() - entCount > 0) {
+                    if (currCampaign.impsTogo() - entCount > 0) {
 					/*
 					 * among matching entries with the same campaign id, the AdX\
 					 * randomly chooses an entry according to the designated
 					 * weight. by setting a constant weight 1, we create a
 					 * uniform probability over active campaigns(irrelevant because we are bidding only on one campaign)
 					 */
-                    if (query.getDevice() == Device.pc) {
-                        if (query.getAdType() == AdType.text) {
-                            entCount++;
+                        if (query.getDevice() == Device.pc) {
+                            if (query.getAdType() == AdType.text) {
+                                entCount++;
+                            } else {
+                                entCount += currCampaign.getVideoCoef();
+                            }
                         } else {
-                            entCount += currCampaign.getVideoCoef();
-                        }
-                    } else {
-                        if (query.getAdType() == AdType.text) {
-                            entCount += currCampaign.getMobileCoef();
-                        } else {
-                            entCount += currCampaign.getVideoCoef() + currCampaign.getMobileCoef();
-                        }
+                            if (query.getAdType() == AdType.text) {
+                                entCount += currCampaign.getMobileCoef();
+                            } else {
+                                entCount += currCampaign.getVideoCoef() + currCampaign.getMobileCoef();
+                            }
 
+                        }
+                        bidBundle.addQuery(query, ourBid, new Ad(null),
+                                currCampaign.getId(), 1);
                     }
-                    bidBundle.addQuery(query, ourBid, new Ad(null),
-                            currCampaign.getId(), 1);
                 }
+
+                double impressionLimit = currCampaign.impsTogo();
+                double budgetLimit = currCampaign.getBudget();
+                bidBundle.setCampaignDailyLimit(currCampaign.getId(), (int) impressionLimit, budgetLimit);
+
+                System.out.println("Day " + day + ": Updated " + entCount
+                        + " Bid Bundle entries for Campaign ("+currCampaign.getNiceName()+") id " + currCampaign.getId());
             }
-
-            double impressionLimit = currCampaign.impsTogo();
-            double budgetLimit = currCampaign.getBudget();
-            bidBundle.setCampaignDailyLimit(currCampaign.getId(), (int) impressionLimit, budgetLimit);
-
-            System.out.println("Day " + day + ": Updated " + entCount
-                    + " Bid Bundle entries for Campaign id " + currCampaign.getId());
         }
 
         if (bidBundle != null) {
             System.out.println("Day " + day + ": Sending BidBundle");
             sendMessage(adxAgentAddress, bidBundle);
         }
+        System.out.println("==================[ Bidding Over ]================================================================================");
+        System.out.println("==================================================================================================================");
+        System.out.println("==================================================================================================================");
     }
 
     /**
@@ -596,6 +618,15 @@ public class DankAdNetwork extends Agent {
         campaignQueriesSet.toArray(campaign.getCampaignQueries());
 
 
+    }
+
+    public Campaign getCampaignBasedOnNiceName(Character c) {
+        for (Campaign rc : this.myCampaigns.values()) {
+            if (rc.getNiceName() == c) {
+                return rc;
+            }
+        }
+        return null;
     }
 
 }

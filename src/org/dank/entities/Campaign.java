@@ -13,6 +13,10 @@ import java.util.Set;
  */
 public class Campaign {
 
+    private static char newName = (char)((int)'a'-1);
+    private char niceName;
+
+
     private int id;
     private Long reachImps;
     private long dayStart;
@@ -21,7 +25,6 @@ public class Campaign {
     private double videoCoef;
     private double mobileCoef;
     private AdxQuery[] campaignQueries; // array of queries relevant for the campaign
-
     /* campaign info as reported */
     private CampaignStats stats;
     private double budget;
@@ -37,6 +40,7 @@ public class Campaign {
 
         stats = new CampaignStats(0, 0, 0);
         budget = 0.0;
+        this.niceName = (char)((int)Campaign.newName+1);
     }
 
     public Campaign(CampaignOpportunityMessage com) {
@@ -49,13 +53,18 @@ public class Campaign {
         videoCoef = com.getVideoCoef();
         stats = new CampaignStats(0, 0, 0);
         budget = 0.0;
+        this.niceName = Campaign.newName++;
     }
 
     @Override
     public String toString() {
-        return "Campaign ID " + id + ": " + "day " + dayStart + " to "
+        return "Campaign ("+this.niceName+") ID " + id + ": " + "day " + dayStart + " to "
                 + dayEnd + " " + targetSegment + ", reach: " + reachImps
                 + " coefs: (v=" + videoCoef + ", m=" + mobileCoef + ")";
+    }
+
+    public char getNiceName(){
+        return this.niceName;
     }
 
     public int impsTogo() {
@@ -142,5 +151,11 @@ public class Campaign {
         this.budget = budget;
     }
 
-    public long getLength(){ return this.dayEnd - this.dayStart; }
+    // Made by Stefan
+    public long getLength(){ return this.dayEnd - this.dayStart + 1; }
+
+    // Made by Stefan
+    public boolean isRunningOnDay(long day){
+        return (this.dayStart <= day && day <= this.dayEnd);
+    }
 }
