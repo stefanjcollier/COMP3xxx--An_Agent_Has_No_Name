@@ -18,6 +18,14 @@ public class State {
 
     public static final double PI_TOO_HIGH = 9.0; //TODO determine this
 
+    /** The maximum bid some one can offer for an impression */
+    public static final double MAX_IMP_PRICE = 0.0001;
+
+    /** The percentage of a budget we intend to spend */
+    public static final double SPENDING_ALLOWANCE = 0.9; //TODO decide on this
+
+    public static final double MIN_ACCEPTABLE_REACH = 0.9;
+
     public enum BidOutcome { BID_WIN, RANDOM_WIN, LOSS }
 
     private State() {
