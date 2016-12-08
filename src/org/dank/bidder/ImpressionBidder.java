@@ -14,7 +14,10 @@ public class ImpressionBidder {
 
     private static ImpressionBidder INSTANCE;
     private PriceIndexPredictor priceIndexPredictor;
-    private ImpressionBidder() {};
+    private ImpressionBidder() {}{
+        this.priceIndexPredictor = PriceIndexPredictor.getInstance();
+    }
+
 
 
     public double getImpressionBid(Campaign runningCamp, int today){
