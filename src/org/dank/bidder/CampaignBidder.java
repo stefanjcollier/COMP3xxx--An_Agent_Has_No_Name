@@ -32,21 +32,27 @@ public class CampaignBidder {
         if (myQuality <= State.LOW_QUALITY){
             System.out.println("Performed strategy 2: Quality too low, bidding lowest price");
             System.out.println("BID = " + performStrategy2(incomingCamp, myQuality));
-            System.out.println("LOWEST BID = ");
-            System.out.println("HIGHEST BID = ");
+
+            System.out.println("STRATEGIC BID= " + performStrategy1(incomingCamp, myQuality));
+            System.out.println("LOWEST BID = " + performStrategy2(incomingCamp, myQuality));
+            System.out.println("HIGHEST BID = " + performStrategy3(incomingCamp, myQuality));
 
             return performStrategy2(incomingCamp, myQuality);
         } else if (!this.isCampaignAchievable(incomingCamp)) {
             System.out.println("Performed strategy 2: Campaign unachievable, bidding highest price");
             System.out.println("BID = " + performStrategy3(incomingCamp, myQuality));
-            System.out.println("LOWEST BID = ");
-            System.out.println("HIGHEST BID = ");
+
+            System.out.println("STRATEGIC BID= " + performStrategy1(incomingCamp, myQuality));
+            System.out.println("LOWEST BID = " + performStrategy2(incomingCamp, myQuality));
+            System.out.println("HIGHEST BID = " + performStrategy3(incomingCamp, myQuality));
             return performStrategy3(incomingCamp, myQuality);
         } else {
             System.out.println("Performed strategy 1: Campaign achievable, bidding strategic bid");
             System.out.println("BID = " + performStrategy1(incomingCamp, myQuality));
-            System.out.println("LOWEST BID = ");
-            System.out.println("HIGHEST BID = ");
+
+            System.out.println("STRATEGIC BID= " + performStrategy1(incomingCamp, myQuality));
+            System.out.println("LOWEST BID = " + performStrategy2(incomingCamp, myQuality));
+            System.out.println("HIGHEST BID = " + performStrategy3(incomingCamp, myQuality));
             return performStrategy1(incomingCamp, myQuality);
         }
     }
