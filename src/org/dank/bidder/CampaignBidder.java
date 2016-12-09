@@ -23,14 +23,24 @@ public class CampaignBidder {
 
 
     public double getBidFor(Campaign incomingCamp, double myQuality){
+        System.out.println("==============[CampaignBidder]===========================================");
+        System.out.println("--------------[Camp: "+incomingCamp.getId()+"]-------------------------------------------");
         // We prioritise having a high quality
+
+        System.out.println("Quality score: " + myQuality);
+
+
         if (myQuality <= State.LOW_QUALITY){
+            System.out.println("Performed strategy 2: Quality too low, bidding lowest price");
+            System.out.println("Bid: " + performStrategy2(incomingCamp, myQuality));
             return performStrategy2(incomingCamp, myQuality);
-
         } else if (!this.isCampaignAchievable(incomingCamp)) {
+            System.out.println("Performed strategy 2: Campaign unachievable, bidding highest price");
+            System.out.println("Bid: " + performStrategy3(incomingCamp, myQuality));
             return performStrategy3(incomingCamp, myQuality);
-
         } else {
+            System.out.println("Performed strategy 1: Campaign achievable, bidding strategic bid");
+            System.out.println("Bid: " + performStrategy1(incomingCamp, myQuality));
             return performStrategy1(incomingCamp, myQuality);
         }
     }
