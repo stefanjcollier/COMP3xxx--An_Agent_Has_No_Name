@@ -2,6 +2,7 @@ package org.dank.bidder;
 
 import com.sun.org.apache.xml.internal.dtm.ref.DTMAxisIterNodeList;
 import org.DankAdNetwork;
+import org.State;
 import org.dank.MarketMonitor;
 import org.dank.entities.Campaign;
 
@@ -27,26 +28,29 @@ public class UCSBidder {
         currentDay += 1; // calculation the UCSBid for day n+1
 
         double estimatedImpressionReach = calcEstimatedImpressionReach(currentDay);
-        double gucs = 1.0; //todo --  constant
+        double gucs = 0.5; //todo --  constant
         double Ep =  0.001;//todo -- p:= impression unit-price
 
         double r0 =  0.75 * (estimatedImpressionReach);
 
         System.out.println("=========================================================");
-        System.out.println("UCSBidder -- Calculating the UCS for Day" + currentDay);
+        System.out.println("UCSBidder -- Calculating the UCS for Day " + currentDay);
         System.out.println("UCSBidder -- Current Level : " +ucsLevel);
         System.out.println("UCSBidder -- Previous Bid : " +prevBid);
         System.out.println("UCSBidder -- Estimated Impression Reach : " + estimatedImpressionReach);
-        System.out.println("=========================================================");
 
         if(ucsLevel > 0.9){
-
+            System.out.println("UCSBidder -- Calculated Bid : " + prevBid / (1+gucs));
+            System.out.println("=========================================================");
             return prevBid / (1+gucs);
+
         }else if(ucsLevel < 0.81 && ((r0 / prevBid) >= (20 / 3) * ((1+gucs)/(Ep)))){
-
-            return (1+gucs) / prevBid;
+            System.out.println("UCSBidder -- Calculated Bid : " + (1+gucs) * prevBid);
+            System.out.println("=========================================================");
+            return (1+gucs) * prevBid;
         }else{
-
+            System.out.println("UCSBidder -- Calculated Bid : " + prevBid);
+            System.out.println("=========================================================");
             return prevBid;
         }
 
@@ -58,7 +62,7 @@ public class UCSBidder {
         double retVal = 0;
         for(Campaign c : allocatedCampaigns){
 
-            if(c.getDayEnd() > currentDay){
+            if(c.getDayEnd() > currentDay || c.getDayStart() == currentDay){
 
                 double length = c.getDayEnd() - currentDay;
                 double dailyAverage = c.impsTogo() / length;
