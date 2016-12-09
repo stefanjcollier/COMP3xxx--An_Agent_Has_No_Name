@@ -33,6 +33,13 @@ public class UCSBidder {
 
         double r0 =  0.75 * (estimatedImpressionReach);
 
+        if(agent.getAllocatedCampaigns().size() == 0){
+            System.out.println("=========================================================");
+            System.out.println("UCSBidder -- Zero Campaign Precaution");
+            System.out.println("UCSBidder -- Calculated Bid : " + 0.0);
+            System.out.println("=========================================================");
+         return 0.0;
+        }
         System.out.println("=========================================================");
         System.out.println("UCSBidder -- Calculating the UCS for Day " + currentDay);
         System.out.println("UCSBidder -- Current Level : " +ucsLevel);
@@ -44,10 +51,10 @@ public class UCSBidder {
             System.out.println("=========================================================");
             return prevBid / (1+gucs);
 
-        }else if(ucsLevel < 0.81 && ((r0 / prevBid) >= (20 / 3) * ((1+gucs)/(Ep)))){
-            System.out.println("UCSBidder -- Calculated Bid : " + (1+gucs) * prevBid);
+        }else if(ucsLevel < 0.81 && ((r0 / prevBid) >= (20 / 3) * ((1+gucs)/(Ep)))) {
+            System.out.println("UCSBidder -- Calculated Bid : " + (1 + gucs) * prevBid);
             System.out.println("=========================================================");
-            return (1+gucs) * prevBid;
+            return (1 + gucs) * prevBid;
         }else{
             System.out.println("UCSBidder -- Calculated Bid : " + prevBid);
             System.out.println("=========================================================");
