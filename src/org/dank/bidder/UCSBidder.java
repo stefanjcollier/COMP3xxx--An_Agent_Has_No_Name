@@ -3,6 +3,7 @@ package org.dank.bidder;
 import com.sun.org.apache.xml.internal.dtm.ref.DTMAxisIterNodeList;
 import org.DankAdNetwork;
 import org.State;
+import org.dank.Logger;
 import org.dank.MarketMonitor;
 import org.dank.entities.Campaign;
 
@@ -17,23 +18,27 @@ public class UCSBidder {
     private static UCSBidder INSTANCE;
 
     DankAdNetwork agent;
+    Logger logger = new Logger();
 
     public UCSBidder(DankAdNetwork agent) {
+
         this.agent = agent;
+
     };
 
 
     public double calcUCSBid(double prevBid,double ucsLevel,int currentDay){
+        logger.logUCS(ucsLevel, prevBid);//logging the ucs performance
 
         currentDay += 1; // calculation the UCSBid for day n+1
 
         double estimatedImpressionReach = calcEstimatedImpressionReach(currentDay);
-        double gucs = 0.5; //todo --  constant
+        double gucs = 0.3; //todo --  constant
         double Ep =  0.001;//todo -- p:= impression unit-price
 
         double r0 =  0.75 * (estimatedImpressionReach);
 
-        if(agent.getAllocatedCampaigns().size() == 0){
+        if(estimatedImpressionReach == 0){
             System.out.println("=========================================================");
             System.out.println("UCSBidder -- Zero Campaign Precaution");
             System.out.println("UCSBidder -- Calculated Bid : " + 0.0);
