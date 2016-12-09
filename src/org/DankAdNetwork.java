@@ -283,7 +283,7 @@ public class DankAdNetwork extends Agent {
                 ucsBid = 0.1 + random.nextDouble() / 10.0;
 
             } else {
-                ucsBid = ucsbidder.calcUCSBid((long) ucsBid, (long) ucsLevel, day);
+                ucsBid = ucsbidder.calcUCSBid( ucsBid,  ucsLevel, day);
 
             }
 
