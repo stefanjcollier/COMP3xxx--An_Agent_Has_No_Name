@@ -33,7 +33,8 @@ public class UCSBidder {
         currentDay += 1; // calculation the UCSBid for day n+1
 
         double estimatedImpressionReach = calcEstimatedImpressionReach(currentDay);
-        double gucs = 0.3; //todo --  constant
+        double gucsup = 0.3; //todo --  constant
+        double gucsdown = 0.1; //todo --  constant
         double Ep =  0.001;//todo -- p:= impression unit-price
 
         double r0 =  0.75 * (estimatedImpressionReach);
@@ -52,14 +53,14 @@ public class UCSBidder {
         System.out.println("UCSBidder -- Estimated Impression Reach : " + estimatedImpressionReach);
 
         if(ucsLevel > 0.9){
-            System.out.println("UCSBidder -- Calculated Bid : " + prevBid / (1+gucs));
+            System.out.println("UCSBidder -- Calculated Bid : " + prevBid / (1+gucsdown));
             System.out.println("=========================================================");
-            return prevBid / (1+gucs);
+            return prevBid / (1+gucsdown);
 
-        }else if(ucsLevel < 0.81 && ((r0 / prevBid) >= (20 / 3) * ((1+gucs)/(Ep)))) {
-            System.out.println("UCSBidder -- Calculated Bid : " + (1 + gucs) * prevBid);
+        }else if(ucsLevel < 0.81 && ((r0 / prevBid) >= (20 / 3) * ((1+gucsup)/(Ep)))) {
+            System.out.println("UCSBidder -- Calculated Bid : " + (1 + gucsup) * prevBid);
             System.out.println("=========================================================");
-            return (1 + gucs) * prevBid;
+            return (1 + gucsup) * prevBid;
         }else{
             System.out.println("UCSBidder -- Calculated Bid : " + prevBid);
             System.out.println("=========================================================");
