@@ -87,10 +87,10 @@ public class CampaignBidder {
     }
 
     private double lowestPrice(Campaign incomingCamp, double myQuality){
-        return incomingCamp.getReachImps() / myQuality;
+        return (int) Math.ceil((incomingCamp.getReachImps() / myQuality) / 10.0);
     }
 
     private double highestPrice(Campaign incomingCamp, double myQuality){
-        return (incomingCamp.getReachImps() * myQuality) / 10.0;
+        return (int) Math.floor(incomingCamp.getReachImps() * myQuality);
     }
 }
