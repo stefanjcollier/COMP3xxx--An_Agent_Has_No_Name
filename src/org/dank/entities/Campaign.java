@@ -29,6 +29,8 @@ public class Campaign {
     private CampaignStats stats;
     private double budget;
 
+    private double ourBid;
+
     public Campaign(InitialCampaignMessage icm) {
         reachImps = icm.getReachImps();
         dayStart = icm.getDayStart();
@@ -65,6 +67,14 @@ public class Campaign {
 
     public char getNiceName(){
         return this.niceName;
+    }
+
+    public double getOurBid() {
+        return ourBid;
+    }
+
+    public void setOurBid(double ourBid) {
+        this.ourBid = ourBid;
     }
 
     public int impsTogo() {
