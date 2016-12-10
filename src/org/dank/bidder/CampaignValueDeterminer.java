@@ -49,7 +49,7 @@ public class CampaignValueDeterminer {
         // NOTE: Q_second
         //  We change the assumption on Q_second based on desperation.
         //  i.e. a larger Q_second means they have a larger quality
-        //      which means that their bid is less
+        //      which means that their bid is less, which means something to dwell on later
          */
 
         return 0;

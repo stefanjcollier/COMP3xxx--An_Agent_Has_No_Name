@@ -62,14 +62,10 @@ public class CampaignBidder {
      * (Normal Path)
      * */
     protected double performStrategy1(Campaign incomingCamp, double myQuality){
-<<<<<<< HEAD
-        return incomingCamp.getReachImps() * myQuality / this.pici(incomingCamp);
-=======
-        double bid = myQuality / this.pici(incomingCamp);
+        double bid = (myQuality / incomingCamp.getReachImps()) / this.pici(incomingCamp);
         double minBid = this.lowestPrice(incomingCamp, myQuality);
         double maxBid = this.highestPrice(incomingCamp, myQuality);
         return this.bound(bid, minBid, maxBid);
->>>>>>> d5418a8e9aac851bad2dfa9931369573083c5ebb
     }
     /** Bid lowest valid price */
     protected double performStrategy2(Campaign incomingCamp, double myQuality){
@@ -80,7 +76,6 @@ public class CampaignBidder {
         return this.highestPrice(incomingCamp, myQuality);
     }
 
-
     private double pici(Campaign incomingCamp){
         double pi = this.priceIndexPredictor.estimatePriceForSegmentMultipleDays(incomingCamp);
         double ci = this.state.getCi();
@@ -90,7 +85,7 @@ public class CampaignBidder {
     /** if budget (PI*CI) > reach**/
     private boolean isCampaignAchievable(Campaign incomingCamp){
         double pi = this.priceIndexPredictor.estimatePriceForSegmentMultipleDays(incomingCamp);
-        return pi >= State.PI_TOO_HIGH;
+        return pi <= State.PI_TOO_HIGH;
     }
 
     private double lowestPrice(Campaign incomingCamp, double myQuality){

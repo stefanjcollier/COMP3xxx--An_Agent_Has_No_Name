@@ -106,10 +106,13 @@ public class DankAdNetwork extends Agent {
     private UCSBidder ucsbidder;
     private ImpressionBidder impressionBidder;
     private CampaignBidder campaignBidder;
-
+    private org.dank.Logger logger;
     double qualityScore;
 
     public DankAdNetwork() {
+
+
+        logger = new org.dank.Logger();
 
         campaignReports = new LinkedList<CampaignReport>();
         ucsbidder = new UCSBidder(this);
@@ -249,7 +252,6 @@ public class DankAdNetwork extends Agent {
 
         pendingCampaign = new Campaign(com);
 
-        MarketMonitor.getInstance().addCampaign(pendingCampaign);
 
         System.out.println("Day " + day + ": Campaign opportunity - " + pendingCampaign);
 
@@ -266,7 +268,11 @@ public class DankAdNetwork extends Agent {
         long cmpimps = com.getReachImps();
 //		long cmpBidMillis = random.nextInt((int)cmpimps);
 
-        long cmpBidMillis = (long) campaignBidder.getBidFor(pendingCampaign, qualityScore);
+        long cmpBidMillis = (long) campaignBidder.getBidFor(pendingCampaign, qualityScore); //TODO should we do any multiplication/division here?
+
+        pendingCampaign.setOurBid(cmpBidMillis);
+
+        MarketMonitor.getInstance().addCampaign(pendingCampaign);
 
         System.out.println("Day " + day + ": Campaign total budget bid (millis): " + cmpBidMillis);
 
@@ -317,9 +323,10 @@ public class DankAdNetwork extends Agent {
 
 
         // Update the CI
-        double budget = notificationMessage.getCostMillis() / 1000.0;
-        double bid = pendingCampaign.getBudget();
+        double budget = notificationMessage.getCostMillis() / 1000.0; // the bid of whoever won it
+        double bid = pendingCampaign.getBudget(); //our bid
         State.getInstance().informOfCampaignOutcome(budget, bid);
+        logger.logCampaign(pendingCampaign,budget);
 
         if ((pendingCampaign.getId() == adNetworkDailyNotification.getCampaignId())
                 && (notificationMessage.getCostMillis() != 0)) {

@@ -4,6 +4,7 @@ import org.dank.MarketMonitor;
 import org.dank.entities.Campaign;
 import tau.tac.adx.report.adn.MarketSegment;
 
+import java.util.ArrayList;
 import java.util.Set;
 
 /**
@@ -23,14 +24,15 @@ public class PriceIndexPredictor {
 
         double popularity = 0;
 
-        for (Campaign campaign : this.monitor.getAllCampaignsOnDay((int)day)) {
+        ArrayList<Campaign> campaigns = (ArrayList<Campaign>) this.monitor.getAllCampaignsOnDay((int)day);
+
+        for (Campaign campaign : campaigns) {
+
             double userPopulation = MarketSegment.usersInMarketSegments().get(campaign.getTargetSegment());
             double reach = (double) campaign.getReachImps();
             double period = (double) (campaign.getLength());
 
-            if (campaign.getTargetSegment().contains(s)) {
-                popularity += (reach / (userPopulation * period));
-            }
+            popularity += (reach / (userPopulation * period));
 
         }
 
@@ -64,7 +66,7 @@ public class PriceIndexPredictor {
         }
 
         //  div by |T| . W(S)
-        popularity /= (endDay - startDay) * MarketSegment.usersInMarketSegments().get(targetSegment);
+        popularity /= ((endDay - startDay) * MarketSegment.usersInMarketSegments().get(targetSegment));
 
         return popularity;
     }
