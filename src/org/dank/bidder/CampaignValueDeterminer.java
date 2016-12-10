@@ -51,6 +51,7 @@ public class CampaignValueDeterminer {
         //  i.e. a larger Q_second means they have a larger quality
         //      which means that their bid is less
          */
+
         return 0;
     }
 
