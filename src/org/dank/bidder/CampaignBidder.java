@@ -62,7 +62,14 @@ public class CampaignBidder {
      * (Normal Path)
      * */
     protected double performStrategy1(Campaign incomingCamp, double myQuality){
+<<<<<<< HEAD
         return incomingCamp.getReachImps() * myQuality / this.pici(incomingCamp);
+=======
+        double bid = myQuality / this.pici(incomingCamp);
+        double minBid = this.lowestPrice(incomingCamp, myQuality);
+        double maxBid = this.highestPrice(incomingCamp, myQuality);
+        return this.bound(bid, minBid, maxBid);
+>>>>>>> d5418a8e9aac851bad2dfa9931369573083c5ebb
     }
     /** Bid lowest valid price */
     protected double performStrategy2(Campaign incomingCamp, double myQuality){
@@ -92,5 +99,11 @@ public class CampaignBidder {
 
     private double highestPrice(Campaign incomingCamp, double myQuality){
         return (int) Math.floor(incomingCamp.getReachImps() * myQuality);
+    }
+
+    private double bound(double bid, double min, double max) {
+        if (bid < min) return min;
+        else if (bid > max) return max;
+        return bid;
     }
 }
