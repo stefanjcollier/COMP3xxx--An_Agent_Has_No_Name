@@ -28,7 +28,7 @@ public class State {
 
     public enum BidOutcome { BID_WIN, RANDOM_WIN, LOSS }
 
-    private State() {
+    public State() {
         this.ci = 1.0;
         this.gGreed = 1.5;
     }
