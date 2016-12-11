@@ -98,7 +98,7 @@ public class CampaignBidder {
     }
 
     protected double performANLStrategy(Campaign incomingCamp, double myQuality){
-        return (myQuality / this.pici(incomingCamp)) * incomingCamp.getReachImps();
+        return 10*(myQuality / this.pici(incomingCamp)) * incomingCamp.getReachImps();
     }
     /** Bid lowest valid price */
     protected double performStrategy2(Campaign incomingCamp, double myQuality){
