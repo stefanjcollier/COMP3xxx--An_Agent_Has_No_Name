@@ -55,4 +55,9 @@ public class MarketMonitor implements MarketMonitorInterface {
         return singleton;
     }
 
+    public static MarketMonitor getNewInstance(){
+        singleton = new MarketMonitor();
+        return singleton;
+    }
+
 }

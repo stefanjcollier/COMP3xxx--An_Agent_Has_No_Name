@@ -523,6 +523,8 @@ public class DankAdNetwork extends Agent {
     protected void simulationSetup() {
         Random random = new Random();
 
+        MarketMonitor.getNewInstance();
+
         day = 0;
         bidBundle = new AdxBidBundle();
 
