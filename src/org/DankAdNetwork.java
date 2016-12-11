@@ -408,6 +408,7 @@ public class DankAdNetwork extends Agent {
 		 * for now, a single entry per active campaign is added for queries of
 		 * matching target segment.
 		 */
+		double n_max = 1.2;
         for (Campaign currCampaign : runningCamps) {
 
             if ((dayBiddingFor >= currCampaign.getDayStart())
@@ -452,7 +453,7 @@ public class DankAdNetwork extends Agent {
 
                 double impressionLimit = currCampaign.impsTogo();
                 double budgetLimit = currCampaign.getBudget();
-                bidBundle.setCampaignDailyLimit(currCampaign.getId(), (int) impressionLimit, budgetLimit);
+                bidBundle.setCampaignDailyLimit(currCampaign.getId(), (int) (impressionLimit * 2*n_max), budgetLimit * n_max);
 
                 System.out.println("Day " + day + ": Updated " + entCount
                         + " Bid Bundle entries for Campaign ("+currCampaign.getNiceName()+") id " + currCampaign.getId());
