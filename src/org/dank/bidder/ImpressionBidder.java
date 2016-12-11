@@ -36,7 +36,7 @@ public class ImpressionBidder {
 
 
         double budget = spendableBudget;
-        if (isOverspending(spendableBudget,runningCamp, today)){
+        if (false &&isOverspending(spendableBudget,runningCamp, today)){
             budget *= State.MAX_IMP_PRICE;
             System.out.println("isOverspending!");
             System.out.println("    -> budget now:"+budget);

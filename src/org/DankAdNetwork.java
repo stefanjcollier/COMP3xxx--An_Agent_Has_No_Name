@@ -117,7 +117,7 @@ public class DankAdNetwork extends Agent {
         campaignReports = new LinkedList<CampaignReport>();
         ucsbidder = new UCSBidder(this);
         impressionBidder = ImpressionBidder.getInstance();
-        campaignBidder = new CampaignBidder();
+        campaignBidder = new CampaignBidder(this.myCampaigns, MarketMonitor.getInstance());
         qualityScore = 1;
     }
 

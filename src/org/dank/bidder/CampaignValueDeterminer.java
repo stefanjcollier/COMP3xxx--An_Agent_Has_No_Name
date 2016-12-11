@@ -4,8 +4,7 @@ import org.dank.MarketMonitor;
 import org.dank.entities.Campaign;
 import tau.tac.adx.report.adn.MarketSegment;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -13,9 +12,70 @@ import java.util.Set;
  * Created by Stefa on 10/12/2016.
  */
 public class CampaignValueDeterminer {
+    private Map<Integer, Campaign> myCampaigns;
+    private MarketMonitor marketMonitor;
+
+
+    public CampaignValueDeterminer(Map<Integer, Campaign> myCampaigns, MarketMonitor marketMonitor){
+        this.myCampaigns = myCampaigns;
+        this.marketMonitor = marketMonitor;
+    }
+
+
+
 
     public double determineBid(Campaign IC, double myQuality){
-        /*
+        double cost = IC.getReachImps()*getAverageCompetingPrice(IC);
+
+        //Assumption on Q_second:
+        double Q_second = 1.0;
+        double second_winning_bid = cost * Q_second / myQuality;
+
+        double undercutting_percent = 1.0;
+        double my_bid = second_winning_bid * undercutting_percent;
+
+        return my_bid;
+    }
+
+    private double getAverageCompetingPrice(Campaign IC){
+        double runningTotal = 0.0;
+        double runningCount = 0.0;
+        for (Campaign PC : this.marketMonitor.getAllCampaigns()){
+            if ( !this.wasRandomlyWon(PC) && this.isCompeting(PC, IC) ){
+                runningTotal += PC.getBudget() / PC.getReachImps();
+                runningCount++;
+            }
+        }
+        double avg_imp_price = runningTotal / runningCount;
+        return avg_imp_price;
+    }
+
+    private boolean wasRandomlyWon(Campaign PC){
+        return weShouldHaveWon(PC) || myRandomBid(PC);
+    }
+
+    private boolean weShouldHaveWon(Campaign PC){
+        return PC.getBudget() > PC.getOurBid(); //TODO check this.. as effective bid should be in order
+    }
+
+    private boolean myRandomBid(Campaign PC){
+         return (myCampaigns.containsKey(PC.getId()) && (PC.getOurBid() == PC.getBudget()));
+    }
+
+    /**
+     * Determines if the two given {@link Campaign}s are competing by seeing if their target markets intersect
+     * @return true -- They do compete
+     */
+    private boolean isCompeting(Campaign RC, Campaign IC){
+        Set<MarketSegment> targetSegment_RC = RC.getTargetSegment();
+        Set<MarketSegment> targetSegment_IC = IC.getTargetSegment();
+        targetSegment_RC.retainAll(targetSegment_IC);
+
+
+        return targetSegment_RC.size() > 0;
+    }
+
+      /*
         PC := Previous Campaigns
         PC = all campaigns with (overlaping segments) and  not (random wins)
 
@@ -54,48 +114,5 @@ public class CampaignValueDeterminer {
         //  i.e. a larger Q_second means they have a larger quality
         //      which means that their bid is less, which means something to dwell on later
          */
-        double runningTotal = 0.0;
-        double runningCount = 0.0;
-        for (Campaign PC : MarketMonitor.getInstance().getAllCampaigns()){
-            if (isNotRandomWinAndIsOverlapping(PC, IC)){
-                runningTotal += PC.getBudget() / PC.getReachImps();
-                runningCount++;
-            }
-        }
-        double avg_imp_price = runningTotal / runningCount;
-
-        double cost = IC.getReachImps()*avg_imp_price;
-
-        //Assumption:
-        double Q_second = 1.0;
-        double second_winning_bid = cost * Q_second / myQuality;
-
-        double undercutting_percent = 1.0;
-        double my_bid = second_winning_bid * undercutting_percent;
-
-        return my_bid;
-    }
-
-    private boolean isNotRandomWinAndIsOverlapping(Campaign PC, Campaign IC){
-        return !isRandomWin(PC) && isCompeting(PC, IC);
-    }
-
-    private boolean isRandomWin(Campaign RC){
-        return false;
-    }
-
-
-    /**
-     * Determines if the two given {@link Campaign}s are competing by seeing if their target markets intersect
-     * @return true -- They do compete
-     */
-    private static boolean isCompeting(Campaign RC, Campaign IC){
-        Set<MarketSegment> targetSegment_RC = RC.getTargetSegment();
-        Set<MarketSegment> targetSegment_IC = IC.getTargetSegment();
-        targetSegment_RC.retainAll(targetSegment_IC);
-
-
-        return targetSegment_RC.size() > 0;
-    }
 
 }
