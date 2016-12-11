@@ -30,7 +30,7 @@ public class State {
 
     private State() {
         this.ci = 1.0;
-        this.gGreed = 1.2;
+        this.gGreed = 1.5;
     }
 
     public double getLOW_QUALITY() {
@@ -49,7 +49,7 @@ public class State {
     public void informOfCampaignOutcome(double budget, double bid){
         BidOutcome outcome = BidOutcome.LOSS;
 
-        boolean won = budget != 0;
+        boolean won = (budget != 0);
         if(won){
             if(budget == bid){
                 outcome = BidOutcome.RANDOM_WIN;
