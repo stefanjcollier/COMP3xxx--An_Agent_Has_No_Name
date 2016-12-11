@@ -23,34 +23,50 @@ public class CampaignValueDeterminer {
     }
 
 
+    public double determineBid(Campaign IC, double myQuality) {
+        return this.determineBid(IC,myQuality,false);
+    }
 
-
-    public double determineBid(Campaign IC, double myQuality){
-        double cost = IC.getReachImps()*getAverageCompetingPrice(IC);
+    public double determineBid(Campaign IC, double myQuality, boolean showWorking){
+        show(showWorking,"------[ CampaignValueDeterminer(Working): ("+IC.getNiceName()+") "+IC.getId()+"]---------");
+        double cost = IC.getReachImps()*getAverageCompetingPrice(IC, showWorking);
 
         //Assumption on Q_second:
         double Q_second = 1.0;
         double second_winning_bid = cost * Q_second / myQuality;
+        show(showWorking,"B_Second = "+second_winning_bid);
 
-        double undercutting_percent = 1.0;
+        double undercutting_percent = 0.9;
         double my_bid = second_winning_bid * undercutting_percent;
 
+        if (!showWorking && (my_bid == Double.NaN || my_bid <= 0)){
+            this.determineBid(IC,myQuality,true);
+            show(true,"-----(Working)----------------------");
+        }
         return my_bid;
     }
 
-    private double getAverageCompetingPrice(Campaign IC){
+    private double getAverageCompetingPrice(Campaign IC, boolean showWorking){
         double runningTotal = 0.0;
         double runningCount = 0.0;
         for (Campaign PC : this.marketMonitor.getAllCampaigns()){
-            if ( !this.wasRandomlyWon(PC) && this.isCompeting(PC, IC) ){
+            if ( !this.wasRandomlyWon(PC) && this.isCompeting(PC, IC) && PC.getBudget() > 0 ){
+                show(showWorking, "\t - ("+PC.getNiceName()+") PC.getBudget() / PC.getReachImps() = "+PC.getBudget()+" / "+PC.getReachImps()+" = "+PC.getBudget() / PC.getReachImps());
                 runningTotal += PC.getBudget() / PC.getReachImps();
                 runningCount++;
             }
         }
         double avg_imp_price = runningTotal / runningCount;
+
+        show(showWorking, "Running Count: "+(int)runningCount);
+        show(showWorking, "Avg Imp Price: "+avg_imp_price);
+
         return avg_imp_price;
     }
 
+    private void show(boolean showWorking, String txt){
+        if ( showWorking) System.out.println(txt);
+    }
     private boolean wasRandomlyWon(Campaign PC){
         return weShouldHaveWon(PC) || myRandomBid(PC);
     }

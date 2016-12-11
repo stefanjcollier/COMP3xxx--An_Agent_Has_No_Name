@@ -317,14 +317,25 @@ public class DankAdNetwork extends Agent {
         System.out.println("Day " + day + ": Daily notification for campaign ("+findNiceNameOfCampaign(adNetworkDailyNotification.getCampaignId())+") "
                 + adNetworkDailyNotification.getCampaignId());
 
-        String campaignAllocatedTo = " allocated to "
-                + notificationMessage.getWinner();
+        String campaignAllocatedTo = " allocated to "+ notificationMessage.getWinner();
 
 
         // Update the CI
         double budget = notificationMessage.getCostMillis() / 1000.0; // the bid of whoever won it
         double bid = pendingCampaign.getBudget(); //our bid
+
         State.getInstance().informOfCampaignOutcome(budget, bid);
+
+        //Ensure that the winning budget is remembered, even if we didn't win it!
+        System.out.println("Campaign looking for: ("+findNiceNameOfCampaign(adNetworkDailyNotification.getCampaignId())+")"+adNetworkDailyNotification.getCampaignId());
+        for (Campaign campaign : MarketMonitor.getInstance().getAllCampaigns()){
+            System.out.println("\tcamp ("+campaign.getNiceName()+")"+campaign.getId());
+            if (campaign.getId() == adNetworkDailyNotification.getCampaignId()){
+                System.out.println("\tFOUND!");
+                campaign.setBudget(budget/1000.0);
+                break;
+            }
+        }
         logger.logCampaign(pendingCampaign,budget);
 
         if ((pendingCampaign.getId() == adNetworkDailyNotification.getCampaignId())
@@ -439,8 +450,7 @@ public class DankAdNetwork extends Agent {
                             }
 
                         }
-                        bidBundle.addQuery(query, ourBid, new Ad(null),
-                                currCampaign.getId(), 1);
+                        bidBundle.addQuery(query, ourBid, new Ad(null), currCampaign.getId(), 1);
                     }
                 }
 
