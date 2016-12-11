@@ -30,8 +30,8 @@ public class CampaignBidder {
     public double getBidFor(Campaign incomingCamp, double myQuality){
         System.out.println("==============[CampaignBidder]===========================================");
         System.out.println("--------------[Camp: "+incomingCamp.getId()+"]-------------------------------------------");
-        // We prioritise having a high quality
 
+        // We prioritise having a high quality
         System.out.println("Quality score: " + myQuality);
 
         double strat1Result = performStrategy1(incomingCamp, myQuality);

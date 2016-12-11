@@ -114,7 +114,7 @@ public class Campaign {
     }
 
     public Set<MarketSegment> getTargetSegment() {
-        return targetSegment;
+        return this.targetSegment;
     }
 
     public void setTargetSegment(Set<MarketSegment> targetSegment) {

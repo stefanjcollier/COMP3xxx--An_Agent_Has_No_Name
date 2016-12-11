@@ -6,6 +6,7 @@ import tau.tac.adx.report.adn.MarketSegment;
 
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  *
@@ -69,10 +70,11 @@ public class CampaignValueDeterminer {
     private boolean isCompeting(Campaign RC, Campaign IC){
         Set<MarketSegment> targetSegment_RC = RC.getTargetSegment();
         Set<MarketSegment> targetSegment_IC = IC.getTargetSegment();
-        targetSegment_RC.retainAll(targetSegment_IC);
 
+        Set<MarketSegment> overlap = new TreeSet<>(targetSegment_RC);
+        overlap.retainAll(targetSegment_IC);
 
-        return targetSegment_RC.size() > 0;
+        return overlap.size() > 0;
     }
 
       /*

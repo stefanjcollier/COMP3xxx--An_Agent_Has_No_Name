@@ -55,4 +55,7 @@ public class MarketMonitor implements MarketMonitorInterface {
         return singleton;
     }
 
+    public String toString(){
+        return "MarketMontitor: NoOfCampaigns = "+this.allCampaigns.size();
+    }
 }

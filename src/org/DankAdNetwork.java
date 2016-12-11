@@ -117,7 +117,6 @@ public class DankAdNetwork extends Agent {
         campaignReports = new LinkedList<CampaignReport>();
         ucsbidder = new UCSBidder(this);
         impressionBidder = ImpressionBidder.getInstance();
-        campaignBidder = new CampaignBidder(this.myCampaigns, MarketMonitor.getInstance());
         qualityScore = 1;
     }
 
@@ -530,6 +529,7 @@ public class DankAdNetwork extends Agent {
         ucsBid = 0.1 + random.nextDouble() / 10.0;
 
         myCampaigns = new HashMap<Integer, Campaign>();
+        campaignBidder = new CampaignBidder(this.myCampaigns, MarketMonitor.getInstance());
         log.fine("AdNet " + getName() + " simulationSetup");
     }
 
