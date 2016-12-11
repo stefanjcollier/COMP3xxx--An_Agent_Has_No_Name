@@ -2,6 +2,7 @@ package org.dank.bidder.index;
 
 import org.dank.MarketMonitor;
 import org.dank.entities.Campaign;
+import org.omg.CORBA.PUBLIC_MEMBER;
 import tau.tac.adx.report.adn.MarketSegment;
 
 import java.util.ArrayList;
@@ -15,8 +16,8 @@ public class PriceIndexPredictor {
     private static PriceIndexPredictor INSTANCE;
     private MarketMonitor monitor;
 
-    private PriceIndexPredictor() {
-        this.monitor = MarketMonitor.getInstance();
+    public PriceIndexPredictor(MarketMonitor monitor) {
+        this.monitor = monitor;
     }
 
 
@@ -35,7 +36,7 @@ public class PriceIndexPredictor {
             popularity += (reach / (userPopulation * period));
 
         }
-
+        System.out.println("***********************" + popularity);
         return popularity;
     }
 
@@ -71,10 +72,4 @@ public class PriceIndexPredictor {
         return popularity;
     }
 
-    public static PriceIndexPredictor getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new PriceIndexPredictor();
-        }
-        return INSTANCE;
-    }
 }

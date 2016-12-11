@@ -16,8 +16,8 @@ public class CampaignBidder {
     PriceIndexPredictor priceIndexPredictor;
     State state;
 
-    public CampaignBidder() {
-        this.priceIndexPredictor = PriceIndexPredictor.getInstance();
+    public CampaignBidder(PriceIndexPredictor predictor) {
+        this.priceIndexPredictor = predictor;
         this.state = State.getInstance();
     }
 
