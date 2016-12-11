@@ -82,8 +82,7 @@ public class CampaignBidder {
      * (Normal Path)
      * */
     protected double performStrategy1(Campaign incomingCamp, double myQuality){
-        double bid = (myQuality / this.pici(incomingCamp)) * incomingCamp.getReachImps();
-        return bid;
+        return (myQuality / this.pici(incomingCamp)) * incomingCamp.getReachImps();
     }
     /** Bid lowest valid price */
     protected double performStrategy2(Campaign incomingCamp, double myQuality){
