@@ -6,6 +6,7 @@ import org.dank.MarketMonitor;
 import org.dank.bidder.ImpressionBidder;
 import org.dank.bidder.UCSBidder;
 import org.dank.bidder.CampaignBidder;
+import org.dank.bidder.index.PriceIndexPredictor;
 import org.dank.entities.Campaign;
 import se.sics.isl.transport.Transportable;
 import se.sics.tasim.aw.Agent;
@@ -107,17 +108,19 @@ public class DankAdNetwork extends Agent {
     private ImpressionBidder impressionBidder;
     private CampaignBidder campaignBidder;
     private org.dank.Logger logger;
+    private PriceIndexPredictor predictor;
+    private MarketMonitor monitor;
     double qualityScore;
 
     public DankAdNetwork() {
 
-
+        monitor = new MarketMonitor();
         logger = new org.dank.Logger();
-
+        predictor = new PriceIndexPredictor(monitor);
         campaignReports = new LinkedList<CampaignReport>();
         ucsbidder = new UCSBidder(this);
-        impressionBidder = ImpressionBidder.getInstance();
-        campaignBidder = new CampaignBidder();
+        impressionBidder = new ImpressionBidder(predictor);
+        campaignBidder = new CampaignBidder(predictor);
         qualityScore = 1;
     }
 
@@ -272,7 +275,7 @@ public class DankAdNetwork extends Agent {
 
         pendingCampaign.setOurBid(cmpBidMillis);
 
-        MarketMonitor.getInstance().addCampaign(pendingCampaign);
+        monitor.addCampaign(pendingCampaign);
 
         System.out.println("Day " + day + ": Campaign total budget bid (millis): " + cmpBidMillis);
 
@@ -523,6 +526,8 @@ public class DankAdNetwork extends Agent {
     protected void simulationSetup() {
         Random random = new Random();
 
+        MarketMonitor.getNewInstance();
+
         day = 0;
         bidBundle = new AdxBidBundle();
 
@@ -636,7 +641,7 @@ public class DankAdNetwork extends Agent {
     }
 
     private char findNiceNameOfCampaign(long id){
-        for (Campaign camp : MarketMonitor.getInstance().getAllCampaigns()){
+        for (Campaign camp : monitor.getAllCampaigns()){
             if (camp.getId() == id){
                 return camp.getNiceName();
             }

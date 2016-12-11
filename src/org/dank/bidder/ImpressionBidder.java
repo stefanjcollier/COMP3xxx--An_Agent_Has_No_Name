@@ -14,8 +14,9 @@ public class ImpressionBidder {
 
     private static ImpressionBidder INSTANCE;
     private PriceIndexPredictor priceIndexPredictor;
-    private ImpressionBidder() {}{
-        this.priceIndexPredictor = PriceIndexPredictor.getInstance();
+
+    public ImpressionBidder(PriceIndexPredictor predictor){
+        this.priceIndexPredictor = predictor;
     }
 
 
@@ -82,10 +83,5 @@ public class ImpressionBidder {
         return (today + 1) == runningCamp.getDayEnd();
     }
 
-    public static ImpressionBidder getInstance(){
-        if (INSTANCE == null) {
-            INSTANCE = new ImpressionBidder();
-        }
-        return INSTANCE;
-    };
+
 }
