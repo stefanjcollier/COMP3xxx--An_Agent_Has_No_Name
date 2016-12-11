@@ -267,7 +267,7 @@ public class DankAdNetwork extends Agent {
         long cmpimps = com.getReachImps();
 //		long cmpBidMillis = random.nextInt((int)cmpimps);
 
-        long cmpBidMillis = (long) campaignBidder.getBidFor(pendingCampaign, qualityScore); //TODO should we do any multiplication/division here?
+        long cmpBidMillis = (long) campaignBidder.getBidFor(pendingCampaign, qualityScore, day); //TODO should we do any multiplication/division here?
 
         pendingCampaign.setOurBid(cmpBidMillis);
 

@@ -27,7 +27,7 @@ public class CampaignBidder {
     }
 
 
-    public double getBidFor(Campaign incomingCamp, double myQuality){
+    public double getBidFor(Campaign incomingCamp, double myQuality, long today){
         System.out.println("==============[CampaignBidder]===========================================");
         System.out.println("--------------[Camp: "+incomingCamp.getNiceName()+"("+incomingCamp.getId()+")]-------------------------------------------");
 
@@ -82,6 +82,10 @@ public class CampaignBidder {
 
             }
         }
+    }
+
+    private boolean inFirstFewDays(long today){
+        return today <= State.FIRST_FEW_DAYS;
     }
 
     /**

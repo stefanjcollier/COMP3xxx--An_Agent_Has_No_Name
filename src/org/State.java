@@ -28,6 +28,9 @@ public class State {
 
     public enum BidOutcome { BID_WIN, RANDOM_WIN, LOSS }
 
+    public static final long FIRST_FEW_DAYS = 5;
+
+
     private State() {
         this.ci = 1.0;
         this.gGreed = 1.2;
