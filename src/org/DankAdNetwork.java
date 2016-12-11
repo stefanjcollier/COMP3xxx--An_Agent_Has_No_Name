@@ -241,6 +241,7 @@ public class DankAdNetwork extends Agent {
 		 * to our allocated-campaigns list.
 		 */
         System.out.println("Day " + day + ": Allocated campaign - " + campaign);
+        MarketMonitor.getInstance().addCampaign(campaign);
         myCampaigns.put(initialCampaignMessage.getId(), campaign);
     }
 
@@ -446,6 +447,7 @@ public class DankAdNetwork extends Agent {
                             }
 
                         }
+                        double query_type_multiplier = impressionBidder.impressionMediumMultiplier(query);
                         bidBundle.addQuery(query, ourBid, new Ad(null),
                                 currCampaign.getId(), 1);
                     }
@@ -453,7 +455,7 @@ public class DankAdNetwork extends Agent {
 
                 double impressionLimit = currCampaign.impsTogo();
                 double budgetLimit = currCampaign.getBudget();
-                bidBundle.setCampaignDailyLimit(currCampaign.getId(), (int) (impressionLimit * 2*n_max), budgetLimit * n_max);
+                bidBundle.setCampaignDailyLimit(currCampaign.getId(), (int) (impressionLimit * n_max), budgetLimit * n_max);
 
                 System.out.println("Day " + day + ": Updated " + entCount
                         + " Bid Bundle entries for Campaign ("+currCampaign.getNiceName()+") id " + currCampaign.getId());
@@ -529,7 +531,7 @@ public class DankAdNetwork extends Agent {
     protected void simulationSetup() {
         Random random = new Random();
 
-        MarketMonitor.getNewInstance();
+       monitor = new MarketMonitor();
 
         day = 0;
         bidBundle = new AdxBidBundle();
@@ -545,6 +547,19 @@ public class DankAdNetwork extends Agent {
     protected void simulationFinished() {
         campaignReports.clear();
         bidBundle = null;
+        System.out.println("###########################################");
+        System.out.println("===========[ Post Game Diagnostics ]=============");
+        for (Campaign my_camp : this.myCampaigns.values()){
+            System.out.println("----[ Campaign ("+my_camp.getNiceName()+"): "+my_camp.getId()+"]----");
+            System.out.println("Length: "+my_camp.getLength());
+            System.out.println("Total Budget: £" + my_camp.getBudget() +
+                    "\t\tspent: £" + my_camp.getStats().getCost() +
+                    "\t\t=" + (100.0 * my_camp.getStats().getCost()/ my_camp.getBudget()) + "% spent    ");
+            System.out.println("Total Reach: " + my_camp.getReachImps()
+                    + "\t\tachieved: " + Math.floor(my_camp.getStats().getTargetedImps()) +
+                    "\t\t=" + (100.0 * Math.floor(my_camp.getStats().getTargetedImps()) / my_camp.getReachImps()) + "%achieved");
+
+        }
     }
 
     /**
