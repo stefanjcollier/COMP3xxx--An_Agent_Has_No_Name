@@ -56,6 +56,7 @@ public class CampaignValueDeterminer {
     }
 
     private boolean weShouldHaveWon(Campaign PC){
+        // If our bid was smaller, then we should have won
         return PC.getBudget() > PC.getOurBid(); //TODO check this.. as effective bid should be in order
     }
 

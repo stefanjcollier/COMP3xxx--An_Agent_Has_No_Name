@@ -29,56 +29,72 @@ public class CampaignBidder {
 
     public double getBidFor(Campaign incomingCamp, double myQuality){
         System.out.println("==============[CampaignBidder]===========================================");
-        System.out.println("--------------[Camp: "+incomingCamp.getId()+"]-------------------------------------------");
+        System.out.println("--------------[Camp: "+incomingCamp.getNiceName()+"("+incomingCamp.getId()+")]-------------------------------------------");
 
         // We prioritise having a high quality
         System.out.println("Quality score: " + myQuality);
 
-        double strat1Result = performStrategy1(incomingCamp, myQuality);
-        double minBid = this.lowestPrice(incomingCamp, myQuality);
-        double maxBid = this.highestPrice(incomingCamp, myQuality);
+        double strat1 = performStrategy1(incomingCamp, myQuality);
+        double strat2 = performStrategy2(incomingCamp,myQuality);
+        double strat3 = performStrategy3(incomingCamp, myQuality);
+        double anlStrat = performANLStrategy(incomingCamp, myQuality);
 
-        System.out.println("STRATEGIC BID= " + strat1Result);
-        System.out.println("OLD BID      = " + (myQuality / incomingCamp.getReachImps()) / this.pici(incomingCamp));
-        System.out.println("LOWEST BID   = " + performStrategy2(incomingCamp, myQuality));
-        System.out.println("HIGHEST BID  = " + performStrategy3(incomingCamp, myQuality));
+        double minBid = strat2;
+        double maxBid = strat3;
+
+        System.out.println("STRATEGIC BID= " + strat1);
+        System.out.println("ANL BID      = " + anlStrat);
+        System.out.println("LOWEST BID   = " + strat2);
+        System.out.println("HIGHEST BID  = " + strat3);
 
         if (myQuality <= State.LOW_QUALITY){
             System.out.println("Performed strategy 2: Quality too low, bidding lowest price");
-            System.out.println("BID = " + performStrategy2(incomingCamp, myQuality));
+            System.out.println("BID = " + strat2);
+
+            return strat2;
 
 
-            return performStrategy2(incomingCamp, myQuality);
         } else if (!this.isCampaignAchievable(incomingCamp)) {
             System.out.println("Performed strategy 2: Campaign unachievable, bidding highest price");
-            System.out.println("BID = " + performStrategy3(incomingCamp, myQuality));
+            System.out.println("BID = " + strat3);
 
-            return performStrategy3(incomingCamp, myQuality);
+            return strat3;
+
+
         } else {
-            if (strat1Result <= minBid){
+            if (strat1 <= minBid){
                 System.out.println("Attempted strategy 1: Campaign achievable, HOWEVER bid set to MIN");
-                System.out.println("BID (Strat1) = " + strat1Result);
+                System.out.println("BID (Strat1) = " + strat1);
                 System.out.println("BID (Min)    = " + minBid);
+                return maxBid;
 
-            }else if (strat1Result >= maxBid){
+            }else if (strat1 >= maxBid){
                 System.out.println("Attempted strategy 1: Campaign achievable, HOWEVER bid set to MAX");
-                System.out.println("BID (Strat1) = " + strat1Result);
+                System.out.println("BID (Strat1) = " + strat1);
                 System.out.println("BID (Max)      = " + maxBid);
+                return minBid;
+
             }else{
                 System.out.println("Performed strategy 1: Campaign achievable, bidding strategic bid");
-                System.out.println("BID = " + performStrategy1(incomingCamp, myQuality));
-            }
+                //No need for bounding
+                System.out.println("BID = " + strat1);
+                return strat1;
 
-            return bound(strat1Result, minBid, maxBid);
+            }
         }
     }
+
     /**
      * bid private value: PI * CI
      * (Normal Path)
      * */
     protected double performStrategy1(Campaign incomingCamp, double myQuality){
         double my_bid = this.campaignValueDeterminer.determineBid(incomingCamp, myQuality);
-        return 100;
+        return my_bid*1000;
+    }
+
+    protected double performANLStrategy(Campaign incomingCamp, double myQuality){
+        return (myQuality / this.pici(incomingCamp)) * incomingCamp.getReachImps();
     }
     /** Bid lowest valid price */
     protected double performStrategy2(Campaign incomingCamp, double myQuality){
