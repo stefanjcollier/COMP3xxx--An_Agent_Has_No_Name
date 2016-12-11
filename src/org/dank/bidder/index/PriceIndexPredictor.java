@@ -36,7 +36,6 @@ public class PriceIndexPredictor {
             popularity += (reach / (userPopulation * period));
 
         }
-        System.out.println("***********************" + popularity);
         return popularity;
     }
 

@@ -122,7 +122,7 @@ public class DankAdNetwork extends Agent {
         campaignReports = new LinkedList<CampaignReport>();
         ucsbidder = new UCSBidder(this);
         impressionBidder = new ImpressionBidder(predictor);
-        campaignBidder = new CampaignBidder(state);
+        campaignBidder = new CampaignBidder(predictor, state);
         qualityScore = 1;
     }
 
