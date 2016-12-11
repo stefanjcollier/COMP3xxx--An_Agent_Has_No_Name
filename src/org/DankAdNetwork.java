@@ -110,9 +110,11 @@ public class DankAdNetwork extends Agent {
     private org.dank.Logger logger;
     private PriceIndexPredictor predictor;
     private MarketMonitor monitor;
+    private State state;
     double qualityScore;
 
     public DankAdNetwork() {
+        state = new State();
 
         monitor = new MarketMonitor();
         logger = new org.dank.Logger();
@@ -120,7 +122,7 @@ public class DankAdNetwork extends Agent {
         campaignReports = new LinkedList<CampaignReport>();
         ucsbidder = new UCSBidder(this);
         impressionBidder = new ImpressionBidder(predictor);
-        campaignBidder = new CampaignBidder(predictor);
+        campaignBidder = new CampaignBidder(state);
         qualityScore = 1;
     }
 
@@ -328,7 +330,7 @@ public class DankAdNetwork extends Agent {
         // Update the CI
         double budget = notificationMessage.getCostMillis() / 1000.0; // the bid of whoever won it
         double bid = pendingCampaign.getBudget(); //our bid
-        State.getInstance().informOfCampaignOutcome(budget, bid);
+        state.informOfCampaignOutcome(budget, bid);
         logger.logCampaign(pendingCampaign,budget);
 
         if ((pendingCampaign.getId() == adNetworkDailyNotification.getCampaignId())
