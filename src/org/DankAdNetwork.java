@@ -241,6 +241,7 @@ public class DankAdNetwork extends Agent {
 		 * to our allocated-campaigns list.
 		 */
         System.out.println("Day " + day + ": Allocated campaign - " + campaign);
+        MarketMonitor.getInstance().addCampaign(campaign);
         myCampaigns.put(initialCampaignMessage.getId(), campaign);
     }
 
