@@ -109,16 +109,16 @@ public class DankAdNetwork extends Agent {
     private CampaignBidder campaignBidder;
     private org.dank.Logger logger;
     private PriceIndexPredictor predictor;
-    private MarketMonitor monitor;
+    private MarketMonitor marketMonitor;
     private State state;
     double qualityScore;
 
     public DankAdNetwork() {
         state = new State();
 
-        monitor = new MarketMonitor();
+        marketMonitor = new MarketMonitor();
         logger = new org.dank.Logger();
-        predictor = new PriceIndexPredictor(monitor);
+        predictor = new PriceIndexPredictor(marketMonitor);
         campaignReports = new LinkedList<CampaignReport>();
         ucsbidder = new UCSBidder(this);
         impressionBidder = new ImpressionBidder(predictor);
@@ -241,7 +241,7 @@ public class DankAdNetwork extends Agent {
 		 * to our allocated-campaigns list.
 		 */
         System.out.println("Day " + day + ": Allocated campaign - " + campaign);
-        MarketMonitor.getInstance().addCampaign(campaign);
+        this.marketMonitor.addCampaign(campaign);
         myCampaigns.put(initialCampaignMessage.getId(), campaign);
     }
 
@@ -278,7 +278,7 @@ public class DankAdNetwork extends Agent {
 
         pendingCampaign.setOurBid(cmpBidMillis);
 
-        monitor.addCampaign(pendingCampaign);
+        marketMonitor.addCampaign(pendingCampaign);
 
         System.out.println("Day " + day + ": Campaign total budget bid (millis): " + cmpBidMillis);
 
@@ -448,7 +448,7 @@ public class DankAdNetwork extends Agent {
 
                         }
                         double query_type_multiplier = impressionBidder.impressionMediumMultiplier(query);
-                        bidBundle.addQuery(query, ourBid, new Ad(null),
+                        bidBundle.addQuery(query, ourBid*query_type_multiplier, new Ad(null),
                                 currCampaign.getId(), 1);
                     }
                 }
@@ -531,7 +531,7 @@ public class DankAdNetwork extends Agent {
     protected void simulationSetup() {
         Random random = new Random();
 
-       monitor = new MarketMonitor();
+
 
         day = 0;
         bidBundle = new AdxBidBundle();
@@ -545,6 +545,7 @@ public class DankAdNetwork extends Agent {
 
     @Override
     protected void simulationFinished() {
+        marketMonitor = new MarketMonitor();
         campaignReports.clear();
         bidBundle = null;
         System.out.println("###########################################");
@@ -659,7 +660,7 @@ public class DankAdNetwork extends Agent {
     }
 
     private char findNiceNameOfCampaign(long id){
-        for (Campaign camp : monitor.getAllCampaigns()){
+        for (Campaign camp : marketMonitor.getAllCampaigns()){
             if (camp.getId() == id){
                 return camp.getNiceName();
             }

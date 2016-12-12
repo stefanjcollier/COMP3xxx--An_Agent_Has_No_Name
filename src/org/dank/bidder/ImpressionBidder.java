@@ -92,10 +92,10 @@ public class ImpressionBidder {
     public double impressionMediumMultiplier(AdxQuery query) {
         double multiplier = 1.0;
         double extra = 0.05;
-        if (query.getDevice() == Device.pc) {
-            multiplier *= 1 + extra;
+        if (query.getDevice() == Device.mobile) {
+            multiplier *= 1 + extra; //1.05
         } else {
-            multiplier *= 1 - extra;
+            multiplier *= 1 - extra; //0.95
         }
         if (query.getAdType() == AdType.video) {
             multiplier *= 1 + extra;
