@@ -1,8 +1,13 @@
 package org.dank.bidder;
 
 import org.State;
+import org.dank.MarketMonitor;
 import org.dank.bidder.index.PriceIndexPredictor;
 import org.dank.entities.Campaign;
+import tau.tac.adx.report.adn.MarketSegment;
+
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  *  This class determines the value of the bid for any given bid
@@ -35,8 +40,12 @@ public class CampaignBidder {
 
         double minBid = strat2;
         double maxBid = strat3;
+        double supplyDemand = this.getPopularityViaDemmandOverSupply(incomingCamp);
+        double stratSupplyVDemmand =  minBid + (0.9*maxBid-minBid)*supplyDemand;
 
-        System.out.println("ANL BID= " + strat1);
+
+        System.out.println("ANL BID      = " + strat1);
+        System.out.println("SUP_DEM BID  = "+supplyDemand);
         System.out.println("LOWEST BID   = " + strat2);
         System.out.println("HIGHEST BID  = " + strat3);
 
@@ -59,23 +68,24 @@ public class CampaignBidder {
 
 
         } else {
-            if (strat1 <= minBid){
+            // Pretty Bounding method
+            if (stratSupplyVDemmand <= minBid){
                 System.out.println("Attempted strategy 1: Campaign achievable, HOWEVER bid set to MIN");
-                System.out.println("BID (Strat1) = " + strat1);
+                System.out.println("BID (Strat1) = " + stratSupplyVDemmand);
                 System.out.println("BID (Min)    = " + minBid);
                 return maxBid * State.getInstance().getCi();
 
-            }else if (strat1 >= maxBid){
+            }else if (stratSupplyVDemmand >= maxBid){
                 System.out.println("Attempted strategy 1: Campaign achievable, HOWEVER bid set to MAX");
-                System.out.println("BID (Strat1) = " + strat1);
+                System.out.println("BID (Strat1) = " + stratSupplyVDemmand);
                 System.out.println("BID (Max)      = " + maxBid);
                 return minBid * State.getInstance().getCi();
 
             }else{
-                System.out.println("Performed strategy 1: Campaign achievable, bidding strategic bid");
+                System.out.println("Performed strategy DemmandOverSuppy: Campaign achievable, bidding strategic bid");
                 //No need for bounding
-                System.out.println("BID = " + strat1);
-                return strat1;
+                System.out.println("BID = " + stratSupplyVDemmand);
+                return stratSupplyVDemmand;
 
             }
         }
@@ -122,4 +132,45 @@ public class CampaignBidder {
         else if (bid > max) return max;
         return bid;
     }
+    /**
+     * Determines if the two given {@link Campaign}s are competing by seeing if their target markets intersect
+     * @return true -- They do compete
+     */
+    private boolean isCompeting(Campaign RC, Campaign IC){
+        Set<MarketSegment> targetSegment_RC = RC.getTargetSegment();
+        Set<MarketSegment> targetSegment_IC = IC.getTargetSegment();
+
+        Set<MarketSegment> overlap = new TreeSet<>(targetSegment_RC);
+        overlap.retainAll(targetSegment_IC);
+
+        return overlap.size() > 0;
+    }
+
+
+    public double getPopularityViaDemmandOverSupply(Campaign incomingCamp){
+
+        double demand = 0.0;
+        double supply = MarketSegment.marketSegmentSize(incomingCamp.getTargetSegment()) * incomingCamp.getLength() * 3;
+        for(long i = incomingCamp.getDayStart();i <= incomingCamp.getDayEnd();i++){
+
+            for(Campaign c : MarketMonitor.getInstance().getAllCampaigns()){
+
+                if(c.isRunningOnDay(i) && isCompeting(c,incomingCamp)){
+
+                    demand += incomingCamp.getReachImps() / incomingCamp.getLength();
+
+                }
+            }
+        }
+
+        System.out.println("Demand : " + demand);
+        System.out.println("Supply : " + supply);
+
+        System.out.println("Demand / Supply : " + (demand / supply));
+
+
+        return demand/supply;
+    }
+
+
 }
