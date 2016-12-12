@@ -40,6 +40,10 @@ public class CampaignBidder {
         System.out.println("LOWEST BID   = " + strat2);
         System.out.println("HIGHEST BID  = " + strat3);
 
+        if (incomingCamp.getReachImps() >= 15000) {
+            return strat3;
+        }
+
         if (myQuality <= State.LOW_QUALITY){
             System.out.println("Performed strategy 2: Quality too low, bidding lowest price");
             System.out.println("BID = " + strat2);
