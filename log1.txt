@@ -1,0 +1,2468 @@
+12/12 01:42:18 INFO agentware.SimClient|next simulation starts in 101 seconds
+12/12 01:42:18 INFO agentware.SimClient|[will reconnect in 1 minutes, 26 seconds]
+12/12 01:43:45 INFO agentware.SimClient|next simulation 545 starts in 14 seconds
+UNKNOWN Message Received: edu.umich.eecs.tac.props.AdvertiserInfo@bc77fede
+tau.tac.adx.report.demand.InitialCampaignMessage[202006375,1657,1,5,1657,[HIGH_INCOME, FEMALE],2.093208865403381,2.382759639956644,demand,[]]
+Day 0: Allocated campaign - Campaign (`) ID 202006375: day 1 to 5 [HIGH_INCOME, FEMALE], reach: 1657 coefs: (v=2.093208865403381, m=2.382759639956644)
+Day 0: Campaign opportunity - Campaign (a) ID 185827008: day 2 to 4 [HIGH_INCOME, YOUNG], reach: 1159 coefs: (v=2.2636616817864086, m=1.784545739295992)
+==============[CampaignBidder]===========================================
+--------------[Camp: a(185827008)]-------------------------------------------
+Quality score: 1.0
+Demand : 0.0
+Supply : 6957.0
+Demand / Supply : 0.0
+DEMANDSUPPLY BID= 0.0
+LOWEST BID   = 116.0
+HIGHEST BID  = 1159.0
+BID = 116.0
+Day 0: Campaign total budget bid (millis): 116
+Day 0: Initial ucs bid is 0.17108822185957484
+Day 0 :BankStatus[0,000000]
+Day 0 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 1]========================================================
+--------------------
+My Campaigns(1):
+-(`) Campaign (`) ID 202006375: day 1 to 5 [HIGH_INCOME, FEMALE],  Target Reach:1657   ImpsToGo:1657  imp completion:0.0%
+--------------------
+--------------[ImpressionBidder:Camp `(202006375)]-------------------------------------------
+Total Budget: ?1.657		remaining: ?1.657		=99.99999999999999% remaining to spend
+Total Reach: 1657		remaining: 1657		=100.0%needed
+Total Length: 5			remaining: 5			=100.0%of time left
+(initial) Spendable Budget (90.0%): ?1.4913
+Price Per Impression: 9.000000000000001E-4
+---------------------------------------------------------------------------
+Day 0: Updated 54 Bid Bundle entries for Campaign (`) id 202006375
+Day 0: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 1) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 0 ended. Starting next day
+Day 1: Daily notification for campaign (a) 185827008
+Day 1:  allocated to adv3. UCS Level set to 1.0 at price 0.15560493313405072 Quality Score is: 1.0
+Day 1: Campaign opportunity - Campaign (b) ID 120028027: day 3 to 12 [YOUNG, FEMALE], reach: 11180 coefs: (v=2.0322096390007243, m=1.5263806310967278)
+==============[CampaignBidder]===========================================
+--------------[Camp: b(120028027)]-------------------------------------------
+Quality score: 1.0
+Demand : 2236.0
+Supply : 67080.0
+Demand / Supply : 0.03333333333333333
+DEMANDSUPPLY BID= 372.6666666666667
+LOWEST BID   = 1118.0
+HIGHEST BID  = 11180.0
+BID = 372.6666666666667
+Day 1: Campaign total budget bid (millis): 1155
+=========================================================
+UCSBidder -- Calculating the UCS for Day 2
+UCSBidder -- Current Level : 1.0
+UCSBidder -- Previous Bid : 0.17108822185957484
+UCSBidder -- Estimated Impression Reach : 552.3333333333334
+UCSBidder -- Calculated Bid : 0.15553474714506801
+=========================================================
+Day 1: ucs level reported: 1.0
+Day 1 :BankStatus[-0,155605]
+Publishers Report: 
+Day 1 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 2]========================================================
+--------------------
+My Campaigns(1):
+-(`) Campaign (`) ID 202006375: day 1 to 5 [HIGH_INCOME, FEMALE],  Target Reach:1657   ImpsToGo:1657  imp completion:0.0%
+--------------------
+--------------[ImpressionBidder:Camp `(202006375)]-------------------------------------------
+Total Budget: ?1.657		remaining: ?1.657		=99.99999999999999% remaining to spend
+Total Reach: 1657		remaining: 1657		=100.0%needed
+Total Length: 5			remaining: 4			=80.0%of time left
+(initial) Spendable Budget (90.0%): ?1.4913
+Price Per Impression: 9.000000000000001E-4
+---------------------------------------------------------------------------
+Day 1: Updated 54 Bid Bundle entries for Campaign (`) id 202006375
+Day 1: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 2) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 1 ended. Starting next day
+Day 2: Updating campaign (`) 202006375 stats: 441.902937557776 tgtImps 0.0 nonTgtImps. Cost of imps is 0.1568924999999999
+Day 2: Daily notification for campaign (b) 120028027
+Day 2:  allocated to adv1. UCS Level set to 0.81 at price 0.1215 Quality Score is: 1.0
+Day 2: Campaign opportunity - Campaign (c) ID 2047420837: day 4 to 13 [LOW_INCOME, YOUNG, MALE], reach: 9180 coefs: (v=2.794484512567109, m=2.459128942934876)
+==============[CampaignBidder]===========================================
+--------------[Camp: c(2047420837)]-------------------------------------------
+Quality score: 1.0
+Demand : 9180.0
+Supply : 55080.0
+Demand / Supply : 0.16666666666666666
+DEMANDSUPPLY BID= 1530.0
+LOWEST BID   = 918.0
+HIGHEST BID  = 9180.0
+BID = 1530.0
+Day 2: Campaign total budget bid (millis): 1071
+=========================================================
+UCSBidder -- Calculating the UCS for Day 3
+UCSBidder -- Current Level : 0.81
+UCSBidder -- Previous Bid : 0.15553474714506801
+UCSBidder -- Estimated Impression Reach : 607.5
+UCSBidder -- Calculated Bid : 0.15553474714506801
+=========================================================
+Day 2: ucs level reported: 0.81
+Day 2 :BankStatus[-0,277105]
+Publishers Report: 
+(publisher: tripadvisor popularity: 330 video: 109 text: 222)
+(publisher: ehow popularity: 487 video: 246 text: 242)
+(publisher: msn popularity: 3825 video: 1134 text: 2692)
+(publisher: amazon popularity: 2607 video: 1066 text: 1542)
+(publisher: yahoo popularity: 3419 video: 1291 text: 2129)
+(publisher: target popularity: 393 video: 140 text: 254)
+Day 2 : AdNetworkReport
+Day 2 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 3]========================================================
+--------------------
+My Campaigns(1):
+-(`) Campaign (`) ID 202006375: day 1 to 5 [HIGH_INCOME, FEMALE],  Target Reach:1657   ImpsToGo:1215  imp completion:26.66885561603959%
+--------------------
+--------------[ImpressionBidder:Camp `(202006375)]-------------------------------------------
+Total Budget: ?1.657		remaining: ?1.5001075000000001		=90.53153289076644% remaining to spend
+Total Reach: 1657		remaining: 1215		=73.32528666264334%needed
+Total Length: 5			remaining: 3			=60.0%of time left
+(initial) Spendable Budget (90.0%): ?1.35009675
+Price Per Impression: 0.0011111907407407408
+---------------------------------------------------------------------------
+Day 2: Updated 54 Bid Bundle entries for Campaign (`) id 202006375
+Day 2: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 3) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 2 ended. Starting next day
+Day 3: Updating campaign (`) 202006375 stats: 995.7667635348716 tgtImps 0.0 nonTgtImps. Cost of imps is 0.25039784685073335
+Day 3: Daily notification for campaign (c) 2047420837
+Day 3:  allocated to adv5. UCS Level set to 0.7290000000000001 at price 0.10935000000000002 Quality Score is: 1.0
+Day 3: Campaign opportunity - Campaign (d) ID 324145459: day 5 to 14 [HIGH_INCOME, OLD, FEMALE], reach: 814 coefs: (v=2.017672858275481, m=1.7233149745711973)
+==============[CampaignBidder]===========================================
+--------------[Camp: d(324145459)]-------------------------------------------
+Quality score: 1.0
+Demand : 648.0
+Supply : 12210.0
+Demand / Supply : 0.05307125307125307
+DEMANDSUPPLY BID= 43.2
+LOWEST BID   = 82.0
+HIGHEST BID  = 814.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 814.0
+Day 3: Campaign total budget bid (millis): 814
+=========================================================
+UCSBidder -- Calculating the UCS for Day 4
+UCSBidder -- Current Level : 0.7290000000000001
+UCSBidder -- Previous Bid : 0.15553474714506801
+UCSBidder -- Estimated Impression Reach : 661.0
+UCSBidder -- Calculated Bid : 0.15553474714506801
+=========================================================
+Day 3: ucs level reported: 0.7290000000000001
+Day 3 :BankStatus[-0,543347]
+Publishers Report: 
+(publisher: tripadvisor popularity: 336 video: 117 text: 220)
+(publisher: ehow popularity: 519 video: 213 text: 307)
+(publisher: msn popularity: 3792 video: 1159 text: 2634)
+(publisher: amazon popularity: 2591 video: 1103 text: 1489)
+(publisher: yahoo popularity: 3451 video: 1325 text: 2127)
+(publisher: target popularity: 428 video: 144 text: 285)
+Day 3 : AdNetworkReport
+Day 3 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 4]========================================================
+--------------------
+My Campaigns(1):
+-(`) Campaign (`) ID 202006375: day 1 to 5 [HIGH_INCOME, FEMALE],  Target Reach:1657   ImpsToGo:661  imp completion:60.09455422660661%
+--------------------
+--------------[ImpressionBidder:Camp `(202006375)]-------------------------------------------
+Total Budget: ?1.657		remaining: ?1.4066021531492667		=84.88848238679942% remaining to spend
+Total Reach: 1657		remaining: 661		=39.89136994568497%needed
+Total Length: 5			remaining: 2			=40.0%of time left
+(initial) Spendable Budget (90.0%): ?1.2659419378343402
+Price Per Impression: 0.001915192039083722
+---------------------------------------------------------------------------
+Day 3: Updated 54 Bid Bundle entries for Campaign (`) id 202006375
+Day 3: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 4) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 3 ended. Starting next day
+Day 4: Updating campaign (`) 202006375 stats: 1747.6512597058272 tgtImps 0.0 nonTgtImps. Cost of imps is 0.2891545616479724
+Day 4: Daily notification for campaign (d) 324145459
+Day 4:  allocated to DummyAdnetwork-2. UCS Level set to 0.6561000000000001 at price 0.0856662438628768 Quality Score is: 1.0
+Day 4: Campaign opportunity - Campaign (e) ID 597475062: day 6 to 15 [LOW_INCOME, FEMALE], reach: 8762 coefs: (v=2.2463252473735085, m=1.562662113602026)
+==============[CampaignBidder]===========================================
+--------------[Camp: e(597475062)]-------------------------------------------
+Quality score: 1.0
+Demand : 21024.0
+Supply : 131430.0
+Demand / Supply : 0.15996347865784066
+DEMANDSUPPLY BID= 1401.6
+LOWEST BID   = 877.0
+HIGHEST BID  = 8762.0
+BID = 1401.6
+Day 4: Campaign total budget bid (millis): 1017
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 4: ucs level reported: 0.6561000000000001
+Day 4 :BankStatus[-0,722519]
+Publishers Report: 
+(publisher: tripadvisor popularity: 331 video: 106 text: 226)
+(publisher: ehow popularity: 518 video: 214 text: 305)
+(publisher: msn popularity: 3856 video: 1178 text: 2679)
+(publisher: amazon popularity: 2627 video: 1092 text: 1536)
+(publisher: yahoo popularity: 3367 video: 1285 text: 2083)
+(publisher: target popularity: 402 video: 119 text: 284)
+Day 4 : AdNetworkReport
+Day 4 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 5]========================================================
+--------------------
+My Campaigns(1):
+-(`) Campaign (`) ID 202006375: day 1 to 5 [HIGH_INCOME, FEMALE],  Target Reach:1657   ImpsToGo:0  imp completion:105.4708062586498%
+--------------------
+Day 4: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 5) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 4 ended. Starting next day
+Day 5: Updating campaign (`) 202006375 stats: 2409.0226213302303 tgtImps 0.0 nonTgtImps. Cost of imps is 0.3674734691904078
+Day 5: Daily notification for campaign (e) 597475062
+Day 5:  allocated to adv5. UCS Level set to 0.5314410000000002 at price 0.0 Quality Score is: 1.0
+Day 5: Campaign opportunity - Campaign (f) ID 2019500526: day 7 to 11 [FEMALE], reach: 12610 coefs: (v=2.4768657456774856, m=1.8889973426744775)
+==============[CampaignBidder]===========================================
+--------------[Camp: f(2019500526)]-------------------------------------------
+Quality score: 1.0
+Demand : 37830.0
+Supply : 75660.0
+Demand / Supply : 0.5
+DEMANDSUPPLY BID= 6305.0
+LOWEST BID   = 1261.0
+HIGHEST BID  = 12610.0
+BID = 6305.0
+Day 5: Campaign total budget bid (millis): 1891
+Day 5: ucs level reported: 0.5314410000000002
+Day 5 :BankStatus[-0,761276]
+Publishers Report: 
+(publisher: tripadvisor popularity: 311 video: 106 text: 206)
+(publisher: ehow popularity: 523 video: 241 text: 283)
+(publisher: msn popularity: 3869 video: 1186 text: 2684)
+(publisher: amazon popularity: 2619 video: 1106 text: 1514)
+(publisher: yahoo popularity: 3354 video: 1284 text: 2071)
+(publisher: target popularity: 431 video: 152 text: 280)
+Day 5 : AdNetworkReport
+Day 5 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 6]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 5: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 6) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 5 ended. Starting next day
+Day 6: Updating campaign (`) 202006375 stats: 2409.0226213302303 tgtImps 0.0 nonTgtImps. Cost of imps is 0.3674734691904078
+Day 6: Daily notification for campaign (f) 2019500526
+Day 6:  allocated to adv5. UCS Level set to 0.7290000000000001 at price 0.09504960993323895 Quality Score is: 1.1316768646051318
+Day 6: Campaign opportunity - Campaign (g) ID 1911026134: day 8 to 12 [LOW_INCOME, OLD, FEMALE], reach: 6002 coefs: (v=2.7365560410599734, m=2.366619506060598)
+==============[CampaignBidder]===========================================
+--------------[Camp: g(1911026134)]-------------------------------------------
+Quality score: 1.1316768646051318
+Demand : 28800.0
+Supply : 36015.0
+Demand / Supply : 0.7996668054977093
+DEMANDSUPPLY BID= 5431.336942940442
+LOWEST BID   = 531.0
+HIGHEST BID  = 6792.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 6792.0
+Day 6: Campaign total budget bid (millis): 6792
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 6: ucs level reported: 0.7290000000000001
+Day 6 :BankStatus[1,086003]
+Publishers Report: 
+(publisher: tripadvisor popularity: 351 video: 124 text: 228)
+(publisher: ehow popularity: 525 video: 228 text: 298)
+(publisher: msn popularity: 3749 video: 1145 text: 2605)
+(publisher: amazon popularity: 2631 video: 1128 text: 1504)
+(publisher: yahoo popularity: 3394 video: 1304 text: 2091)
+(publisher: target popularity: 415 video: 149 text: 267)
+Day 6 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 7]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 6: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 7) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 6 ended. Starting next day
+Day 7: Daily notification for campaign (g) 1911026134
+Day 7:  WON at cost (Millis)6792. UCS Level set to 0.5904900000000002 at price 0.0 Quality Score is: 1.1316768646051318
+Day 7: Campaign opportunity - Campaign (h) ID 1731519662: day 9 to 13 [HIGH_INCOME], reach: 1988 coefs: (v=2.4750559560062957, m=1.5306735507409264)
+==============[CampaignBidder]===========================================
+--------------[Camp: h(1731519662)]-------------------------------------------
+Quality score: 1.1316768646051318
+Demand : 1985.0
+Supply : 29820.0
+Demand / Supply : 0.06656606304493629
+DEMANDSUPPLY BID= 149.7070757880617
+LOWEST BID   = 176.0
+HIGHEST BID  = 2249.0
+BID = 149.7070757880617
+Day 7: Campaign total budget bid (millis): 187
+Day 7: ucs level reported: 0.5904900000000002
+Day 7 :BankStatus[1,086003]
+Publishers Report: 
+(publisher: tripadvisor popularity: 321 video: 106 text: 216)
+(publisher: ehow popularity: 510 video: 219 text: 292)
+(publisher: msn popularity: 3777 video: 1206 text: 2572)
+(publisher: amazon popularity: 2649 video: 1120 text: 1530)
+(publisher: yahoo popularity: 3391 video: 1295 text: 2097)
+(publisher: target popularity: 423 video: 159 text: 265)
+Day 7 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 8]========================================================
+--------------------
+My Campaigns(1):
+-(g) Campaign (g) ID 1911026134: day 8 to 12 [LOW_INCOME, OLD, FEMALE],  Target Reach:6002   ImpsToGo:6002  imp completion:0.0%
+--------------------
+--------------[ImpressionBidder:Camp g(1911026134)]-------------------------------------------
+Total Budget: ?6.792		remaining: ?6.792		=99.99999999999999% remaining to spend
+Total Reach: 6002		remaining: 6002		=100.0%needed
+Total Length: 5			remaining: 5			=100.0%of time left
+(initial) Spendable Budget (90.0%): ?6.1128
+Price Per Impression: 0.0010184605131622793
+---------------------------------------------------------------------------
+Day 7: Updated 60 Bid Bundle entries for Campaign (g) id 1911026134
+Day 7: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 8) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 7 ended. Starting next day
+Day 8: Daily notification for campaign (h) 1731519662
+Day 8:  allocated to adv5. UCS Level set to 1.0 at price 0.16876072325375563 Quality Score is: 1.1316768646051318
+Day 8: Campaign opportunity - Campaign (i) ID 892642384: day 10 to 12 [OLD, FEMALE], reach: 4212 coefs: (v=2.5271779870527533, m=1.8868623169697043)
+==============[CampaignBidder]===========================================
+--------------[Camp: i(892642384)]-------------------------------------------
+Quality score: 1.1316768646051318
+Demand : 19656.0
+Supply : 25272.0
+Demand / Supply : 0.7777777777777778
+DEMANDSUPPLY BID= 3706.888888888889
+LOWEST BID   = 373.0
+HIGHEST BID  = 4766.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 4766.0
+Day 8: Campaign total budget bid (millis): 4766
+=========================================================
+UCSBidder -- Calculating the UCS for Day 9
+UCSBidder -- Current Level : 1.0
+UCSBidder -- Previous Bid : 0.17550529432951628
+UCSBidder -- Estimated Impression Reach : 2000.6666666666667
+UCSBidder -- Calculated Bid : 0.15955026757228752
+=========================================================
+Day 8: ucs level reported: 1.0
+Day 8 :BankStatus[0,917243]
+Publishers Report: 
+(publisher: tripadvisor popularity: 340 video: 112 text: 229)
+(publisher: ehow popularity: 542 video: 213 text: 330)
+(publisher: msn popularity: 3752 video: 1096 text: 2657)
+(publisher: amazon popularity: 2718 video: 1136 text: 1583)
+(publisher: yahoo popularity: 3382 video: 1318 text: 2065)
+(publisher: target popularity: 408 video: 144 text: 265)
+Day 8 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 9]========================================================
+--------------------
+My Campaigns(1):
+-(g) Campaign (g) ID 1911026134: day 8 to 12 [LOW_INCOME, OLD, FEMALE],  Target Reach:6002   ImpsToGo:6002  imp completion:0.0%
+--------------------
+--------------[ImpressionBidder:Camp g(1911026134)]-------------------------------------------
+Total Budget: ?6.792		remaining: ?6.792		=99.99999999999999% remaining to spend
+Total Reach: 6002		remaining: 6002		=100.0%needed
+Total Length: 5			remaining: 4			=80.0%of time left
+(initial) Spendable Budget (90.0%): ?6.1128
+Price Per Impression: 0.0010184605131622793
+---------------------------------------------------------------------------
+Day 8: Updated 60 Bid Bundle entries for Campaign (g) id 1911026134
+Day 8: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 9) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 8 ended. Starting next day
+Day 9: Updating campaign (g) 1911026134 stats: 3673.47507302296 tgtImps 0.0 nonTgtImps. Cost of imps is 0.20296755375079312
+Day 9: Daily notification for campaign (i) 892642384
+Day 9:  allocated to adv6. UCS Level set to 0.9 at price 0.12793641379436188 Quality Score is: 1.1316768646051318
+Day 9: Campaign opportunity - Campaign (j) ID 780403862: day 11 to 20 [LOW_INCOME, YOUNG, FEMALE], reach: 15840 coefs: (v=2.5009565165316405, m=2.228205925557501)
+==============[CampaignBidder]===========================================
+--------------[Camp: j(780403862)]-------------------------------------------
+Quality score: 1.1316768646051318
+Demand : 30096.0
+Supply : 59400.0
+Demand / Supply : 0.5066666666666667
+DEMANDSUPPLY BID= 9082.0
+LOWEST BID   = 1400.0
+HIGHEST BID  = 17925.0
+BID = 9082.0
+Day 9: Campaign total budget bid (millis): 2109
+=========================================================
+UCSBidder -- Calculating the UCS for Day 10
+UCSBidder -- Current Level : 0.9
+UCSBidder -- Previous Bid : 0.15955026757228752
+UCSBidder -- Estimated Impression Reach : 1164.0
+UCSBidder -- Calculated Bid : 0.15955026757228752
+=========================================================
+Day 9: ucs level reported: 0.9
+Day 9 :BankStatus[0,789306]
+Publishers Report: 
+(publisher: tripadvisor popularity: 339 video: 121 text: 219)
+(publisher: ehow popularity: 529 video: 221 text: 309)
+(publisher: msn popularity: 3828 video: 1218 text: 2611)
+(publisher: amazon popularity: 2669 video: 1093 text: 1577)
+(publisher: yahoo popularity: 3298 video: 1263 text: 2036)
+(publisher: target popularity: 397 video: 140 text: 258)
+Day 9 : AdNetworkReport
+Day 9 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 10]========================================================
+--------------------
+My Campaigns(1):
+-(g) Campaign (g) ID 1911026134: day 8 to 12 [LOW_INCOME, OLD, FEMALE],  Target Reach:6002   ImpsToGo:2328  imp completion:61.204183155997335%
+--------------------
+--------------[ImpressionBidder:Camp g(1911026134)]-------------------------------------------
+Total Budget: ?6.792		remaining: ?6.589032446249207		=97.01166734760317% remaining to spend
+Total Reach: 6002		remaining: 2328		=38.78707097634122%needed
+Total Length: 5			remaining: 3			=60.0%of time left
+(initial) Spendable Budget (90.0%): ?5.930129201624286
+Price Per Impression: 0.0025473063580860335
+---------------------------------------------------------------------------
+Day 9: Updated 60 Bid Bundle entries for Campaign (g) id 1911026134
+Day 9: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 10) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 9 ended. Starting next day
+Day 10: Updating campaign (g) 1911026134 stats: 9676.682422329406 tgtImps 0.0 nonTgtImps. Cost of imps is 0.6311323760942068
+Day 10: Daily notification for campaign (j) 780403862
+Day 10:  allocated to adv5. UCS Level set to 0.9 at price 0.13526237390287266 Quality Score is: 1.1316768646051318
+Day 10: Campaign opportunity - Campaign (k) ID 412936962: day 12 to 14 [LOW_INCOME, YOUNG, FEMALE], reach: 4752 coefs: (v=2.5480040619639865, m=2.473099195155335)
+==============[CampaignBidder]===========================================
+--------------[Camp: k(412936962)]-------------------------------------------
+Quality score: 1.1316768646051318
+Demand : 22176.0
+Supply : 17820.0
+Demand / Supply : 1.2444444444444445
+DEMANDSUPPLY BID= 6691.377777777778
+LOWEST BID   = 420.0
+HIGHEST BID  = 5377.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 5377.0
+Day 10: Campaign total budget bid (millis): 5377
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 10: ucs level reported: 0.9
+Day 10 :BankStatus[0,451076]
+Publishers Report: 
+(publisher: tripadvisor popularity: 303 video: 119 text: 185)
+(publisher: ehow popularity: 474 video: 210 text: 265)
+(publisher: msn popularity: 3689 video: 1141 text: 2549)
+(publisher: amazon popularity: 2748 video: 1165 text: 1584)
+(publisher: yahoo popularity: 3412 video: 1298 text: 2115)
+(publisher: target popularity: 440 video: 139 text: 302)
+Day 10 : AdNetworkReport
+Day 10 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 11]========================================================
+--------------------
+My Campaigns(1):
+-(g) Campaign (g) ID 1911026134: day 8 to 12 [LOW_INCOME, OLD, FEMALE],  Target Reach:6002   ImpsToGo:0  imp completion:161.22429893917703%
+--------------------
+Day 10: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 11) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 10 ended. Starting next day
+Day 11: Updating campaign (g) 1911026134 stats: 12005.400002551001 tgtImps 0.0 nonTgtImps. Cost of imps is 1.3508960834423855
+Day 11: Daily notification for campaign (k) 412936962
+Day 11:  allocated to adv6. UCS Level set to 0.6561000000000001 at price 0.0 Quality Score is: 1.1316768646051318
+Day 11: Campaign opportunity - Campaign (l) ID 1913382861: day 13 to 15 [LOW_INCOME, OLD, FEMALE], reach: 3601 coefs: (v=2.6650611747207322, m=2.051312692762135)
+==============[CampaignBidder]===========================================
+--------------[Camp: l(1913382861)]-------------------------------------------
+Quality score: 1.1316768646051318
+Demand : 13200.0
+Supply : 21609.0
+Demand / Supply : 0.6108565875329723
+DEMANDSUPPLY BID= 2489.2405941968623
+LOWEST BID   = 319.0
+HIGHEST BID  = 4075.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 4075.0
+Day 11: Campaign total budget bid (millis): 4075
+Day 11: ucs level reported: 0.6561000000000001
+Day 11 :BankStatus[0,022711]
+Publishers Report: 
+(publisher: tripadvisor popularity: 320 video: 109 text: 212)
+(publisher: ehow popularity: 513 video: 235 text: 279)
+(publisher: msn popularity: 3801 video: 1133 text: 2669)
+(publisher: amazon popularity: 2708 video: 1179 text: 1530)
+(publisher: yahoo popularity: 3383 video: 1280 text: 2104)
+(publisher: target popularity: 409 video: 144 text: 266)
+Day 11 : AdNetworkReport
+Day 11 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 12]========================================================
+--------------------
+My Campaigns(1):
+-(g) Campaign (g) ID 1911026134: day 8 to 12 [LOW_INCOME, OLD, FEMALE],  Target Reach:6002   ImpsToGo:0  imp completion:200.02332560064983%
+--------------------
+Day 11: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 12) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 11 ended. Starting next day
+Day 12: Updating campaign (g) 1911026134 stats: 12005.400002551001 tgtImps 0.0 nonTgtImps. Cost of imps is 1.3508960834423855
+Day 12: Daily notification for campaign (l) 1913382861
+Day 12:  allocated to DummyAdnetwork-2. UCS Level set to 0.9 at price 0.13608971931254213 Quality Score is: 1.1316768646051318
+Day 12: Campaign opportunity - Campaign (m) ID 64529034: day 14 to 16 [HIGH_INCOME, YOUNG], reach: 463 coefs: (v=2.7613386658131533, m=1.7050636943863773)
+==============[CampaignBidder]===========================================
+--------------[Camp: m(64529034)]-------------------------------------------
+Quality score: 1.1316768646051318
+Demand : 770.0
+Supply : 6957.0
+Demand / Supply : 0.11067989075751042
+DEMANDSUPPLY BID= 57.88558286617795
+LOWEST BID   = 41.0
+HIGHEST BID  = 523.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 523.0
+Day 12: Campaign total budget bid (millis): 523
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 12: ucs level reported: 0.9
+Day 12 :BankStatus[-0,833595]
+Publishers Report: 
+(publisher: tripadvisor popularity: 347 video: 113 text: 235)
+(publisher: ehow popularity: 512 video: 215 text: 298)
+(publisher: msn popularity: 3838 video: 1193 text: 2646)
+(publisher: amazon popularity: 2651 video: 1086 text: 1566)
+(publisher: yahoo popularity: 3354 video: 1310 text: 2045)
+(publisher: target popularity: 395 video: 138 text: 258)
+Day 12 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 13]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 12: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 13) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 12 ended. Starting next day
+Day 13: Updating campaign (g) 1911026134 stats: 12005.400002551001 tgtImps 0.0 nonTgtImps. Cost of imps is 1.3508960834423855
+Day 13: Daily notification for campaign (m) 64529034
+Day 13:  allocated to adv6. UCS Level set to 0.47829690000000014 at price 0.0 Quality Score is: 1.2263087019661105
+Day 13: Campaign opportunity - Campaign (n) ID 984695325: day 15 to 19 [LOW_INCOME, YOUNG, FEMALE], reach: 1980 coefs: (v=2.4342931557592364, m=2.2206883918280513)
+==============[CampaignBidder]===========================================
+--------------[Camp: n(984695325)]-------------------------------------------
+Quality score: 1.2263087019661105
+Demand : 3564.0
+Supply : 29700.0
+Demand / Supply : 0.12
+DEMANDSUPPLY BID= 291.36
+LOWEST BID   = 162.0
+HIGHEST BID  = 2428.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 2428.0
+Day 13: Campaign total budget bid (millis): 2428
+Day 13: ucs level reported: 0.47829690000000014
+Day 13 :BankStatus[7,923987]
+Publishers Report: 
+(publisher: tripadvisor popularity: 334 video: 106 text: 229)
+(publisher: ehow popularity: 539 video: 240 text: 300)
+(publisher: msn popularity: 3833 video: 1206 text: 2628)
+(publisher: amazon popularity: 2694 video: 1117 text: 1578)
+(publisher: yahoo popularity: 3346 video: 1264 text: 2083)
+(publisher: target popularity: 390 video: 136 text: 255)
+Day 13 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 14]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 13: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 14) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 13 ended. Starting next day
+Day 14: Daily notification for campaign (n) 984695325
+Day 14:  allocated to DummyAdnetwork. UCS Level set to 0.5904900000000002 at price 0.0 Quality Score is: 1.2263087019661105
+Day 14: Campaign opportunity - Campaign (o) ID 817479765: day 16 to 20 [HIGH_INCOME, YOUNG], reach: 1932 coefs: (v=2.09744504788978, m=1.6577291474341047)
+==============[CampaignBidder]===========================================
+--------------[Camp: o(817479765)]-------------------------------------------
+Quality score: 1.2263087019661105
+Demand : 3860.0
+Supply : 11595.0
+Demand / Supply : 0.33290211297973266
+DEMANDSUPPLY BID= 788.6451056489867
+LOWEST BID   = 158.0
+HIGHEST BID  = 2369.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 2369.0
+Day 14: Campaign total budget bid (millis): 2369
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 14: ucs level reported: 0.5904900000000002
+Day 14 :BankStatus[7,923987]
+Publishers Report: 
+(publisher: tripadvisor popularity: 313 video: 90 text: 224)
+(publisher: ehow popularity: 539 video: 241 text: 299)
+(publisher: msn popularity: 3813 video: 1182 text: 2632)
+(publisher: amazon popularity: 2556 video: 1085 text: 1472)
+(publisher: yahoo popularity: 3472 video: 1318 text: 2155)
+(publisher: target popularity: 403 video: 143 text: 261)
+Day 14 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 15]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 14: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 15) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 14 ended. Starting next day
+Day 15: Daily notification for campaign (o) 817479765
+Day 15:  allocated to adv6. UCS Level set to 0.5314410000000002 at price 0.0 Quality Score is: 1.2263087019661105
+Day 15: Campaign opportunity - Campaign (p) ID 1990233491: day 17 to 19 [LOW_INCOME, OLD, MALE], reach: 4308 coefs: (v=2.90876531709908, m=1.9649450626705534)
+==============[CampaignBidder]===========================================
+--------------[Camp: p(1990233491)]-------------------------------------------
+Quality score: 1.2263087019661105
+Demand : 8616.0
+Supply : 16155.0
+Demand / Supply : 0.5333333333333333
+DEMANDSUPPLY BID= 2817.0666666666666
+LOWEST BID   = 352.0
+HIGHEST BID  = 5282.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 5282.0
+Day 15: Campaign total budget bid (millis): 5282
+Day 15: ucs level reported: 0.5314410000000002
+Day 15 :BankStatus[7,923987]
+Publishers Report: 
+(publisher: tripadvisor popularity: 312 video: 93 text: 220)
+(publisher: ehow popularity: 552 video: 236 text: 317)
+(publisher: msn popularity: 3760 video: 1157 text: 2604)
+(publisher: amazon popularity: 2685 video: 1107 text: 1579)
+(publisher: yahoo popularity: 3414 video: 1337 text: 2078)
+(publisher: target popularity: 393 video: 147 text: 247)
+Day 15 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 16]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 15: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 16) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 15 ended. Starting next day
+Day 16: Daily notification for campaign (p) 1990233491
+Day 16:  allocated to adv5. UCS Level set to 1.0 at price 0.1856546082348871 Quality Score is: 1.2263087019661105
+Day 16: Campaign opportunity - Campaign (q) ID 52800214: day 18 to 20 [LOW_INCOME, YOUNG, FEMALE], reach: 1188 coefs: (v=2.1443355432751074, m=2.154693827897775)
+==============[CampaignBidder]===========================================
+--------------[Camp: q(52800214)]-------------------------------------------
+Quality score: 1.2263087019661105
+Demand : 3960.0
+Supply : 17820.0
+Demand / Supply : 0.2222222222222222
+DEMANDSUPPLY BID= 323.55555555555554
+LOWEST BID   = 97.0
+HIGHEST BID  = 1456.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 1456.0
+Day 16: Campaign total budget bid (millis): 1456
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 16: ucs level reported: 1.0
+Day 16 :BankStatus[7,738332]
+Publishers Report: 
+(publisher: tripadvisor popularity: 331 video: 114 text: 218)
+(publisher: ehow popularity: 536 video: 219 text: 318)
+(publisher: msn popularity: 3733 video: 1155 text: 2579)
+(publisher: amazon popularity: 2688 video: 1108 text: 1581)
+(publisher: yahoo popularity: 3424 video: 1361 text: 2064)
+(publisher: target popularity: 411 video: 154 text: 258)
+Day 16 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 17]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 16: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 17) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 16 ended. Starting next day
+Day 17: Daily notification for campaign (q) 52800214
+Day 17:  WON at cost (Millis)1456. UCS Level set to 0.47829690000000014 at price 0.0 Quality Score is: 1.2263087019661105
+Day 17: Campaign opportunity - Campaign (r) ID 986528051: day 19 to 21 [HIGH_INCOME, YOUNG], reach: 463 coefs: (v=2.7870635062254125, m=2.260441342959123)
+==============[CampaignBidder]===========================================
+--------------[Camp: r(986528051)]-------------------------------------------
+Quality score: 1.2263087019661105
+Demand : 1078.0
+Supply : 6957.0
+Demand / Supply : 0.1549518470605146
+DEMANDSUPPLY BID= 87.85769728331178
+LOWEST BID   = 38.0
+HIGHEST BID  = 567.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 567.0
+Day 17: Campaign total budget bid (millis): 567
+Day 17: ucs level reported: 0.47829690000000014
+Day 17 :BankStatus[7,738332]
+Publishers Report: 
+(publisher: tripadvisor popularity: 330 video: 118 text: 213)
+(publisher: ehow popularity: 453 video: 205 text: 249)
+(publisher: msn popularity: 3811 video: 1143 text: 2669)
+(publisher: amazon popularity: 2705 video: 1107 text: 1599)
+(publisher: yahoo popularity: 3356 video: 1290 text: 2067)
+(publisher: target popularity: 397 video: 134 text: 264)
+Day 17 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 18]========================================================
+--------------------
+My Campaigns(1):
+-(q) Campaign (q) ID 52800214: day 18 to 20 [LOW_INCOME, YOUNG, FEMALE],  Target Reach:1188   ImpsToGo:1188  imp completion:0.0%
+--------------------
+--------------[ImpressionBidder:Camp q(52800214)]-------------------------------------------
+Total Budget: ?1.456		remaining: ?1.456		=100.0% remaining to spend
+Total Reach: 1188		remaining: 1188		=100.0%needed
+Total Length: 3			remaining: 3			=100.0%of time left
+(initial) Spendable Budget (90.0%): ?1.3104
+Price Per Impression: 0.001103030303030303
+---------------------------------------------------------------------------
+Day 17: Updated 54 Bid Bundle entries for Campaign (q) id 52800214
+Day 17: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 18) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 17 ended. Starting next day
+Day 18: Daily notification for campaign (r) 986528051
+Day 18:  allocated to adv6. UCS Level set to 0.6561000000000001 at price 0.07710481756899015 Quality Score is: 1.2263087019661105
+Day 18: Campaign opportunity - Campaign (s) ID 353628186: day 20 to 24 [LOW_INCOME, FEMALE], reach: 4381 coefs: (v=2.5489360216450354, m=2.053296097974693)
+==============[CampaignBidder]===========================================
+--------------[Camp: s(353628186)]-------------------------------------------
+Quality score: 1.2263087019661105
+Demand : 1752.0
+Supply : 65715.0
+Demand / Supply : 0.02666057977630678
+DEMANDSUPPLY BID= 143.22063455832003
+LOWEST BID   = 358.0
+HIGHEST BID  = 5372.0
+BID = 143.22063455832003
+Day 18: Campaign total budget bid (millis): 367
+=========================================================
+UCSBidder -- Calculating the UCS for Day 19
+UCSBidder -- Current Level : 0.6561000000000001
+UCSBidder -- Previous Bid : 0.11757824073533057
+UCSBidder -- Estimated Impression Reach : 1188.0
+UCSBidder -- Calculated Bid : 0.11757824073533057
+=========================================================
+Day 18: ucs level reported: 0.6561000000000001
+Day 18 :BankStatus[7,661227]
+Publishers Report: 
+(publisher: tripadvisor popularity: 348 video: 102 text: 247)
+(publisher: ehow popularity: 527 video: 220 text: 308)
+(publisher: msn popularity: 3802 video: 1167 text: 2636)
+(publisher: amazon popularity: 2629 video: 1152 text: 1478)
+(publisher: yahoo popularity: 3419 video: 1333 text: 2087)
+(publisher: target popularity: 390 video: 133 text: 258)
+Day 18 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 19]========================================================
+--------------------
+My Campaigns(1):
+-(q) Campaign (q) ID 52800214: day 18 to 20 [LOW_INCOME, YOUNG, FEMALE],  Target Reach:1188   ImpsToGo:1188  imp completion:0.0%
+--------------------
+--------------[ImpressionBidder:Camp q(52800214)]-------------------------------------------
+Total Budget: ?1.456		remaining: ?1.456		=100.0% remaining to spend
+Total Reach: 1188		remaining: 1188		=100.0%needed
+Total Length: 3			remaining: 2			=66.66666666666667%of time left
+(initial) Spendable Budget (90.0%): ?1.3104
+Price Per Impression: 0.001103030303030303
+---------------------------------------------------------------------------
+Day 18: Updated 54 Bid Bundle entries for Campaign (q) id 52800214
+Day 18: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 19) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 18 ended. Starting next day
+Day 19: Updating campaign (q) 52800214 stats: 1188.6952289794701 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 19: Daily notification for campaign (s) 353628186
+Day 19:  allocated to adv6. UCS Level set to 0.7290000000000001 at price 0.08451687240140315 Quality Score is: 1.2263087019661105
+Day 19: Campaign opportunity - Campaign (t) ID 714841571: day 21 to 25 [HIGH_INCOME], reach: 7952 coefs: (v=2.4471538779199116, m=2.177889473194109)
+==============[CampaignBidder]===========================================
+--------------[Camp: t(714841571)]-------------------------------------------
+Quality score: 1.2263087019661105
+Demand : 1590.0
+Supply : 29820.0
+Demand / Supply : 0.05331991951710262
+DEMANDSUPPLY BID= 519.9225352112676
+LOWEST BID   = 649.0
+HIGHEST BID  = 9751.0
+BID = 519.9225352112676
+Day 19: Campaign total budget bid (millis): 683
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 19: ucs level reported: 0.7290000000000001
+Day 19 :BankStatus[7,576710]
+Publishers Report: 
+(publisher: tripadvisor popularity: 318 video: 91 text: 228)
+(publisher: ehow popularity: 496 video: 216 text: 281)
+(publisher: msn popularity: 3791 video: 1173 text: 2619)
+(publisher: amazon popularity: 2592 video: 1132 text: 1461)
+(publisher: yahoo popularity: 3455 video: 1337 text: 2119)
+(publisher: target popularity: 397 video: 142 text: 256)
+Day 19 : AdNetworkReport
+Day 19 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 20]========================================================
+--------------------
+My Campaigns(1):
+-(q) Campaign (q) ID 52800214: day 18 to 20 [LOW_INCOME, YOUNG, FEMALE],  Target Reach:1188   ImpsToGo:0  imp completion:100.05852095786786%
+--------------------
+Day 19: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 20) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 19 ended. Starting next day
+Day 20: Updating campaign (q) 52800214 stats: 2378.4694307792856 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 20: Daily notification for campaign (t) 714841571
+Day 20:  allocated to adv6. UCS Level set to 0.5904900000000002 at price 0.0 Quality Score is: 1.2263087019661105
+Day 20: Campaign opportunity - Campaign (u) ID 1759610506: day 22 to 24 [LOW_INCOME, OLD, MALE], reach: 1077 coefs: (v=2.2546646441932476, m=2.2925689187804736)
+==============[CampaignBidder]===========================================
+--------------[Camp: u(1759610506)]-------------------------------------------
+Quality score: 1.2263087019661105
+Demand : 1077.0
+Supply : 16155.0
+Demand / Supply : 0.06666666666666667
+DEMANDSUPPLY BID= 88.0
+LOWEST BID   = 88.0
+HIGHEST BID  = 1320.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 1320.0
+Day 20: Campaign total budget bid (millis): 1320
+Day 20: ucs level reported: 0.5904900000000002
+Day 20 :BankStatus[7,576710]
+Publishers Report: 
+(publisher: tripadvisor popularity: 335 video: 108 text: 228)
+(publisher: ehow popularity: 501 video: 230 text: 272)
+(publisher: msn popularity: 3841 video: 1158 text: 2684)
+(publisher: amazon popularity: 2651 video: 1119 text: 1533)
+(publisher: yahoo popularity: 3399 video: 1322 text: 2078)
+(publisher: target popularity: 381 video: 139 text: 243)
+Day 20 : AdNetworkReport
+Day 20 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 21]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 20: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 21) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 20 ended. Starting next day
+Day 21: Updating campaign (q) 52800214 stats: 2378.4694307792856 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 21: Daily notification for campaign (u) 1759610506
+Day 21:  allocated to adv6. UCS Level set to 0.81 at price 0.12868891380041436 Quality Score is: 1.2642437190299591
+Day 21: Campaign opportunity - Campaign (v) ID 891294454: day 23 to 27 [HIGH_INCOME, YOUNG, FEMALE], reach: 1024 coefs: (v=2.46441294047254, m=2.12959547508168)
+==============[CampaignBidder]===========================================
+--------------[Camp: v(891294454)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 1020.0
+Supply : 3840.0
+Demand / Supply : 0.265625
+DEMANDSUPPLY BID= 343.71875
+LOWEST BID   = 81.0
+HIGHEST BID  = 1294.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 1294.0
+Day 21: Campaign total budget bid (millis): 1294
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 21: ucs level reported: 0.81
+Day 21 :BankStatus[9,325583]
+Publishers Report: 
+(publisher: tripadvisor popularity: 349 video: 116 text: 234)
+(publisher: ehow popularity: 511 video: 217 text: 295)
+(publisher: msn popularity: 3815 video: 1224 text: 2592)
+(publisher: amazon popularity: 2629 video: 1163 text: 1467)
+(publisher: yahoo popularity: 3387 video: 1309 text: 2079)
+(publisher: target popularity: 414 video: 152 text: 263)
+Day 21 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 22]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 21: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 22) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 21 ended. Starting next day
+Day 22: Daily notification for campaign (v) 891294454
+Day 22:  allocated to adv6. UCS Level set to 0.6561000000000001 at price 0.0 Quality Score is: 1.2642437190299591
+Day 22: Campaign opportunity - Campaign (w) ID 495159243: day 24 to 28 [LOW_INCOME], reach: 8012 coefs: (v=2.947493240568269, m=1.7656981380786585)
+==============[CampaignBidder]===========================================
+--------------[Camp: w(495159243)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 3204.0
+Supply : 120180.0
+Demand / Supply : 0.026660009985022465
+DEMANDSUPPLY BID= 270.03924113829254
+LOWEST BID   = 634.0
+HIGHEST BID  = 10129.0
+BID = 270.03924113829254
+Day 22: Campaign total budget bid (millis): 650
+Day 22: ucs level reported: 0.6561000000000001
+Day 22 :BankStatus[9,325583]
+Publishers Report: 
+(publisher: tripadvisor popularity: 320 video: 113 text: 208)
+(publisher: ehow popularity: 504 video: 216 text: 289)
+(publisher: msn popularity: 3817 video: 1159 text: 2659)
+(publisher: amazon popularity: 2580 video: 1076 text: 1505)
+(publisher: yahoo popularity: 3449 video: 1328 text: 2122)
+(publisher: target popularity: 429 video: 173 text: 257)
+Day 22 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 23]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 22: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 23) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 22 ended. Starting next day
+Day 23: Daily notification for campaign (w) 495159243
+Day 23:  allocated to adv6. UCS Level set to 1.0 at price 0.17359869592070637 Quality Score is: 1.2642437190299591
+Day 23: Campaign opportunity - Campaign (x) ID 597302845: day 25 to 34 [LOW_INCOME, OLD, FEMALE], reach: 19208 coefs: (v=2.604392888948548, m=1.7551158443958719)
+==============[CampaignBidder]===========================================
+--------------[Camp: x(597302845)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 13440.0
+Supply : 72030.0
+Demand / Supply : 0.18658892128279883
+DEMANDSUPPLY BID= 4530.938775510204
+LOWEST BID   = 1520.0
+HIGHEST BID  = 24283.0
+BID = 4530.938775510204
+Day 23: Campaign total budget bid (millis): 1803
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 23: ucs level reported: 1.0
+Day 23 :BankStatus[9,151984]
+Publishers Report: 
+(publisher: tripadvisor popularity: 324 video: 110 text: 215)
+(publisher: ehow popularity: 537 video: 252 text: 286)
+(publisher: msn popularity: 3785 video: 1160 text: 2626)
+(publisher: amazon popularity: 2675 video: 1156 text: 1520)
+(publisher: yahoo popularity: 3395 video: 1297 text: 2099)
+(publisher: target popularity: 393 video: 134 text: 260)
+Day 23 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 24]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 23: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 24) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 23 ended. Starting next day
+Day 24: Daily notification for campaign (x) 597302845
+Day 24:  allocated to adv6. UCS Level set to 0.5314410000000002 at price 0.0 Quality Score is: 1.2642437190299591
+Day 24: Campaign opportunity - Campaign (y) ID 2102543397: day 26 to 35 [HIGH_INCOME, YOUNG], reach: 1546 coefs: (v=2.9525734547441767, m=1.666466993909805)
+==============[CampaignBidder]===========================================
+--------------[Camp: y(2102543397)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 308.0
+Supply : 23190.0
+Demand / Supply : 0.01328158689090125
+DEMANDSUPPLY BID= 25.952220784821044
+LOWEST BID   = 123.0
+HIGHEST BID  = 1954.0
+BID = 25.952220784821044
+Day 24: Campaign total budget bid (millis): 124
+Day 24: ucs level reported: 0.5314410000000002
+Day 24 :BankStatus[9,151984]
+Publishers Report: 
+(publisher: tripadvisor popularity: 356 video: 126 text: 231)
+(publisher: ehow popularity: 513 video: 244 text: 270)
+(publisher: msn popularity: 3783 video: 1171 text: 2613)
+(publisher: amazon popularity: 2714 video: 1156 text: 1559)
+(publisher: yahoo popularity: 3296 video: 1272 text: 2025)
+(publisher: target popularity: 401 video: 140 text: 262)
+Day 24 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 25]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 24: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 25) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 24 ended. Starting next day
+Day 25: Daily notification for campaign (y) 2102543397
+Day 25:  WON at cost (Millis)124. UCS Level set to 0.7290000000000001 at price 0.08208463180898151 Quality Score is: 1.2642437190299591
+Day 25: Campaign opportunity - Campaign (z) ID 1300869389: day 27 to 36 [HIGH_INCOME, YOUNG, MALE], reach: 4136 coefs: (v=2.0581481358269498, m=2.201199442823274)
+==============[CampaignBidder]===========================================
+--------------[Camp: z(1300869389)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 4130.0
+Supply : 15510.0
+Demand / Supply : 0.26627981947130885
+DEMANDSUPPLY BID= 1392.1108961960026
+LOWEST BID   = 328.0
+HIGHEST BID  = 5228.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 5228.0
+Day 25: Campaign total budget bid (millis): 5228
+=========================================================
+UCSBidder -- Calculating the UCS for Day 26
+UCSBidder -- Current Level : 0.7290000000000001
+UCSBidder -- Previous Bid : 0.11363139019675438
+UCSBidder -- Estimated Impression Reach : 171.77777777777777
+UCSBidder -- Calculated Bid : 0.11363139019675438
+=========================================================
+Day 25: ucs level reported: 0.7290000000000001
+Day 25 :BankStatus[9,069899]
+Publishers Report: 
+(publisher: tripadvisor popularity: 343 video: 103 text: 241)
+(publisher: ehow popularity: 543 video: 231 text: 313)
+(publisher: msn popularity: 3684 video: 1150 text: 2535)
+(publisher: amazon popularity: 2725 video: 1165 text: 1561)
+(publisher: yahoo popularity: 3467 video: 1318 text: 2150)
+(publisher: target popularity: 373 video: 134 text: 240)
+Day 25 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 26]========================================================
+--------------------
+My Campaigns(1):
+-(y) Campaign (y) ID 2102543397: day 26 to 35 [HIGH_INCOME, YOUNG],  Target Reach:1546   ImpsToGo:1546  imp completion:0.0%
+--------------------
+--------------[ImpressionBidder:Camp y(2102543397)]-------------------------------------------
+Total Budget: ?0.124		remaining: ?0.124		=100.0% remaining to spend
+Total Reach: 1546		remaining: 1546		=100.0%needed
+Total Length: 10			remaining: 10			=100.0%of time left
+(initial) Spendable Budget (90.0%): ?0.1116
+Price Per Impression: 7.21862871927555E-5
+---------------------------------------------------------------------------
+Day 25: Updated 48 Bid Bundle entries for Campaign (y) id 2102543397
+Day 25: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 26) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 25 ended. Starting next day
+Day 26: Daily notification for campaign (z) 1300869389
+Day 26:  allocated to DummyAdnetwork-2. UCS Level set to 0.6561000000000001 at price 0.0 Quality Score is: 1.2642437190299591
+Day 26: Campaign opportunity - Campaign ({) ID 431109599: day 28 to 32 [YOUNG, MALE], reach: 2353 coefs: (v=2.9698301411930736, m=1.9028834256840939)
+==============[CampaignBidder]===========================================
+--------------[Camp: {(431109599)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 4700.0
+Supply : 35295.0
+Demand / Supply : 0.1331633375832271
+DEMANDSUPPLY BID= 396.0277659725174
+LOWEST BID   = 187.0
+HIGHEST BID  = 2974.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 2974.0
+Day 26: Campaign total budget bid (millis): 2974
+=========================================================
+UCSBidder -- Calculating the UCS for Day 27
+UCSBidder -- Current Level : 0.6561000000000001
+UCSBidder -- Previous Bid : 0.11363139019675438
+UCSBidder -- Estimated Impression Reach : 193.25
+UCSBidder -- Calculated Bid : 0.11363139019675438
+=========================================================
+Day 26: ucs level reported: 0.6561000000000001
+Day 26 :BankStatus[9,069899]
+Publishers Report: 
+(publisher: tripadvisor popularity: 337 video: 108 text: 230)
+(publisher: ehow popularity: 533 video: 240 text: 294)
+(publisher: msn popularity: 3823 video: 1204 text: 2620)
+(publisher: amazon popularity: 2632 video: 1104 text: 1529)
+(publisher: yahoo popularity: 3370 video: 1311 text: 2060)
+(publisher: target popularity: 412 video: 142 text: 271)
+Day 26 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 27]========================================================
+--------------------
+My Campaigns(1):
+-(y) Campaign (y) ID 2102543397: day 26 to 35 [HIGH_INCOME, YOUNG],  Target Reach:1546   ImpsToGo:1546  imp completion:0.0%
+--------------------
+--------------[ImpressionBidder:Camp y(2102543397)]-------------------------------------------
+Total Budget: ?0.124		remaining: ?0.124		=100.0% remaining to spend
+Total Reach: 1546		remaining: 1546		=100.0%needed
+Total Length: 10			remaining: 9			=90.0%of time left
+(initial) Spendable Budget (90.0%): ?0.1116
+Price Per Impression: 7.21862871927555E-5
+---------------------------------------------------------------------------
+Day 26: Updated 48 Bid Bundle entries for Campaign (y) id 2102543397
+Day 26: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 27) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 26 ended. Starting next day
+Day 27: Updating campaign (y) 2102543397 stats: 1304.4705133608854 tgtImps 0.0 nonTgtImps. Cost of imps is 3.484375000000006E-5
+Day 27: Daily notification for campaign ({) 431109599
+Day 27:  allocated to DummyAdnetwork-2. UCS Level set to 0.6561000000000001 at price 0.0 Quality Score is: 1.2642437190299591
+Day 27: Campaign opportunity - Campaign (|) ID 1100780195: day 29 to 31 [HIGH_INCOME, OLD], reach: 1822 coefs: (v=2.8590188880767187, m=2.453696736809436)
+==============[CampaignBidder]===========================================
+--------------[Camp: |(1100780195)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 5463.0
+Supply : 10935.0
+Demand / Supply : 0.49958847736625517
+DEMANDSUPPLY BID= 1150.5522633744856
+LOWEST BID   = 145.0
+HIGHEST BID  = 2303.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 2303.0
+Day 27: Campaign total budget bid (millis): 2303
+=========================================================
+UCSBidder -- Calculating the UCS for Day 28
+UCSBidder -- Current Level : 0.6561000000000001
+UCSBidder -- Previous Bid : 0.11363139019675438
+UCSBidder -- Estimated Impression Reach : 34.42857142857143
+UCSBidder -- Calculated Bid : 0.11363139019675438
+=========================================================
+Day 27: ucs level reported: 0.6561000000000001
+Day 27 :BankStatus[9,069899]
+Publishers Report: 
+(publisher: tripadvisor popularity: 351 video: 113 text: 239)
+(publisher: ehow popularity: 515 video: 230 text: 286)
+(publisher: msn popularity: 3747 video: 1177 text: 2571)
+(publisher: amazon popularity: 2658 video: 1106 text: 1553)
+(publisher: yahoo popularity: 3373 video: 1281 text: 2093)
+(publisher: target popularity: 430 video: 143 text: 288)
+Day 27 : AdNetworkReport
+Day 27 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 28]========================================================
+--------------------
+My Campaigns(1):
+-(y) Campaign (y) ID 2102543397: day 26 to 35 [HIGH_INCOME, YOUNG],  Target Reach:1546   ImpsToGo:241  imp completion:84.37713540497317%
+--------------------
+--------------[ImpressionBidder:Camp y(2102543397)]-------------------------------------------
+Total Budget: ?0.124		remaining: ?0.12396515625		=99.9719002016129% remaining to spend
+Total Reach: 1546		remaining: 241		=15.588615782664942%needed
+Total Length: 10			remaining: 8			=80.0%of time left
+(initial) Spendable Budget (90.0%): ?0.111568640625
+Price Per Impression: 4.6294041753112036E-4
+---------------------------------------------------------------------------
+Day 27: Updated 48 Bid Bundle entries for Campaign (y) id 2102543397
+Day 27: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 28) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 27 ended. Starting next day
+Day 28: Updating campaign (y) 2102543397 stats: 1714.2047099820031 tgtImps 0.0 nonTgtImps. Cost of imps is 3.484375000000006E-5
+Day 28: Daily notification for campaign (|) 1100780195
+Day 28:  allocated to DummyAdnetwork-2. UCS Level set to 0.7290000000000001 at price 0.07295489970944256 Quality Score is: 1.2642437190299591
+Day 28: Campaign opportunity - Campaign (}) ID 1866272448: day 30 to 34 [HIGH_INCOME, FEMALE], reach: 1657 coefs: (v=2.47224728701769, m=2.3038049433613703)
+==============[CampaignBidder]===========================================
+--------------[Camp: }(1866272448)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 5627.0
+Supply : 9945.0
+Demand / Supply : 0.5658119658119658
+DEMANDSUPPLY BID= 1184.8102564102564
+LOWEST BID   = 132.0
+HIGHEST BID  = 2094.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 2094.0
+Day 28: Campaign total budget bid (millis): 2094
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 28: ucs level reported: 0.7290000000000001
+Day 28 :BankStatus[8,996910]
+Publishers Report: 
+(publisher: tripadvisor popularity: 320 video: 116 text: 205)
+(publisher: ehow popularity: 525 video: 222 text: 304)
+(publisher: msn popularity: 3839 video: 1185 text: 2655)
+(publisher: amazon popularity: 2597 video: 1075 text: 1523)
+(publisher: yahoo popularity: 3428 video: 1305 text: 2124)
+(publisher: target popularity: 397 video: 145 text: 253)
+Day 28 : AdNetworkReport
+Day 28 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 29]========================================================
+--------------------
+My Campaigns(1):
+-(y) Campaign (y) ID 2102543397: day 26 to 35 [HIGH_INCOME, YOUNG],  Target Reach:1546   ImpsToGo:0  imp completion:110.87999417736114%
+--------------------
+Day 28: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 29) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 28 ended. Starting next day
+Day 29: Updating campaign (y) 2102543397 stats: 1955.3330814972173 tgtImps 0.0 nonTgtImps. Cost of imps is 3.484375000000006E-5
+Day 29: Daily notification for campaign (}) 1866272448
+Day 29:  allocated to DummyAdnetwork-2. UCS Level set to 0.47829690000000014 at price 0.0 Quality Score is: 1.2642437190299591
+Day 29: Campaign opportunity - Campaign (~) ID 1847144690: day 31 to 33 [LOW_INCOME, OLD], reach: 10070 coefs: (v=2.9428277594108048, m=2.333605307191079)
+==============[CampaignBidder]===========================================
+--------------[Camp: ~(1847144690)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 13424.0
+Supply : 37764.0
+Demand / Supply : 0.35547081876919817
+DEMANDSUPPLY BID= 4525.143522931893
+LOWEST BID   = 797.0
+HIGHEST BID  = 12730.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 12730.0
+Day 29: Campaign total budget bid (millis): 12730
+Day 29: ucs level reported: 0.47829690000000014
+Day 29 :BankStatus[8,996910]
+Publishers Report: 
+(publisher: tripadvisor popularity: 306 video: 96 text: 211)
+(publisher: ehow popularity: 525 video: 212 text: 314)
+(publisher: msn popularity: 3811 video: 1125 text: 2687)
+(publisher: amazon popularity: 2733 video: 1151 text: 1583)
+(publisher: yahoo popularity: 3298 video: 1281 text: 2018)
+(publisher: target popularity: 390 video: 129 text: 262)
+Day 29 : AdNetworkReport
+Day 29 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 30]========================================================
+--------------------
+My Campaigns(1):
+-(y) Campaign (y) ID 2102543397: day 26 to 35 [HIGH_INCOME, YOUNG],  Target Reach:1546   ImpsToGo:0  imp completion:126.47691342155352%
+--------------------
+Day 29: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 30) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 29 ended. Starting next day
+Day 30: Updating campaign (y) 2102543397 stats: 1955.3330814972173 tgtImps 0.0 nonTgtImps. Cost of imps is 3.484375000000006E-5
+Day 30: Daily notification for campaign (~) 1847144690
+Day 30:  allocated to adv1. UCS Level set to 0.6561000000000001 at price 0.0 Quality Score is: 1.2642437190299591
+Day 30: Campaign opportunity - Campaign () ID 508151136: day 32 to 36 [OLD], reach: 13527 coefs: (v=2.9369635090931947, m=2.483279852977269)
+==============[CampaignBidder]===========================================
+--------------[Camp: (508151136)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 13525.0
+Supply : 81165.0
+Demand / Supply : 0.16663586521283805
+DEMANDSUPPLY BID= 2849.6399310047436
+LOWEST BID   = 1070.0
+HIGHEST BID  = 17101.0
+BID = 2849.6399310047436
+Day 30: Campaign total budget bid (millis): 1248
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 30: ucs level reported: 0.6561000000000001
+Day 30 :BankStatus[8,996910]
+Publishers Report: 
+(publisher: tripadvisor popularity: 353 video: 107 text: 247)
+(publisher: ehow popularity: 536 video: 236 text: 301)
+(publisher: msn popularity: 3769 video: 1139 text: 2631)
+(publisher: amazon popularity: 2646 video: 1129 text: 1518)
+(publisher: yahoo popularity: 3363 video: 1267 text: 2097)
+(publisher: target popularity: 411 video: 146 text: 266)
+Day 30 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 31]========================================================
+--------------------
+My Campaigns(1):
+-(y) Campaign (y) ID 2102543397: day 26 to 35 [HIGH_INCOME, YOUNG],  Target Reach:1546   ImpsToGo:0  imp completion:126.47691342155352%
+--------------------
+Day 30: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 31) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 30 ended. Starting next day
+Day 31: Updating campaign (y) 2102543397 stats: 1955.3330814972173 tgtImps 0.0 nonTgtImps. Cost of imps is 3.484375000000006E-5
+Day 31: Daily notification for campaign () 508151136
+Day 31:  allocated to adv1. UCS Level set to 0.6561000000000001 at price 0.0 Quality Score is: 1.2642437190299591
+Day 31: Campaign opportunity - Campaign (?) ID 1077419433: day 33 to 42 [HIGH_INCOME, YOUNG, MALE], reach: 2585 coefs: (v=2.83400236538201, m=2.054901383608234)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(1077419433)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 2322.0
+Supply : 15510.0
+Demand / Supply : 0.14970986460348162
+DEMANDSUPPLY BID= 489.251837524178
+LOWEST BID   = 205.0
+HIGHEST BID  = 3268.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 3268.0
+Day 31: Campaign total budget bid (millis): 3268
+Day 31: ucs level reported: 0.6561000000000001
+Day 31 :BankStatus[8,996910]
+Publishers Report: 
+(publisher: tripadvisor popularity: 341 video: 123 text: 219)
+(publisher: ehow popularity: 510 video: 211 text: 300)
+(publisher: msn popularity: 3768 video: 1178 text: 2591)
+(publisher: amazon popularity: 2685 video: 1099 text: 1587)
+(publisher: yahoo popularity: 3377 video: 1330 text: 2048)
+(publisher: target popularity: 400 video: 139 text: 262)
+Day 31 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 32]========================================================
+--------------------
+My Campaigns(1):
+-(y) Campaign (y) ID 2102543397: day 26 to 35 [HIGH_INCOME, YOUNG],  Target Reach:1546   ImpsToGo:0  imp completion:126.47691342155352%
+--------------------
+Day 31: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 32) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 31 ended. Starting next day
+Day 32: Updating campaign (y) 2102543397 stats: 1955.3330814972173 tgtImps 0.0 nonTgtImps. Cost of imps is 3.484375000000006E-5
+Day 32: Daily notification for campaign (?) 1077419433
+Day 32:  allocated to DummyAdnetwork. UCS Level set to 1.0 at price 0.1614681588672991 Quality Score is: 1.2642437190299591
+Day 32: Campaign opportunity - Campaign (?) ID 1454822022: day 34 to 36 [HIGH_INCOME, YOUNG, FEMALE], reach: 153 coefs: (v=2.818206945446395, m=2.4242735035586582)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(1454822022)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 510.0
+Supply : 2304.0
+Demand / Supply : 0.22135416666666666
+DEMANDSUPPLY BID= 42.721354166666664
+LOWEST BID   = 13.0
+HIGHEST BID  = 193.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 193.0
+Day 32: Campaign total budget bid (millis): 193
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 32: ucs level reported: 1.0
+Day 32 :BankStatus[8,835441]
+Publishers Report: 
+(publisher: tripadvisor popularity: 320 video: 116 text: 205)
+(publisher: ehow popularity: 530 video: 217 text: 314)
+(publisher: msn popularity: 3838 video: 1180 text: 2659)
+(publisher: amazon popularity: 2626 video: 1162 text: 1465)
+(publisher: yahoo popularity: 3391 video: 1312 text: 2080)
+(publisher: target popularity: 378 video: 155 text: 224)
+Day 32 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 33]========================================================
+--------------------
+My Campaigns(1):
+-(y) Campaign (y) ID 2102543397: day 26 to 35 [HIGH_INCOME, YOUNG],  Target Reach:1546   ImpsToGo:0  imp completion:126.47691342155352%
+--------------------
+Day 32: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 33) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 32 ended. Starting next day
+Day 33: Updating campaign (y) 2102543397 stats: 1955.3330814972173 tgtImps 0.0 nonTgtImps. Cost of imps is 3.484375000000006E-5
+Day 33: Daily notification for campaign (?) 1454822022
+Day 33:  allocated to DummyAdnetwork. UCS Level set to 0.47829690000000014 at price 0.0 Quality Score is: 1.2642437190299591
+Day 33: Campaign opportunity - Campaign (?) ID 615953048: day 35 to 44 [LOW_INCOME, FEMALE], reach: 8762 coefs: (v=2.0880750662281424, m=2.4959761479823377)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(615953048)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 1752.0
+Supply : 131430.0
+Demand / Supply : 0.01333028988815339
+DEMANDSUPPLY BID= 147.6596210910751
+LOWEST BID   = 694.0
+HIGHEST BID  = 11077.0
+BID = 147.6596210910751
+Day 33: Campaign total budget bid (millis): 703
+Day 33: ucs level reported: 0.47829690000000014
+Day 33 :BankStatus[8,835441]
+Publishers Report: 
+(publisher: tripadvisor popularity: 304 video: 88 text: 217)
+(publisher: ehow popularity: 544 video: 220 text: 325)
+(publisher: msn popularity: 3775 video: 1168 text: 2608)
+(publisher: amazon popularity: 2720 video: 1155 text: 1566)
+(publisher: yahoo popularity: 3339 video: 1295 text: 2045)
+(publisher: target popularity: 401 video: 145 text: 257)
+Day 33 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 34]========================================================
+--------------------
+My Campaigns(1):
+-(y) Campaign (y) ID 2102543397: day 26 to 35 [HIGH_INCOME, YOUNG],  Target Reach:1546   ImpsToGo:0  imp completion:126.47691342155352%
+--------------------
+Day 33: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 34) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 33 ended. Starting next day
+Day 34: Updating campaign (y) 2102543397 stats: 1955.3330814972173 tgtImps 0.0 nonTgtImps. Cost of imps is 3.484375000000006E-5
+Day 34: Daily notification for campaign (?) 615953048
+Day 34:  WON at cost (Millis)735. UCS Level set to 0.7290000000000001 at price 0.040609291812064276 Quality Score is: 1.2642437190299591
+Day 34: Campaign opportunity - Campaign (?) ID 2126574536: day 36 to 45 [HIGH_INCOME, OLD], reach: 2430 coefs: (v=2.8933454212443044, m=1.6345734993384067)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(2126574536)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 2430.0
+Supply : 36450.0
+Demand / Supply : 0.06666666666666667
+DEMANDSUPPLY BID= 204.8
+LOWEST BID   = 193.0
+HIGHEST BID  = 3072.0
+BID = 204.8
+Day 34: Campaign total budget bid (millis): 205
+=========================================================
+UCSBidder -- Calculating the UCS for Day 35
+UCSBidder -- Current Level : 0.7290000000000001
+UCSBidder -- Previous Bid : 0.10192176618785234
+UCSBidder -- Estimated Impression Reach : 973.5555555555555
+UCSBidder -- Calculated Bid : 0.10192176618785234
+=========================================================
+Day 34: ucs level reported: 0.7290000000000001
+Day 34 :BankStatus[8,794832]
+Publishers Report: 
+(publisher: tripadvisor popularity: 311 video: 107 text: 205)
+(publisher: ehow popularity: 548 video: 240 text: 309)
+(publisher: msn popularity: 3801 video: 1156 text: 2646)
+(publisher: amazon popularity: 2647 video: 1113 text: 1535)
+(publisher: yahoo popularity: 3390 video: 1293 text: 2098)
+(publisher: target popularity: 441 video: 163 text: 279)
+Day 34 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 35]========================================================
+--------------------
+My Campaigns(2):
+-(y) Campaign (y) ID 2102543397: day 26 to 35 [HIGH_INCOME, YOUNG],  Target Reach:1546   ImpsToGo:0  imp completion:126.47691342155352%
+-(?) Campaign (?) ID 615953048: day 35 to 44 [LOW_INCOME, FEMALE],  Target Reach:8762   ImpsToGo:8762  imp completion:0.0%
+--------------------
+--------------[ImpressionBidder:Camp ?(615953048)]-------------------------------------------
+Total Budget: ?0.735		remaining: ?0.735		=100.0% remaining to spend
+Total Reach: 8762		remaining: 8762		=100.0%needed
+Total Length: 10			remaining: 10			=100.0%of time left
+(initial) Spendable Budget (90.0%): ?0.6615
+Price Per Impression: 7.549646199497831E-5
+---------------------------------------------------------------------------
+Day 34: Updated 54 Bid Bundle entries for Campaign (?) id 615953048
+Day 34: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 35) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 34 ended. Starting next day
+Day 35: Updating campaign (y) 2102543397 stats: 1955.3330814972173 tgtImps 0.0 nonTgtImps. Cost of imps is 3.484375000000006E-5
+Day 35: Daily notification for campaign (?) 2126574536
+Day 35:  WON at cost (Millis)205. UCS Level set to 0.7290000000000001 at price 0.015714302196626055 Quality Score is: 1.2642437190299591
+Day 35: Campaign opportunity - Campaign (?) ID 2008104002: day 37 to 39 [HIGH_INCOME, FEMALE], reach: 397 coefs: (v=2.2605865178881728, m=1.8064247044687958)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(2008104002)]-------------------------------------------
+Quality score: 1.2642437190299591
+Demand : 1188.0
+Supply : 5967.0
+Demand / Supply : 0.19909502262443438
+DEMANDSUPPLY BID= 99.74660633484162
+LOWEST BID   = 32.0
+HIGHEST BID  = 501.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 501.0
+Day 35: Campaign total budget bid (millis): 501
+=========================================================
+UCSBidder -- Calculating the UCS for Day 36
+UCSBidder -- Current Level : 0.7290000000000001
+UCSBidder -- Previous Bid : 0.10192176618785234
+UCSBidder -- Estimated Impression Reach : 1365.25
+UCSBidder -- Calculated Bid : 0.13249829604420804
+=========================================================
+Day 35: ucs level reported: 0.7290000000000001
+Day 35 :BankStatus[8,779118]
+Publishers Report: 
+(publisher: tripadvisor popularity: 320 video: 110 text: 211)
+(publisher: ehow popularity: 503 video: 232 text: 272)
+(publisher: msn popularity: 3839 video: 1164 text: 2676)
+(publisher: amazon popularity: 2712 video: 1161 text: 1552)
+(publisher: yahoo popularity: 3360 video: 1282 text: 2079)
+(publisher: target popularity: 387 video: 129 text: 259)
+Day 35 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 36]========================================================
+--------------------
+My Campaigns(2):
+-(?) Campaign (?) ID 2126574536: day 36 to 45 [HIGH_INCOME, OLD],  Target Reach:2430   ImpsToGo:2430  imp completion:0.0%
+-(?) Campaign (?) ID 615953048: day 35 to 44 [LOW_INCOME, FEMALE],  Target Reach:8762   ImpsToGo:8762  imp completion:0.0%
+--------------------
+--------------[ImpressionBidder:Camp ?(2126574536)]-------------------------------------------
+Total Budget: ?0.205		remaining: ?0.205		=100.0% remaining to spend
+Total Reach: 2430		remaining: 2430		=100.0%needed
+Total Length: 10			remaining: 10			=100.0%of time left
+(initial) Spendable Budget (90.0%): ?0.1845
+Price Per Impression: 7.592592592592593E-5
+---------------------------------------------------------------------------
+Day 35: Updated 48 Bid Bundle entries for Campaign (?) id 2126574536
+--------------[ImpressionBidder:Camp ?(615953048)]-------------------------------------------
+Total Budget: ?0.735		remaining: ?0.735		=100.0% remaining to spend
+Total Reach: 8762		remaining: 8762		=100.0%needed
+Total Length: 10			remaining: 9			=90.0%of time left
+(initial) Spendable Budget (90.0%): ?0.6615
+Price Per Impression: 7.549646199497831E-5
+---------------------------------------------------------------------------
+Day 35: Updated 54 Bid Bundle entries for Campaign (?) id 615953048
+Day 35: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 36) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 35 ended. Starting next day
+Day 36: Updating campaign (?) 615953048 stats: 6904.310817979644 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 36: Updating campaign (y) 2102543397 stats: 1955.3330814972173 tgtImps 0.0 nonTgtImps. Cost of imps is 3.484375000000006E-5
+Day 36: Daily notification for campaign (?) 2008104002
+Day 36:  allocated to DummyAdnetwork-2. UCS Level set to 0.81 at price 0.08112740875239415 Quality Score is: 1.2048245968738738
+Day 36: Campaign opportunity - Campaign (?) ID 1857288413: day 38 to 40 [HIGH_INCOME, YOUNG, MALE], reach: 310 coefs: (v=2.2691103628527394, m=2.3834798559854247)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(1857288413)]-------------------------------------------
+Quality score: 1.2048245968738738
+Demand : 824.0
+Supply : 4653.0
+Demand / Supply : 0.17709004943047496
+DEMANDSUPPLY BID= 66.05458843756716
+LOWEST BID   = 26.0
+HIGHEST BID  = 373.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 373.0
+Day 36: Campaign total budget bid (millis): 373
+=========================================================
+UCSBidder -- Calculating the UCS for Day 37
+UCSBidder -- Current Level : 0.81
+UCSBidder -- Previous Bid : 0.13249829604420804
+UCSBidder -- Estimated Impression Reach : 569.0357142857142
+UCSBidder -- Calculated Bid : 0.13249829604420804
+=========================================================
+Day 36: ucs level reported: 0.81
+Day 36 :BankStatus[8,842477]
+Publishers Report: 
+(publisher: tripadvisor popularity: 349 video: 105 text: 245)
+(publisher: ehow popularity: 494 video: 217 text: 278)
+(publisher: msn popularity: 3752 video: 1156 text: 2597)
+(publisher: amazon popularity: 2679 video: 1125 text: 1555)
+(publisher: yahoo popularity: 3476 video: 1348 text: 2129)
+(publisher: target popularity: 410 video: 142 text: 269)
+Day 36 : AdNetworkReport
+Day 36 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 37]========================================================
+--------------------
+My Campaigns(2):
+-(?) Campaign (?) ID 2126574536: day 36 to 45 [HIGH_INCOME, OLD],  Target Reach:2430   ImpsToGo:2430  imp completion:0.0%
+-(?) Campaign (?) ID 615953048: day 35 to 44 [LOW_INCOME, FEMALE],  Target Reach:8762   ImpsToGo:1857  imp completion:78.79834304929975%
+--------------------
+--------------[ImpressionBidder:Camp ?(2126574536)]-------------------------------------------
+Total Budget: ?0.205		remaining: ?0.205		=100.0% remaining to spend
+Total Reach: 2430		remaining: 2430		=100.0%needed
+Total Length: 10			remaining: 9			=90.0%of time left
+(initial) Spendable Budget (90.0%): ?0.1845
+Price Per Impression: 7.592592592592593E-5
+---------------------------------------------------------------------------
+Day 36: Updated 48 Bid Bundle entries for Campaign (?) id 2126574536
+--------------[ImpressionBidder:Camp ?(615953048)]-------------------------------------------
+Total Budget: ?0.735		remaining: ?0.735		=100.0% remaining to spend
+Total Reach: 8762		remaining: 1857		=21.193791371832916%needed
+Total Length: 10			remaining: 8			=80.0%of time left
+(initial) Spendable Budget (90.0%): ?0.6615
+Price Per Impression: 3.562197092084006E-4
+---------------------------------------------------------------------------
+Day 36: Updated 54 Bid Bundle entries for Campaign (?) id 615953048
+Day 36: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 37) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 36 ended. Starting next day
+Day 37: Updating campaign (?) 615953048 stats: 14500.878565202573 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 37: Updating campaign (?) 2126574536 stats: 1986.2673579343038 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 37: Daily notification for campaign (?) 1857288413
+Day 37:  allocated to DummyAdnetwork. UCS Level set to 0.7290000000000001 at price 0.015714302196626055 Quality Score is: 1.2048245968738738
+Day 37: Campaign opportunity - Campaign (?) ID 1442314338: day 39 to 48 [YOUNG, FEMALE], reach: 4472 coefs: (v=2.652267326820507, m=1.7630687233549711)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(1442314338)]-------------------------------------------
+Quality score: 1.2048245968738738
+Demand : 5811.0
+Supply : 67080.0
+Demand / Supply : 0.08662790697674419
+DEMANDSUPPLY BID= 466.66453488372093
+LOWEST BID   = 372.0
+HIGHEST BID  = 5387.0
+BID = 466.66453488372093
+Day 37: Campaign total budget bid (millis): 404
+=========================================================
+UCSBidder -- Calculating the UCS for Day 38
+UCSBidder -- Current Level : 0.7290000000000001
+UCSBidder -- Previous Bid : 0.13249829604420804
+UCSBidder -- Estimated Impression Reach : 63.285714285714285
+UCSBidder -- Calculated Bid : 0.13249829604420804
+=========================================================
+Day 37: ucs level reported: 0.7290000000000001
+Day 37 :BankStatus[8,826762]
+Publishers Report: 
+(publisher: tripadvisor popularity: 313 video: 99 text: 215)
+(publisher: ehow popularity: 528 video: 236 text: 293)
+(publisher: msn popularity: 3760 video: 1159 text: 2602)
+(publisher: amazon popularity: 2720 video: 1144 text: 1577)
+(publisher: yahoo popularity: 3366 video: 1297 text: 2070)
+(publisher: target popularity: 413 video: 146 text: 268)
+Day 37 : AdNetworkReport
+Day 37 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 38]========================================================
+--------------------
+My Campaigns(2):
+-(?) Campaign (?) ID 2126574536: day 36 to 45 [HIGH_INCOME, OLD],  Target Reach:2430   ImpsToGo:443  imp completion:81.73939744585613%
+-(?) Campaign (?) ID 615953048: day 35 to 44 [LOW_INCOME, FEMALE],  Target Reach:8762   ImpsToGo:0  imp completion:165.49735865330487%
+--------------------
+--------------[ImpressionBidder:Camp ?(2126574536)]-------------------------------------------
+Total Budget: ?0.205		remaining: ?0.205		=100.0% remaining to spend
+Total Reach: 2430		remaining: 443		=18.23045267489712%needed
+Total Length: 10			remaining: 8			=80.0%of time left
+(initial) Spendable Budget (90.0%): ?0.1845
+Price Per Impression: 4.164785553047404E-4
+---------------------------------------------------------------------------
+Day 37: Updated 48 Bid Bundle entries for Campaign (?) id 2126574536
+Day 37: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 38) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 37 ended. Starting next day
+Day 38: Updating campaign (?) 615953048 stats: 16361.960321757022 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 38: Updating campaign (?) 2126574536 stats: 3787.65518006533 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 38: Daily notification for campaign (?) 1442314338
+Day 38:  allocated to adv5. UCS Level set to 0.9 at price 0.11216412864692121 Quality Score is: 1.2048245968738738
+Day 38: Campaign opportunity - Campaign (?) ID 519189994: day 40 to 42 [OLD], reach: 3246 coefs: (v=2.4839352704538573, m=2.3032648706970353)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(519189994)]-------------------------------------------
+Quality score: 1.2048245968738738
+Demand : 3246.0
+Supply : 48699.0
+Demand / Supply : 0.06665434608513522
+DEMANDSUPPLY BID= 260.6184931928787
+LOWEST BID   = 270.0
+HIGHEST BID  = 3910.0
+BID = 260.6184931928787
+Day 38: Campaign total budget bid (millis): 287
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 38: ucs level reported: 0.9
+Day 38 :BankStatus[8,714598]
+Publishers Report: 
+(publisher: tripadvisor popularity: 315 video: 110 text: 206)
+(publisher: ehow popularity: 573 video: 251 text: 323)
+(publisher: msn popularity: 3846 video: 1154 text: 2693)
+(publisher: amazon popularity: 2622 video: 1091 text: 1532)
+(publisher: yahoo popularity: 3337 video: 1307 text: 2031)
+(publisher: target popularity: 428 video: 139 text: 290)
+Day 38 : AdNetworkReport
+Day 38 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 39]========================================================
+--------------------
+My Campaigns(2):
+-(?) Campaign (?) ID 2126574536: day 36 to 45 [HIGH_INCOME, OLD],  Target Reach:2430   ImpsToGo:0  imp completion:155.87058354178313%
+-(?) Campaign (?) ID 615953048: day 35 to 44 [LOW_INCOME, FEMALE],  Target Reach:8762   ImpsToGo:0  imp completion:186.73773478380534%
+--------------------
+Day 38: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 39) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 38 ended. Starting next day
+Day 39: Updating campaign (?) 615953048 stats: 16361.960321757022 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 39: Updating campaign (?) 2126574536 stats: 4231.398747718703 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 39: Daily notification for campaign (?) 519189994
+Day 39:  allocated to adv5. UCS Level set to 0.6561000000000001 at price 0.0 Quality Score is: 1.2048245968738738
+Day 39: Campaign opportunity - Campaign (?) ID 1534115274: day 41 to 50 [HIGH_INCOME, OLD], reach: 2430 coefs: (v=2.4834970027124905, m=1.6192520701128807)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(1534115274)]-------------------------------------------
+Quality score: 1.2048245968738738
+Demand : 2187.0
+Supply : 36450.0
+Demand / Supply : 0.06
+DEMANDSUPPLY BID= 175.62
+LOWEST BID   = 202.0
+HIGHEST BID  = 2927.0
+BID = 175.62
+Day 39: Campaign total budget bid (millis): 214
+Day 39: ucs level reported: 0.6561000000000001
+Day 39 :BankStatus[8,714598]
+Publishers Report: 
+(publisher: tripadvisor popularity: 339 video: 111 text: 229)
+(publisher: ehow popularity: 496 video: 214 text: 283)
+(publisher: msn popularity: 3839 video: 1168 text: 2672)
+(publisher: amazon popularity: 2651 video: 1149 text: 1503)
+(publisher: yahoo popularity: 3333 video: 1322 text: 2012)
+(publisher: target popularity: 429 video: 132 text: 298)
+Day 39 : AdNetworkReport
+Day 39 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 40]========================================================
+--------------------
+My Campaigns(2):
+-(?) Campaign (?) ID 2126574536: day 36 to 45 [HIGH_INCOME, OLD],  Target Reach:2430   ImpsToGo:0  imp completion:174.1316357085886%
+-(?) Campaign (?) ID 615953048: day 35 to 44 [LOW_INCOME, FEMALE],  Target Reach:8762   ImpsToGo:0  imp completion:186.73773478380534%
+--------------------
+Day 39: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 40) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 39 ended. Starting next day
+Day 40: Updating campaign (?) 615953048 stats: 16361.960321757022 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 40: Updating campaign (?) 2126574536 stats: 4231.398747718703 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 40: Daily notification for campaign (?) 1534115274
+Day 40:  allocated to DummyAdnetwork. UCS Level set to 1.0 at price 0.1684659724478399 Quality Score is: 1.2048245968738738
+Day 40: Campaign opportunity - Campaign (?) ID 1923328335: day 42 to 44 [HIGH_INCOME, YOUNG], reach: 1855 coefs: (v=2.2032828266962747, m=2.023592621549806)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(1923328335)]-------------------------------------------
+Quality score: 1.2048245968738738
+Demand : 6180.0
+Supply : 6957.0
+Demand / Supply : 0.8883139284174213
+DEMANDSUPPLY BID= 1984.4933160845192
+LOWEST BID   = 154.0
+HIGHEST BID  = 2234.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 2234.0
+Day 40: Campaign total budget bid (millis): 2234
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 40: ucs level reported: 1.0
+Day 40 :BankStatus[8,546132]
+Publishers Report: 
+(publisher: tripadvisor popularity: 321 video: 105 text: 217)
+(publisher: ehow popularity: 525 video: 240 text: 286)
+(publisher: msn popularity: 3802 video: 1137 text: 2666)
+(publisher: amazon popularity: 2643 video: 1135 text: 1509)
+(publisher: yahoo popularity: 3410 video: 1295 text: 2116)
+(publisher: target popularity: 404 video: 149 text: 256)
+Day 40 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 41]========================================================
+--------------------
+My Campaigns(2):
+-(?) Campaign (?) ID 2126574536: day 36 to 45 [HIGH_INCOME, OLD],  Target Reach:2430   ImpsToGo:0  imp completion:174.1316357085886%
+-(?) Campaign (?) ID 615953048: day 35 to 44 [LOW_INCOME, FEMALE],  Target Reach:8762   ImpsToGo:0  imp completion:186.73773478380534%
+--------------------
+Day 40: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 41) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 40 ended. Starting next day
+Day 41: Updating campaign (?) 615953048 stats: 16361.960321757022 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 41: Updating campaign (?) 2126574536 stats: 4231.398747718703 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 41: Daily notification for campaign (?) 1923328335
+Day 41:  allocated to DummyAdnetwork. UCS Level set to 0.5904900000000002 at price 0.0 Quality Score is: 1.2048245968738738
+Day 41: Campaign opportunity - Campaign (?) ID 1753482855: day 43 to 52 [HIGH_INCOME, OLD], reach: 9720 coefs: (v=2.5448274447022285, m=1.6348271115212536)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(1753482855)]-------------------------------------------
+Quality score: 1.2048245968738738
+Demand : 12636.0
+Supply : 36450.0
+Demand / Supply : 0.3466666666666667
+DEMANDSUPPLY BID= 4059.4666666666667
+LOWEST BID   = 807.0
+HIGHEST BID  = 11710.0
+BID = 4059.4666666666667
+Day 41: Campaign total budget bid (millis): 1086
+Day 41: ucs level reported: 0.5904900000000002
+Day 41 :BankStatus[8,546132]
+Publishers Report: 
+(publisher: tripadvisor popularity: 319 video: 111 text: 209)
+(publisher: ehow popularity: 544 video: 234 text: 311)
+(publisher: msn popularity: 3810 video: 1163 text: 2648)
+(publisher: amazon popularity: 2713 video: 1126 text: 1588)
+(publisher: yahoo popularity: 3393 video: 1281 text: 2113)
+(publisher: target popularity: 386 video: 139 text: 248)
+Day 41 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 42]========================================================
+--------------------
+My Campaigns(2):
+-(?) Campaign (?) ID 2126574536: day 36 to 45 [HIGH_INCOME, OLD],  Target Reach:2430   ImpsToGo:0  imp completion:174.1316357085886%
+-(?) Campaign (?) ID 615953048: day 35 to 44 [LOW_INCOME, FEMALE],  Target Reach:8762   ImpsToGo:0  imp completion:186.73773478380534%
+--------------------
+Day 41: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 42) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 41 ended. Starting next day
+Day 42: Updating campaign (?) 615953048 stats: 16361.960321757022 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 42: Updating campaign (?) 2126574536 stats: 4231.398747718703 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 42: Daily notification for campaign (?) 1753482855
+Day 42:  allocated to adv5. UCS Level set to 1.0 at price 0.1261822454062352 Quality Score is: 1.2048245968738738
+Day 42: Campaign opportunity - Campaign (?) ID 1531882846: day 44 to 46 [HIGH_INCOME], reach: 2982 coefs: (v=2.5061347294369627, m=2.473751111404521)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(1531882846)]-------------------------------------------
+Quality score: 1.2048245968738738
+Demand : 8946.0
+Supply : 17892.0
+Demand / Supply : 0.5
+DEMANDSUPPLY BID= 1796.0
+LOWEST BID   = 248.0
+HIGHEST BID  = 3592.0
+BID = 1796.0
+Day 42: Campaign total budget bid (millis): 372
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 42: ucs level reported: 1.0
+Day 42 :BankStatus[8,419950]
+Publishers Report: 
+(publisher: tripadvisor popularity: 332 video: 120 text: 213)
+(publisher: ehow popularity: 521 video: 222 text: 300)
+(publisher: msn popularity: 3701 video: 1151 text: 2551)
+(publisher: amazon popularity: 2694 video: 1137 text: 1558)
+(publisher: yahoo popularity: 3446 video: 1330 text: 2117)
+(publisher: target popularity: 412 video: 150 text: 263)
+Day 42 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 43]========================================================
+--------------------
+My Campaigns(2):
+-(?) Campaign (?) ID 2126574536: day 36 to 45 [HIGH_INCOME, OLD],  Target Reach:2430   ImpsToGo:0  imp completion:174.1316357085886%
+-(?) Campaign (?) ID 615953048: day 35 to 44 [LOW_INCOME, FEMALE],  Target Reach:8762   ImpsToGo:0  imp completion:186.73773478380534%
+--------------------
+Day 42: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 43) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 42 ended. Starting next day
+Day 43: Updating campaign (?) 615953048 stats: 16361.960321757022 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 43: Updating campaign (?) 2126574536 stats: 4231.398747718703 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 43: Daily notification for campaign (?) 1531882846
+Day 43:  allocated to DummyAdnetwork. UCS Level set to 0.5314410000000002 at price 0.0 Quality Score is: 1.2048245968738738
+Day 43: Campaign opportunity - Campaign (?) ID 583523441: day 45 to 54 [HIGH_INCOME, YOUNG], reach: 1546 coefs: (v=2.056564949599803, m=2.215418512882145)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(583523441)]-------------------------------------------
+Quality score: 1.2048245968738738
+Demand : 3234.0
+Supply : 23190.0
+Demand / Supply : 0.13945666235446313
+DEMANDSUPPLY BID= 259.66830530401035
+LOWEST BID   = 129.0
+HIGHEST BID  = 1862.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 1862.0
+Day 43: Campaign total budget bid (millis): 1862
+Day 43: ucs level reported: 0.5314410000000002
+Day 43 :BankStatus[8,419950]
+Publishers Report: 
+(publisher: tripadvisor popularity: 336 video: 112 text: 225)
+(publisher: ehow popularity: 529 video: 239 text: 291)
+(publisher: msn popularity: 3847 video: 1169 text: 2679)
+(publisher: amazon popularity: 2652 video: 1075 text: 1578)
+(publisher: yahoo popularity: 3334 video: 1293 text: 2042)
+(publisher: target popularity: 403 video: 141 text: 263)
+Day 43 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 44]========================================================
+--------------------
+My Campaigns(2):
+-(?) Campaign (?) ID 2126574536: day 36 to 45 [HIGH_INCOME, OLD],  Target Reach:2430   ImpsToGo:0  imp completion:174.1316357085886%
+-(?) Campaign (?) ID 615953048: day 35 to 44 [LOW_INCOME, FEMALE],  Target Reach:8762   ImpsToGo:0  imp completion:186.73773478380534%
+--------------------
+Day 43: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 44) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 43 ended. Starting next day
+Day 44: Updating campaign (?) 615953048 stats: 16361.960321757022 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 44: Updating campaign (?) 2126574536 stats: 4231.398747718703 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 44: Daily notification for campaign (?) 583523441
+Day 44:  allocated to DummyAdnetwork-2. UCS Level set to 0.81 at price 0.10585456386660162 Quality Score is: 1.2048245968738738
+Day 44: Campaign opportunity - Campaign (?) ID 1160268368: day 46 to 55 [LOW_INCOME], reach: 40060 coefs: (v=2.5901837152345846, m=1.7446796487918976)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(1160268368)]-------------------------------------------
+Quality score: 1.2048245968738738
+Demand : 0.0
+Supply : 240360.0
+Demand / Supply : 0.0
+DEMANDSUPPLY BID= 0.0
+LOWEST BID   = 3325.0
+HIGHEST BID  = 48265.0
+BID = 3325.0
+Day 44: Campaign total budget bid (millis): 3325
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 44: ucs level reported: 0.81
+Day 44 :BankStatus[8,314095]
+Publishers Report: 
+(publisher: tripadvisor popularity: 337 video: 110 text: 228)
+(publisher: ehow popularity: 513 video: 219 text: 295)
+(publisher: msn popularity: 3816 video: 1184 text: 2633)
+(publisher: amazon popularity: 2669 video: 1143 text: 1527)
+(publisher: yahoo popularity: 3344 video: 1311 text: 2034)
+(publisher: target popularity: 409 video: 143 text: 267)
+Day 44 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 45]========================================================
+--------------------
+My Campaigns(1):
+-(?) Campaign (?) ID 2126574536: day 36 to 45 [HIGH_INCOME, OLD],  Target Reach:2430   ImpsToGo:0  imp completion:174.1316357085886%
+--------------------
+Day 44: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 45) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 44 ended. Starting next day
+Day 45: Updating campaign (?) 615953048 stats: 16361.960321757022 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 45: Updating campaign (?) 2126574536 stats: 4231.398747718703 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 45: Daily notification for campaign (?) 1160268368
+Day 45:  allocated to adv1. UCS Level set to 0.47829690000000014 at price 0.0 Quality Score is: 1.2489574056454245
+Day 45: Campaign opportunity - Campaign (?) ID 1207639960: day 47 to 49 [LOW_INCOME, YOUNG], reach: 2289 coefs: (v=2.2351632783243605, m=1.6724559991542574)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(1207639960)]-------------------------------------------
+Quality score: 1.2489574056454245
+Demand : 6104.0
+Supply : 34344.0
+Demand / Supply : 0.17773119030980666
+DEMANDSUPPLY BID= 507.95574190542743
+LOWEST BID   = 184.0
+HIGHEST BID  = 2858.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 2858.0
+Day 45: Campaign total budget bid (millis): 2858
+Day 45: ucs level reported: 0.47829690000000014
+Day 45 :BankStatus[9,253704]
+Publishers Report: 
+(publisher: tripadvisor popularity: 318 video: 113 text: 206)
+(publisher: ehow popularity: 534 video: 228 text: 307)
+(publisher: msn popularity: 3853 video: 1184 text: 2670)
+(publisher: amazon popularity: 2661 video: 1131 text: 1531)
+(publisher: yahoo popularity: 3328 video: 1263 text: 2066)
+(publisher: target popularity: 413 video: 152 text: 262)
+Day 45 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 46]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 45: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 46) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 45 ended. Starting next day
+Day 46: Updating campaign (?) 2126574536 stats: 4231.398747718703 tgtImps 0.0 nonTgtImps. Cost of imps is 0.0
+Day 46: Daily notification for campaign (?) 1207639960
+Day 46:  allocated to DummyAdnetwork-2. UCS Level set to 1.0 at price 0.14725742259254404 Quality Score is: 1.2587771183036565
+Day 46: Campaign opportunity - Campaign (?) ID 202901609: day 48 to 50 [MALE], reach: 11894 coefs: (v=2.377765880622733, m=1.642753699477165)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(202901609)]-------------------------------------------
+Quality score: 1.2587771183036565
+Demand : 0.0
+Supply : 44604.0
+Demand / Supply : 0.0
+DEMANDSUPPLY BID= 0.0
+LOWEST BID   = 945.0
+HIGHEST BID  = 14971.0
+BID = 945.0
+Day 46: Campaign total budget bid (millis): 945
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 46: ucs level reported: 1.0
+Day 46 :BankStatus[9,365838]
+Publishers Report: 
+(publisher: tripadvisor popularity: 332 video: 119 text: 214)
+(publisher: ehow popularity: 522 video: 217 text: 306)
+(publisher: msn popularity: 3761 video: 1137 text: 2625)
+(publisher: amazon popularity: 2591 video: 1113 text: 1479)
+(publisher: yahoo popularity: 3498 video: 1361 text: 2138)
+(publisher: target popularity: 389 video: 133 text: 257)
+Day 46 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 47]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 46: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 47) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 46 ended. Starting next day
+Day 47: Daily notification for campaign (?) 202901609
+Day 47:  allocated to adv5. UCS Level set to 0.5904900000000002 at price 0.0 Quality Score is: 1.2587771183036565
+Day 47: Campaign opportunity - Campaign (?) ID 1049677402: day 49 to 58 [OLD], reach: 43288 coefs: (v=2.428000144303433, m=2.193428600408085)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(1049677402)]-------------------------------------------
+Quality score: 1.2587771183036565
+Demand : 25968.0
+Supply : 162330.0
+Demand / Supply : 0.15997043060432453
+DEMANDSUPPLY BID= 8716.62879319904
+LOWEST BID   = 3439.0
+HIGHEST BID  = 54489.0
+BID = 8716.62879319904
+Day 47: Campaign total budget bid (millis): 3989
+Day 47: ucs level reported: 0.5904900000000002
+Day 47 :BankStatus[9,365838]
+Publishers Report: 
+(publisher: tripadvisor popularity: 328 video: 107 text: 222)
+(publisher: ehow popularity: 525 video: 225 text: 301)
+(publisher: msn popularity: 3778 video: 1167 text: 2612)
+(publisher: amazon popularity: 2699 video: 1114 text: 1586)
+(publisher: yahoo popularity: 3399 video: 1283 text: 2117)
+(publisher: target popularity: 389 video: 142 text: 248)
+Day 47 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 48]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 47: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 48) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 47 ended. Starting next day
+Day 48: Daily notification for campaign (?) 1049677402
+Day 48:  allocated to adv5. UCS Level set to 0.9 at price 0.1318678502164398 Quality Score is: 1.2587771183036565
+Day 48: Campaign opportunity - Campaign (?) ID 1627344436: day 50 to 54 [FEMALE], reach: 12610 coefs: (v=2.3406502672095977, m=2.2168736301516594)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(1627344436)]-------------------------------------------
+Quality score: 1.2587771183036565
+Demand : 0.0
+Supply : 75660.0
+Demand / Supply : 0.0
+DEMANDSUPPLY BID= 0.0
+LOWEST BID   = 1002.0
+HIGHEST BID  = 15873.0
+BID = 1002.0
+Day 48: Campaign total budget bid (millis): 1002
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 48: ucs level reported: 0.9
+Day 48 :BankStatus[9,233970]
+Publishers Report: 
+(publisher: tripadvisor popularity: 315 video: 112 text: 204)
+(publisher: ehow popularity: 518 video: 233 text: 286)
+(publisher: msn popularity: 3759 video: 1169 text: 2591)
+(publisher: amazon popularity: 2678 video: 1128 text: 1551)
+(publisher: yahoo popularity: 3419 video: 1338 text: 2082)
+(publisher: target popularity: 430 video: 161 text: 270)
+Day 48 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 49]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 48: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 49) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 48 ended. Starting next day
+Day 49: Daily notification for campaign (?) 1627344436
+Day 49:  allocated to DummyAdnetwork. UCS Level set to 0.5314410000000002 at price 0.0 Quality Score is: 1.2587771183036565
+Day 49: Campaign opportunity - Campaign (?) ID 138377146: day 51 to 55 [OLD, MALE], reach: 6507 coefs: (v=2.1458709715515702, m=2.197525254264502)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(138377146)]-------------------------------------------
+Quality score: 1.2587771183036565
+Demand : 9107.0
+Supply : 39045.0
+Demand / Supply : 0.2332436931745422
+DEMANDSUPPLY BID= 1910.2658470995004
+LOWEST BID   = 517.0
+HIGHEST BID  = 8190.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 8190.0
+Day 49: Campaign total budget bid (millis): 8190
+Day 49: ucs level reported: 0.5314410000000002
+Day 49 :BankStatus[9,233970]
+Publishers Report: 
+(publisher: tripadvisor popularity: 313 video: 97 text: 217)
+(publisher: ehow popularity: 524 video: 222 text: 303)
+(publisher: msn popularity: 3816 video: 1183 text: 2634)
+(publisher: amazon popularity: 2618 video: 1136 text: 1483)
+(publisher: yahoo popularity: 3423 video: 1337 text: 2087)
+(publisher: target popularity: 408 video: 143 text: 266)
+Day 49 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 50]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 49: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 50) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 49 ended. Starting next day
+Day 50: Daily notification for campaign (?) 138377146
+Day 50:  WON at cost (Millis)8190. UCS Level set to 0.81 at price 0.1186810651947958 Quality Score is: 1.2587771183036565
+Day 50: Campaign opportunity - Campaign (?) ID 676623895: day 52 to 54 [LOW_INCOME, OLD], reach: 6294 coefs: (v=2.345281042726912, m=2.010730905034651)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(676623895)]-------------------------------------------
+Quality score: 1.2587771183036565
+Demand : 20980.0
+Supply : 37764.0
+Demand / Supply : 0.5555555555555556
+DEMANDSUPPLY BID= 4401.111111111111
+LOWEST BID   = 501.0
+HIGHEST BID  = 7922.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 7922.0
+Day 50: Campaign total budget bid (millis): 7922
+=========================================================
+UCSBidder -- Calculating the UCS for Day 51
+UCSBidder -- Current Level : 0.81
+UCSBidder -- Previous Bid : 0.1507990420511594
+UCSBidder -- Estimated Impression Reach : 1626.75
+UCSBidder -- Calculated Bid : 0.1507990420511594
+=========================================================
+Day 50: ucs level reported: 0.81
+Day 50 :BankStatus[9,115289]
+Publishers Report: 
+(publisher: tripadvisor popularity: 344 video: 128 text: 217)
+(publisher: ehow popularity: 535 video: 239 text: 297)
+(publisher: msn popularity: 3779 video: 1167 text: 2613)
+(publisher: amazon popularity: 2694 video: 1160 text: 1535)
+(publisher: yahoo popularity: 3343 video: 1305 text: 2039)
+(publisher: target popularity: 412 video: 139 text: 274)
+Day 50 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 51]========================================================
+--------------------
+My Campaigns(1):
+-(?) Campaign (?) ID 138377146: day 51 to 55 [OLD, MALE],  Target Reach:6507   ImpsToGo:6507  imp completion:0.0%
+--------------------
+--------------[ImpressionBidder:Camp ?(138377146)]-------------------------------------------
+Total Budget: ?8.19		remaining: ?8.19		=100.0% remaining to spend
+Total Reach: 6507		remaining: 6507		=100.0%needed
+Total Length: 5			remaining: 5			=100.0%of time left
+(initial) Spendable Budget (90.0%): ?7.3709999999999996
+Price Per Impression: 0.0011327800829875518
+---------------------------------------------------------------------------
+Day 50: Updated 54 Bid Bundle entries for Campaign (?) id 138377146
+Day 50: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 51) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 50 ended. Starting next day
+Day 51: Daily notification for campaign (?) 676623895
+Day 51:  allocated to DummyAdnetwork. UCS Level set to 0.7290000000000001 at price 0.015714302196626055 Quality Score is: 1.2587771183036565
+Day 51: Campaign opportunity - Campaign (?) ID 846760276: day 53 to 55 [LOW_INCOME, OLD], reach: 2517 coefs: (v=2.6334966613865687, m=1.9673611558556052)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(846760276)]-------------------------------------------
+Quality score: 1.2587771183036565
+Demand : 9229.0
+Supply : 37764.0
+Demand / Supply : 0.24438618790382374
+DEMANDSUPPLY BID= 774.2154432793136
+LOWEST BID   = 200.0
+HIGHEST BID  = 3168.0
+Performed strategy 2: Campaign unachievable, bidding highest price
+BID = 3168.0
+Day 51: Campaign total budget bid (millis): 3168
+=========================================================
+UCSBidder -- Calculating the UCS for Day 52
+UCSBidder -- Current Level : 0.7290000000000001
+UCSBidder -- Previous Bid : 0.1507990420511594
+UCSBidder -- Estimated Impression Reach : 2169.0
+UCSBidder -- Calculated Bid : 0.19603875466650722
+=========================================================
+Day 51: ucs level reported: 0.7290000000000001
+Day 51 :BankStatus[9,099575]
+Publishers Report: 
+(publisher: tripadvisor popularity: 331 video: 118 text: 214)
+(publisher: ehow popularity: 554 video: 223 text: 332)
+(publisher: msn popularity: 3697 video: 1133 text: 2565)
+(publisher: amazon popularity: 2713 video: 1194 text: 1520)
+(publisher: yahoo popularity: 3379 video: 1318 text: 2062)
+(publisher: target popularity: 417 video: 143 text: 275)
+Day 51 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 52]========================================================
+--------------------
+My Campaigns(1):
+-(?) Campaign (?) ID 138377146: day 51 to 55 [OLD, MALE],  Target Reach:6507   ImpsToGo:6507  imp completion:0.0%
+--------------------
+--------------[ImpressionBidder:Camp ?(138377146)]-------------------------------------------
+Total Budget: ?8.19		remaining: ?8.19		=100.0% remaining to spend
+Total Reach: 6507		remaining: 6507		=100.0%needed
+Total Length: 5			remaining: 4			=80.0%of time left
+(initial) Spendable Budget (90.0%): ?7.3709999999999996
+Price Per Impression: 0.0011327800829875518
+---------------------------------------------------------------------------
+Day 51: Updated 54 Bid Bundle entries for Campaign (?) id 138377146
+Day 51: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 52) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 51 ended. Starting next day
+Day 52: Updating campaign (?) 138377146 stats: 5916.316538897069 tgtImps 0.0 nonTgtImps. Cost of imps is 0.15726046603528002
+Day 52: Daily notification for campaign (?) 846760276
+Day 52:  allocated to DummyAdnetwork. UCS Level set to 1.0 at price 0.19047578364596857 Quality Score is: 1.2587771183036565
+Day 52: Campaign opportunity - Campaign (?) ID 1660376470: day 54 to 56 [MALE], reach: 7434 coefs: (v=2.276141800813641, m=1.7286970060754423)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(1660376470)]-------------------------------------------
+Quality score: 1.2587771183036565
+Demand : 4956.0
+Supply : 44604.0
+Demand / Supply : 0.1111111111111111
+DEMANDSUPPLY BID= 1039.6666666666665
+LOWEST BID   = 591.0
+HIGHEST BID  = 9357.0
+BID = 1039.6666666666665
+Day 52: Campaign total budget bid (millis): 656
+=========================================================
+UCSBidder -- Calculating the UCS for Day 53
+UCSBidder -- Current Level : 1.0
+UCSBidder -- Previous Bid : 0.19603875466650722
+UCSBidder -- Estimated Impression Reach : 295.0
+UCSBidder -- Calculated Bid : 0.17821704969682473
+=========================================================
+Day 52: ucs level reported: 1.0
+Day 52 :BankStatus[8,909099]
+Publishers Report: 
+(publisher: tripadvisor popularity: 338 video: 105 text: 234)
+(publisher: ehow popularity: 497 video: 213 text: 285)
+(publisher: msn popularity: 3872 video: 1203 text: 2670)
+(publisher: amazon popularity: 2646 video: 1139 text: 1508)
+(publisher: yahoo popularity: 3353 video: 1307 text: 2047)
+(publisher: target popularity: 386 video: 135 text: 252)
+Day 52 : AdNetworkReport
+Day 52 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 53]========================================================
+--------------------
+My Campaigns(1):
+-(?) Campaign (?) ID 138377146: day 51 to 55 [OLD, MALE],  Target Reach:6507   ImpsToGo:590  imp completion:90.92233808048363%
+--------------------
+--------------[ImpressionBidder:Camp ?(138377146)]-------------------------------------------
+Total Budget: ?8.19		remaining: ?8.032739533964719		=98.07984778955702% remaining to spend
+Total Reach: 6507		remaining: 590		=9.067158444751806%needed
+Total Length: 5			remaining: 3			=60.0%of time left
+(initial) Spendable Budget (90.0%): ?7.229465580568247
+Price Per Impression: 0.012253331492488554
+---------------------------------------------------------------------------
+Day 52: Updated 54 Bid Bundle entries for Campaign (?) id 138377146
+Day 52: Sending BidBundle
+==================[ Bidding Over for tomorrow (day 53) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 52 ended. Starting next day
+Day 53: Updating campaign (?) 138377146 stats: 8941.333780237332 tgtImps 0.0 nonTgtImps. Cost of imps is 0.2715535469771704
+Day 53: Daily notification for campaign (?) 1660376470
+Day 53:  allocated to adv5. UCS Level set to 0.81 at price 0.12229625491169697 Quality Score is: 1.2587771183036565
+Day 53: Campaign opportunity - Campaign (?) ID 1126428978: day 55 to 57 [OLD], reach: 12986 coefs: (v=2.9961382473297506, m=2.274289892954709)
+==============[CampaignBidder]===========================================
+--------------[Camp: ?(1126428978)]-------------------------------------------
+Quality score: 1.2587771183036565
+Demand : 21640.0
+Supply : 48699.0
+Demand / Supply : 0.4443623072342348
+DEMANDSUPPLY BID= 7263.546274050802
+LOWEST BID   = 1032.0
+HIGHEST BID  = 16346.0
+BID = 7263.546274050802
+Day 53: Campaign total budget bid (millis): 1490
+=========================================================
+UCSBidder -- Zero Campaign Precaution
+UCSBidder -- Calculated Bid : 0.0
+=========================================================
+Day 53: ucs level reported: 0.81
+Day 53 :BankStatus[8,629542]
+Publishers Report: 
+(publisher: tripadvisor popularity: 302 video: 113 text: 190)
+(publisher: ehow popularity: 524 video: 213 text: 312)
+(publisher: msn popularity: 3772 video: 1147 text: 2626)
+(publisher: amazon popularity: 2711 video: 1155 text: 1557)
+(publisher: yahoo popularity: 3392 video: 1342 text: 2051)
+(publisher: target popularity: 402 video: 129 text: 274)
+Day 53 : AdNetworkReport
+Day 53 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 54]========================================================
+--------------------
+My Campaigns(1):
+-(?) Campaign (?) ID 138377146: day 51 to 55 [OLD, MALE],  Target Reach:6507   ImpsToGo:0  imp completion:137.41100015732798%
+--------------------
+Day 53: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 54) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 53 ended. Starting next day
+Day 54: Updating campaign (?) 138377146 stats: 9533.488246309696 tgtImps 0.0 nonTgtImps. Cost of imps is 1.1950822352942916
+Day 54: Daily notification for campaign (?) 1126428978
+Day 54:  allocated to adv5. UCS Level set to 0.5314410000000002 at price 0.0 Quality Score is: 1.2587771183036565
+Day 54 :BankStatus[8,515249]
+Publishers Report: 
+(publisher: tripadvisor popularity: 340 video: 121 text: 220)
+(publisher: ehow popularity: 522 video: 215 text: 308)
+(publisher: msn popularity: 3816 video: 1188 text: 2629)
+(publisher: amazon popularity: 2570 video: 1083 text: 1488)
+(publisher: yahoo popularity: 3440 video: 1304 text: 2137)
+(publisher: target popularity: 438 video: 162 text: 277)
+Day 54 : AdNetworkReport
+Day 54 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 55]========================================================
+--------------------
+My Campaigns(1):
+-(?) Campaign (?) ID 138377146: day 51 to 55 [OLD, MALE],  Target Reach:6507   ImpsToGo:0  imp completion:146.51126857706618%
+--------------------
+Day 54: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 55) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 54 ended. Starting next day
+Day 55: Updating campaign (?) 138377146 stats: 9533.488246309696 tgtImps 0.0 nonTgtImps. Cost of imps is 1.1950822352942916
+Day 55: Daily notification for campaign ( ) 0
+Day 55:  allocated to NONE. UCS Level set to 0.47829690000000014 at price 0.0 Quality Score is: 1.2587771183036565
+Day 55 :BankStatus[7,591605]
+Publishers Report: 
+(publisher: tripadvisor popularity: 313 video: 115 text: 199)
+(publisher: ehow popularity: 549 video: 232 text: 318)
+(publisher: msn popularity: 3789 video: 1187 text: 2603)
+(publisher: amazon popularity: 2679 video: 1129 text: 1551)
+(publisher: yahoo popularity: 3369 video: 1297 text: 2073)
+(publisher: target popularity: 399 video: 134 text: 266)
+Day 55 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 56]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 55: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 56) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 55 ended. Starting next day
+Day 56: Updating campaign (?) 138377146 stats: 9533.488246309696 tgtImps 0.0 nonTgtImps. Cost of imps is 1.1950822352942916
+Day 56: Daily notification for campaign ( ) 0
+Day 56:  allocated to NONE. UCS Level set to 0.47829690000000014 at price 0.0 Quality Score is: 1.2366448534851842
+Day 56 :BankStatus[17,598884]
+Publishers Report: 
+(publisher: tripadvisor popularity: 313 video: 94 text: 220)
+(publisher: ehow popularity: 499 video: 235 text: 265)
+(publisher: msn popularity: 3801 video: 1188 text: 2614)
+(publisher: amazon popularity: 2683 video: 1129 text: 1555)
+(publisher: yahoo popularity: 3372 video: 1326 text: 2047)
+(publisher: target popularity: 412 video: 141 text: 272)
+Day 56 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 57]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 56: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 57) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 56 ended. Starting next day
+Day 57: Daily notification for campaign ( ) 0
+Day 57:  allocated to NONE. UCS Level set to 0.5904900000000002 at price 0.0 Quality Score is: 1.2366448534851842
+Day 57 :BankStatus[17,598884]
+Publishers Report: 
+(publisher: tripadvisor popularity: 331 video: 117 text: 215)
+(publisher: ehow popularity: 509 video: 220 text: 290)
+(publisher: msn popularity: 3739 video: 1128 text: 2612)
+(publisher: amazon popularity: 2739 video: 1183 text: 1557)
+(publisher: yahoo popularity: 3407 video: 1276 text: 2132)
+(publisher: target popularity: 411 video: 144 text: 268)
+Day 57 : Simulation Status Received
+==================================================================================================================
+==================================================================================================================
+===================[Bidding Time, tomorrow: day 58]========================================================
+--------------------
+My Campaigns(0):
+--------------------
+Day 57: Sending Empty BidBundle
+==================[ Bidding Over for tomorrow (day 58) ]================================================================================
+==================================================================================================================
+==================================================================================================================
+Day 57 ended. Starting next day

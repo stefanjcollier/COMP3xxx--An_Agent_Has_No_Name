@@ -528,8 +528,6 @@ public class DankAdNetwork extends Agent {
     protected void simulationSetup() {
         Random random = new Random();
 
-       monitor = new MarketMonitor();
-
         day = 0;
         bidBundle = new AdxBidBundle();
 
@@ -544,6 +542,8 @@ public class DankAdNetwork extends Agent {
     protected void simulationFinished() {
         campaignReports.clear();
         bidBundle = null;
+        monitor = new MarketMonitor();
+
     }
 
     /**

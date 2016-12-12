@@ -7,6 +7,7 @@ import tau.tac.adx.report.adn.MarketSegment;
 
 import java.util.ArrayList;
 import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * Created by vlad on 04/12/2016.
@@ -36,6 +37,7 @@ public class PriceIndexPredictor {
             popularity += (reach / (userPopulation * period));
 
         }
+
         return popularity;
     }
 
@@ -69,6 +71,45 @@ public class PriceIndexPredictor {
         popularity /= ((endDay - startDay) * MarketSegment.usersInMarketSegments().get(targetSegment));
 
         return popularity;
+    }
+
+    /**
+     * Determines if the two given {@link Campaign}s are competing by seeing if their target markets intersect
+     * @return true -- They do compete
+     */
+    private boolean isCompeting(Campaign RC, Campaign IC){
+        Set<MarketSegment> targetSegment_RC = RC.getTargetSegment();
+        Set<MarketSegment> targetSegment_IC = IC.getTargetSegment();
+
+        Set<MarketSegment> overlap = new TreeSet<>(targetSegment_RC);
+        overlap.retainAll(targetSegment_IC);
+
+        return overlap.size() > 0;
+    }
+
+    public double getEstimatedPriceForImpressions(Campaign incomingCamp){
+
+        double demand = 0.0;
+        double supply = MarketSegment.marketSegmentSize(incomingCamp.getTargetSegment()) * incomingCamp.getLength() * 3;
+        for(long i = incomingCamp.getDayStart();i <= incomingCamp.getDayEnd();i++){
+
+            for(Campaign c : monitor.getAllCampaigns()){
+
+                if(c.isRunningOnDay(i) && isCompeting(c,incomingCamp)){
+
+                    demand += incomingCamp.getReachImps() / incomingCamp.getLength();
+
+                }
+            }
+        }
+
+        System.out.println("Demand : " + demand);
+        System.out.println("Supply : " + supply);
+
+        System.out.println("Demand / Supply : " + (demand / supply));
+
+
+        return demand/supply;
     }
 
 }

@@ -46,6 +46,12 @@ public class UCSBidder {
             System.out.println("=========================================================");
          return 0.0;
         }
+
+        if(prevBid == 0.0){
+
+            return 0.22;
+        }
+
         System.out.println("=========================================================");
         System.out.println("UCSBidder -- Calculating the UCS for Day " + currentDay);
         System.out.println("UCSBidder -- Current Level : " +ucsLevel);

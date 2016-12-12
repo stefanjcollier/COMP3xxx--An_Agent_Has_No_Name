@@ -3,6 +3,11 @@ package org.dank.bidder;
 import org.State;
 import org.dank.bidder.index.PriceIndexPredictor;
 import org.dank.entities.Campaign;
+import tau.tac.adx.report.adn.MarketSegment;
+
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.function.Supplier;
 
 /**
  *  This class determines the value of the bid for any given bid
@@ -35,10 +40,12 @@ public class CampaignBidder {
 
         double minBid = strat2;
         double maxBid = strat3;
+        double supplyDemand = priceIndexPredictor.getEstimatedPriceForImpressions(incomingCamp);
 
-        System.out.println("ANL BID= " + strat1);
+        System.out.println("DEMANDSUPPLY BID= " + maxBid * (1 - supplyDemand));
         System.out.println("LOWEST BID   = " + strat2);
         System.out.println("HIGHEST BID  = " + strat3);
+
 
         if (myQuality <= State.LOW_QUALITY){
             System.out.println("Performed strategy 2: Quality too low, bidding lowest price");
@@ -55,24 +62,18 @@ public class CampaignBidder {
 
 
         } else {
-            if (strat1 <= minBid){
-                System.out.println("Attempted strategy 1: Campaign achievable, HOWEVER bid set to MIN");
-                System.out.println("BID (Strat1) = " + strat1);
-                System.out.println("BID (Min)    = " + minBid);
+            System.out.println("Bidding strategic bid");
+            if(supplyDemand > 1){
+                System.out.println("BID = " + maxBid);
                 return maxBid;
-
-            }else if (strat1 >= maxBid){
-                System.out.println("Attempted strategy 1: Campaign achievable, HOWEVER bid set to MAX");
-                System.out.println("BID (Strat1) = " + strat1);
-                System.out.println("BID (Max)      = " + maxBid);
+            }else if(supplyDemand == 0.0){
+                System.out.println("BID = " + minBid);
                 return minBid;
-
             }else{
-                System.out.println("Performed strategy 1: Campaign achievable, bidding strategic bid");
-                //No need for bounding
-                System.out.println("BID = " + strat1);
-                return strat1;
-
+                double bid = minBid + (0.9*maxBid-minBid)*supplyDemand;
+                System.out.println("BID = " + maxBid * (1 - supplyDemand));
+                return this.bound(bid, minBid,  maxBid
+                );
             }
         }
     }
@@ -118,4 +119,9 @@ public class CampaignBidder {
         else if (bid > max) return max;
         return bid;
     }
+
+    ///TEST
+
+
+
 }
