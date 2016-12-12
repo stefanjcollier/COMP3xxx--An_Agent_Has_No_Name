@@ -50,6 +50,9 @@ public class ImpressionBidder {
             System.out.println("    -> budget doubled:" + budget);
         }
         double impPrice = budget / runningCamp.impsTogo();
+        if (today == 0 ){
+            impPrice *= 2;
+        }
 
         System.out.println("Price Per Impression: " + impPrice);
         System.out.println("---------------------------------------------------------------------------");
