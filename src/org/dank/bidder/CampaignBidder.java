@@ -59,13 +59,13 @@ public class CampaignBidder {
                 System.out.println("Attempted strategy 1: Campaign achievable, HOWEVER bid set to MIN");
                 System.out.println("BID (Strat1) = " + strat1);
                 System.out.println("BID (Min)    = " + minBid);
-                return minBid;
+                return maxBid * State.getInstance().getCi();
 
             }else if (strat1 >= maxBid){
                 System.out.println("Attempted strategy 1: Campaign achievable, HOWEVER bid set to MAX");
                 System.out.println("BID (Strat1) = " + strat1);
                 System.out.println("BID (Max)      = " + maxBid);
-                return maxBid;
+                return minBid * State.getInstance().getCi();
 
             }else{
                 System.out.println("Performed strategy 1: Campaign achievable, bidding strategic bid");
