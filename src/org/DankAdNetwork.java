@@ -548,7 +548,7 @@ public class DankAdNetwork extends Agent {
         marketMonitor = new MarketMonitor();
         campaignReports.clear();
         bidBundle = null;
-        System.out.println("###########################################");
+        System.out.println("#############################################################################################");
         System.out.println("===========[ Post Game Diagnostics ]=============");
         for (Campaign my_camp : this.myCampaigns.values()){
             System.out.println("----[ Campaign ("+my_camp.getNiceName()+"): "+my_camp.getId()+"]----");
